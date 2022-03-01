@@ -1,7 +1,7 @@
     <!--Menu-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="img/logo2.PNG" class="img-fluid" width="50px" height="50px" alt=""></a>
+      <a class="navbar-brand" href="http://localhost:8080/"><img src="img/logo2.png" class="img-fluid" width="50px" height="50px" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,7 +20,7 @@
           </ul>
           <div class="btn-group" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
-      <a class="navbar-brand" href="#"><img src="img/logoinicio.PNG" class="img-fluid" width="50px" height="50px" alt="">
+      <a class="navbar-brand" href="#"><img src="img/logoinicio.png" class="img-fluid" width="50px" height="50px" alt="">
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
           <li><a class="dropdown-item" href="#">Registrarse</a></li>

@@ -2,6 +2,7 @@
  <div class="container ">
 <div class="row justify-content-center ">
 <form action = "<?php echo base_url('/login')?>" method="POST">
+<br><br><br><br>
 <h2>Login con CodeIgniter </h2><br>
   <div class="form-group">
     <label for="exampleInputEmail1">Usuario</label>
