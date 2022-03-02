@@ -24,7 +24,7 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
           <li><a class="dropdown-item" href="#">Registrarse</a></li>
-          <li><a class="dropdown-item" href="#">Iniciar sesion</a></li>
+          <li><a class="dropdown-item" href="login">Iniciar sesion</a></li>
         </ul>
       </div>
       </div>
