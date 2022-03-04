@@ -1,6 +1,16 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  
+   
+   <style>
+      .slide{
+        margin-top: 80px;
+      }
+      .slide img{
+        height: 80vh;
+      }
+    </style>
+  </head>
+  <body>
     <!-- Carousel -->
 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
