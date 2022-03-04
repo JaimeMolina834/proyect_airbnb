@@ -6,7 +6,7 @@
 
 <img src="img/logo2.png" class="img-fluid" width="50px" height="50px" alt=""><br>
   <div class="form-group">
-    <label for="exampleInputEmail1">Usuario</label>
+    <label for="exampleInputEmail1">Correo</label>
     <input type="text" style="width : 325px"  class="form-control" id="usuario" placeholder="Usuario" required='campo requerido'>
   </div>
 
