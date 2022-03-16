@@ -9,9 +9,9 @@ class InitSeeder extends Seeder
     public function run()
     {
         $this->call('RolesSeeder');
-        $this->call('CountriesSeeder');
-        $this->call('StatesSeeder');
-        $this->call('CitySeeder');
-        $this->call('LanguagesSeeder');
+        $this->call('PaisesSeeder');
+        $this->call('DepartamentosSeeder');
+        $this->call('MunicipiosSeeder');
+        $this->call('IdiomasSeeder');
     }
 }

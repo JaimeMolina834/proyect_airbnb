@@ -4,22 +4,22 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TblRoles extends Migration
+class TblSaludSeguridad extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'idRol'          => [
-                'type'           => 'INT',
-                'constraint'     => 12,
-                'unsigned'       => true,
-                'auto_increment' => true,
+            'idSaludSeguridad' => [
+                'type'             => 'INT',
+                'constraint'       => 12,
+                'unsigned'         => true,
+                'auto_increment'   => true,
                 'null' => false,
             ],
-            'rol'       => [
+            'saludSeguridad'       => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
-                'null' => false,
+                'constraint' => '250',
+                'null' => true,
             ],
             'date_create' => [
                 'type' => 'DATETIME',
@@ -30,12 +30,12 @@ class TblRoles extends Migration
                 'null' => true,
             ],
         ]);
-        $this->forge->addKey('idRol', true);
-        $this->forge->createTable('tbl_roles');
+        $this->forge->addKey('idSaludSeguridad', true);
+        $this->forge->createTable('tbl_salud_y_seguridad');
     }
 
     public function down()
     {
-        $this->forge->dropTable('tbl_roles');
+        $this->forge->dropTable('tbl_salud_y_seguridad');
     }
 }

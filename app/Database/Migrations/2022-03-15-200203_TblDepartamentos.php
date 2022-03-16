@@ -4,21 +4,22 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TblRoles extends Migration
+class TblDepartamentos extends Migration
 {
     public function up()
     {
+        //$this->db->disableForeignKeyChecks();
         $this->forge->addField([
-            'idRol'          => [
+            'idDepartamento'          => [
                 'type'           => 'INT',
                 'constraint'     => 12,
                 'unsigned'       => true,
                 'auto_increment' => true,
                 'null' => false,
             ],
-            'rol'       => [
+            'departamento'       => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => '250',
                 'null' => false,
             ],
             'date_create' => [
@@ -29,13 +30,21 @@ class TblRoles extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+            'idPais'          => [
+                'type'           => 'INT',
+                'constraint'     => 12,
+                'unsigned'       => true,
+                'null' => true,
+            ],
         ]);
-        $this->forge->addKey('idRol', true);
-        $this->forge->createTable('tbl_roles');
+        $this->forge->addKey('idDepartamento', true);
+        //$this->forge->addForeignKey('idPais','tbl_paises','idPais','CASCADE','SET NULL');
+        $this->forge->createTable('tbl_departamentos');
+        //$this->db->enableForeignKeyChecks();
     }
 
     public function down()
     {
-        $this->forge->dropTable('tbl_roles');
+        $this->forge->dropTable('tbl_departamentos');
     }
 }
