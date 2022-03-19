@@ -19,5 +19,19 @@ class Home extends BaseController
         echo view('templates/footer');
         
     }
+    public function inicio_sesion()
+    {
+        echo view('templates/header');
+        echo view('inicio_sesion');
+        echo view('templates/footer');
+        
+    }
+    public function registro_usuario()
+    {
+        echo view('templates/header');
+        echo view('registro_usuario');
+        echo view('templates/footer');
+        
+    }
 
 }
