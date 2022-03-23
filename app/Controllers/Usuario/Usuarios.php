@@ -142,6 +142,7 @@ class Usuarios extends BaseController{
 
         /*Se buscan los roles para la vista de usuario*/
         $modelUsuario->buscarRol($modelUsuario->asignarCambiarRol);
+        $modelUsuario->buscarRolDos($modelUsuario->asignarCambiarRol);
 
         /*Se agregan los nuevos roles a la session*/
         session()->set([
