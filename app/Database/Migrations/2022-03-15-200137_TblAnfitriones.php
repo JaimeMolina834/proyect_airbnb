@@ -33,6 +33,16 @@ class TblAnfitriones extends Migration
                     'unsigned'   => true,
                     'null' => true,
                 ],
+                'cuentaBanco'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null' => true,
+                ],
+                'banco'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null' => true,
+                ],
                 'date_create' => [
                     'type' => 'DATETIME',
                     'null' => false,
@@ -47,7 +57,19 @@ class TblAnfitriones extends Migration
                     'unsigned'       => true,
                     'null' => false,
                 ],
-                'idIdiomaAnfitrion'          => [
+                'idiomaPrimario'          => [
+                    'type'           => 'INT',
+                    'constraint'     => 12,
+                    'unsigned'       => true,
+                    'null' => true,
+                ],
+                'idiomaSecundario'          => [
+                    'type'           => 'INT',
+                    'constraint'     => 12,
+                    'unsigned'       => true,
+                    'null' => true,
+                ],
+                'idiomaExtra'          => [
                     'type'           => 'INT',
                     'constraint'     => 12,
                     'unsigned'       => true,
@@ -55,8 +77,10 @@ class TblAnfitriones extends Migration
                 ],
             ]);
             $this->forge->addKey('idAnfitrion', true);
-            /*$this->forge->addForeignKey('idUsuario','tbl_usuarios','idUsuario','CASCADE','CASCADE');
-            $this->forge->addForeignKey('idIdiomaAnfitrion','tbl_idioma_anfitrion','idIdiomaAnfitrion','CASCADE','SET NULL');*/
+            //$this->forge->addForeignKey('idUsuario','tbl_usuarios','idUsuario','CASCADE','CASCADE');
+            //$this->forge->addForeignKey('idiomaPrimario','tbl_idiomas','idIdioma','CASCADE','SET NULL');
+            //$this->forge->addForeignKey('idiomaSecundario','tbl_idiomas','idIdioma','CASCADE','SET NULL');
+            //$this->forge->addForeignKey('idiomaExtra','tbl_idiomas','idIdioma','CASCADE','SET NULL');
             $this->forge->createTable('tbl_anfitriones');
             //$this->db->enableForeignKeyChecks();
     }

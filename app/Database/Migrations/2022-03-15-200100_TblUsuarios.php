@@ -46,16 +46,7 @@ class TblUsuarios extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '250',
                 'null' => false,
-            ],
-            'cuentaBanco'       => [
-                'type'       => 'VARCHAR',
-                'constraint' => '100',
-                'null' => true,
-            ],
-            'banco'       => [
-                'type'       => 'VARCHAR',
-                'constraint' => '100',
-                'null' => true,
+                'unique' => true,
             ],
             'numeroTelefono'       => [
                 'type'       => 'VARCHAR',
@@ -70,7 +61,17 @@ class TblUsuarios extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+            'date_delete' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
             'idRol'          => [
+                'type'           => 'INT',
+                'constraint'     => 12,
+                'unsigned'       => true,
+                'null' => true,
+            ],
+            'idRol2'          => [
                 'type'           => 'INT',
                 'constraint'     => 12,
                 'unsigned'       => true,
@@ -79,6 +80,7 @@ class TblUsuarios extends Migration
         ]);
         $this->forge->addKey('idUsuario', true);
         //$this->forge->addForeignKey('idRol','tbl_roles','idRol','CASCADE','SET NULL');
+        //$this->forge->addForeignKey('idRol2','tbl_roles','idRol','CASCADE','SET NULL');
         $this->forge->createTable('tbl_usuarios');
         //$this->db->enableForeignKeyChecks();
     }
