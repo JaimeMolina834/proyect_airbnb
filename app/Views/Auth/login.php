@@ -11,23 +11,18 @@ Login
 
 <?=$this->section('content')?>
 
-<section class="section">
-    <div class="container">
-        <?php if(session('msg')):?>
-        <article class="message is-<?=session('msg.type')?>">
-            <div class="message-body">
-                <?=session('msg.body')?>
-            </div>
-        </article>
-        <?php endif; ?>
+<section>
+      <div class="container mt-5 pt-5">
+        <div class="row">
+          <div class="col-12 col-sm-7 col-md-6 m-auto">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    
+                <h1 class="title">Airbnb</h1>
+                <h2 class="subtitle">Inicia sesión en tu cuenta.</h2>
 
-        <h1 class="title">Login</h1>
-        <h2 class="subtitle">
-            Inicia sesión en tu cuenta.
-        </h2>
-
-        <form action="<?=base_url(route_to('signin'))?>" method="POST">
-            <div class="field">
+                <form action="<?=base_url(route_to('signin'))?>" method="POST">
+            <div class="form-outline mb-4">
                 <p class="control has-icons-left has-icons-right">
                     <input class="input" name="email" value='<?=old('email')?>' type=""
                         placeholder="Correo Electronico">
@@ -40,7 +35,8 @@ Login
                 </p>
                 <p class="is-danger help"><?=session('errors.email')?></p>
             </div>
-            <div class="field">
+            
+            <div class="form-outline mb-4">
                 <p class="control has-icons-left">
                     <input class="input" name="password" type="password" placeholder="Contraseña">
                     <span class="icon is-small is-left">
@@ -49,12 +45,19 @@ Login
                 </p>
                 <p class="is-danger help"><?=session('errors.password')?></p>
             </div>
-            <div class="field">
+            <div class="text-center mt-3">
                 <p class="control">
                     <input type="submit" class="button is-primary" value="Ingresar">
                 </p>
+                <a href="#" class="nav-link">Registrar?</a>
             </div>
         </form>
-    </div>
-</section>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <br><br>
 <?=$this->endSection()?>
