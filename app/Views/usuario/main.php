@@ -4,8 +4,9 @@
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
     <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href= "<?php echo base_url('css/style.css'); ?>" >
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -18,21 +19,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title><?=$this->renderSection('title')?>&nbsp;-&nbsp;Proyect Airbnb 2022</title>
     <?=$this->renderSection('css')?>
-
-    <style>
-    html{
-        height: 100%;
-    }
-    body{
-        display: flex;
-        flex-direction: column;
-        min-height: 100%;
-        background-color: white;
-    }
-    footer{
-        margin-top: auto;
-        }
-    </style>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
