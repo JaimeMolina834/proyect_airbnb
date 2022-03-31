@@ -49,7 +49,7 @@ Login
                 <p class="control">
                     <input type="submit" class="button is-primary" value="Ingresar">
                 </p>
-                <a href="#" class="nav-link">Registrar?</a>
+                <a href="#" class="nav-link">¿Has olvidado tu contraseña?</a>
             </div>
         </form>
                   
