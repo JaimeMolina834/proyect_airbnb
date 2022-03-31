@@ -11,15 +11,14 @@ Hazte anfitrión
 
 <?=$this->section('content')?>
 
-<section class='section'>
-    <div class='container'>
-        <?php if(session('msg')):?>
-        <article class="message is-<?=session('msg.type')?>">
-            <div class="message-body">
-                <?=session('msg.body')?>
-            </div>
-        </article>
-        <?php endif; ?>
+<section>
+    <!-- Contenedor -->
+<div class="container mt-5 pt-5">
+        <div class="row">
+          <div class="col-12 col-sm-7 col-md-6 m-auto">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+
         <h1 class="title">Hazte anfitrión!</h1>
         <h2 class="subtitle">
             Llena los siguientes datos para hacerte anfitrión
@@ -29,7 +28,7 @@ Hazte anfitrión
                 <label class="label">Descripcion</label>
                 <div class="control">
                     <textarea class="textarea" name='descripcion' placeholder="Una breve descripción de ti"
-                        rows="10"><?=old('descripcion')?></textarea>
+                        rows="5"><?=old('descripcion')?></textarea>
                 </div>
                 <p class="is-danger help"><?=session('errors.descripcion')?></p>
             </div>
@@ -50,8 +49,12 @@ Hazte anfitrión
                 </div>
                 <p class="is-danger help"><?=session('errors.banco')?></p>
             </div>
+        <!-- PRIMERA FILA -->
+    <div class="form-group">
+        <div class="row">
 
-            <div class="field control">
+        <!-- primera columna -->
+            <div class="col-md-4">
                 <label class="label">Selecciona un idioma</label>
                 <div class="control select is-link">
                     <select name='idiomaPrimario'>
@@ -65,9 +68,10 @@ Hazte anfitrión
                 </div>
                 <p class="is-danger help"><?=session('errors.idiomaPrimario')?></p>
             </div>
-
-            <div class="field control">
-                <label class="label">Selecciona un idioma secundario</label>
+        
+        <!-- segunda columna -->    
+            <div class="col-md-4">
+                <label class="label">Idioma secundario</label>
                 <div class="control select is-link">
                     <select name='idiomaSecundario'>
                         <option>Elije un idioma</option>
@@ -79,9 +83,9 @@ Hazte anfitrión
                     </select>
                 </div>
             </div>
-
-            <div class="field control">
-                <label class="label">Selecciona un idioma extra</label>
+        <!-- tercera columna -->
+            <div class="col-md-4">
+                <label class="label">Idioma extra</label>
                 <div class="control select is-link">
                     <select name='idiomaExtra'>
                         <option>Elije un idioma</option>
@@ -93,14 +97,20 @@ Hazte anfitrión
                     </select>
                 </div>
             </div>
+    </div>
+</div>
 
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-primary">Enviar</button>
+                    <button class="btn btn-primary">Enviar</button>
                 </div>
             </div>
         </form>
-    </div>
+        </div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
+<br><br>
 <?=$this->endSection()?>

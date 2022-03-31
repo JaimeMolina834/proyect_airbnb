@@ -10,22 +10,36 @@ Hazte Anfitrión
 <?=$this->endSection()?>
 
 <?=$this->section('content')?>
-<section class="section">
+<section>
+    <!-- Contenedor -->
+<div class="container mt-5 pt-5">
+        <div class="row">
+          <div class="col-12 col-sm-7 col-md-6 m-auto">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+
     <h1 class="title">Registrate para ser anfitrión</h1>
     <h2 class="subtitle">
         Llena los siguientes datos para poder ser anfitrión.
     </h2>
+
     <form action="<?=base_url('auth/registrar-anfitrion')?>" method="POST">
-        <div class="field">
+    <!-- PRIMERA FILA -->
+    <div class="form-group">
+        <div class="row">
+
+    <!-- primera columna -->
+    <div class="col-md-4">
             <label class="label">Nombres</label>
             <div class="control">
                 <input name='nombre' value='<?=old('nombre')?>' class="input" type="text"
                     placeholder="Ej: Melvin Marvin">
             </div>
             <p class="is-danger help"><?=session('errors.nombre')?></p>
-        </div>
+    </div>
 
-        <div class="field">
+    <!-- segunda columna -->
+        <div class="col-md-4">
             <label class="label">Apellidos</label>
             <div class="control">
                 <input name='apellido' value='<?=old('apellido')?>' class="input" type="text"
@@ -34,7 +48,9 @@ Hazte Anfitrión
             <p class="is-danger help"><?=session('errors.apellido')?></p>
         </div>
 
-        <div class="field">
+
+    <!-- tercera columna -->    
+        <div class="col-md-4">
             <label class="label">Correo Electronico</label>
             <div class="control has-icons-left has-icons-right">
                 <input name='email' value='<?=old('email')?>' class="input" type="" placeholder="email@gmail.com"
@@ -48,8 +64,15 @@ Hazte Anfitrión
             </div>
             <p class="is-danger help"><?=session('errors.email')?></p>
         </div>
+</div>
+</div>
 
-        <div class="field">
+    <!-- SEGUNDA FILA -->
+    <div class="form-group">
+        <div class="row">
+
+    <!-- primera columna -->
+        <div class="col-md-4">      
             <label class="label">Número de telefono</label>
             <div class="control">
                 <input name='numeroTelefono' value='<?=old('numeroTelefono')?>' class="input" type="text"
@@ -58,7 +81,8 @@ Hazte Anfitrión
             <p class="is-danger help"><?=session('errors.numeroTelefono')?></p>
         </div>
 
-        <div class="field">
+    <!-- segunda columna -->
+        <div class="col-md-4">
             <label class="label">Contraseña</label>
             <div class="control">
                 <input name='password' class="input" type="text" placeholder="Contraseña">
@@ -66,23 +90,31 @@ Hazte Anfitrión
             <p class="is-danger help"><?=session('errors.password')?></p>
         </div>
 
-        <div class="field">
+    <!-- tercera columna -->
+        <div class="col-md-4">
             <label class="label">Confirma tu contraseña</label>
             <div class="control">
                 <input name='c-password' class="input" type="text" placeholder="Repite contraseña">
             </div>
         </div>
+</div>
+</div>
 
         <div class="field">
             <label class="label">Descripcion</label>
             <div class="control">
                 <textarea class="textarea" name='descripcion' placeholder="Una breve descripción de ti"
-                    rows="10"><?=old('descripcion')?></textarea>
+                    rows="5"><?=old('descripcion')?></textarea>
             </div>
             <p class="is-danger help"><?=session('errors.descripcion')?></p>
         </div>
+    
+    <!-- TERCERA FILA -->
+        <div class="form-group">
+        <div class="row">
 
-        <div class="field">
+    <!-- primera columna -->
+        <div class="col-md-4">
             <label class="label">Cuenta de banco</label>
             <div class="control">
                 <input name='cuentaBanco' value='<?=old('cuentaBanco')?>' class="input" type="text"
@@ -91,15 +123,23 @@ Hazte Anfitrión
             <p class="is-danger help"><?=session('errors.cuentaBanco')?></p>
         </div>
 
-        <div class="field">
+    <!-- segunda columna -->    
+        <div class="col-md-4">
             <label class="label">Banco</label>
             <div class="control">
                 <input name='banco' value='<?=old('banco')?>' class="input" type="text" placeholder="ej: Agricola">
             </div>
             <p class="is-danger help"><?=session('errors.banco')?></p>
         </div>
-
-        <div class="field control">
+</div>
+</div>
+    
+<!-- CUARTA FILA -->
+<div class="form-group">
+        <div class="row">
+    
+        <!-- primera columna -->
+        <div class="col-md-4">
             <label class="label">Selecciona un idioma</label>
             <div class="control select is-link">
                 <select name='idiomaPrimario'>
@@ -113,9 +153,10 @@ Hazte Anfitrión
             </div>
             <p class="is-danger help"><?=session('errors.idiomaPrimario')?></p>
         </div>
-
-        <div class="field control">
-            <label class="label">Selecciona un idioma secundario</label>
+    
+    <!-- sunda columna -->
+        <div class="col-md-4">
+            <label class="label">Idioma secundario</label>
             <div class="control select is-link">
                 <select name='idiomaSecundario'>
                     <option>Elije un idioma</option>
@@ -127,9 +168,10 @@ Hazte Anfitrión
                 </select>
             </div>
         </div>
-
-        <div class="field control">
-            <label class="label">Selecciona un idioma extra</label>
+    
+    <!-- tercera columna -->
+        <div class="col-md-4">
+            <label class="label">Idioma extra</label>
             <div class="control select is-link">
                 <select name='idiomaExtra'>
                     <option>Elije un idioma</option>
@@ -141,13 +183,21 @@ Hazte Anfitrión
                 </select>
             </div>
         </div>
+    </div>
+    </div>
 
-        <div class="field is-grouped">
+        <div class="text-center mt-3">
             <div class="control">
                 <button class="button is-primary">Registrarse</button>
             </div>
         </div>
     </form>
-</section>
 
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<br>
 <?=$this->endSection()?>

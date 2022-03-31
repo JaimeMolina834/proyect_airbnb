@@ -11,6 +11,7 @@ Registro
 
 <?=$this->section('content')?>
 <section>
+    <!-- Contenedor -->
 <div class="container mt-5 pt-5">
         <div class="row">
           <div class="col-12 col-sm-7 col-md-6 m-auto">
@@ -101,16 +102,19 @@ Registro
                 <input name='c-password' class="input" type="text" placeholder="Repite contraseña">
             </div>
         </div>
-    </div>
-</div>
-    
+  
     <!-- boton registro -->
+    <div class="col-md-4"><br>
         <div class="text-center mt-3">
             <div class="control">
-                <button class="button is-primary">Registrarse</button>
+                <button class="btn btn-primary">Confirmar</button>
             </div>
         </div>
+</div>
+</div>
+</div>
     </form>
+</div>
 </div>
 </div>
 </div>

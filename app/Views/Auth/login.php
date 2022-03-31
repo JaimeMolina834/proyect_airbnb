@@ -47,7 +47,7 @@ Login
             </div>
             <div class="text-center mt-3">
                 <p class="control">
-                    <input type="submit" class="button is-primary" value="Ingresar">
+                    <input type="submit" class="btn btn-primary" value="Ingresar">
                 </p>
                 <a href="#" class="nav-link">¿Has olvidado tu contraseña?</a>
             </div>
