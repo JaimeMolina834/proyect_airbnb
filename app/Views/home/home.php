@@ -6,13 +6,14 @@ Inicio
 
 <?=$this->section('css')?>
 
-<!-- <link rel="stylesheet" href="css/carusel.css"> -->
+
 <?=$this->endSection()?>
 
 <?=$this->section('content')?>
-<br><br>
-<!-- Carousel -->
-    <div class="container">
+
+<!-- Carousel principal -->
+<section>
+    <div class="container-fluid" style="background-color:black";>
         <div id="carousel1" class="carousel" data-ride="carousel">
             <div class="carousel-inner">
             <div class="carousel-item active">
@@ -45,8 +46,57 @@ Inicio
             </ol>
             
         </div>
-      
     </div>
-<br><br>
+    </section>
+  
+ 
+  <!-- Owl carrusel -->
+   
+  <div class="container-fluid my-5" style="background-color:black;">
+        <h1 class="text-center fw-bold display-1 mb-5">Inspiración <span class="text-danger">para tu  viaje</span></h1>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme">
+                    <div class="item mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="img/c1.jpg" alt="" class="card-img-top">
+                            <div class="card-body">
+                            <h5 class="card-title">Cerro verde</h5>
+                            <p class="card-text">Some quick example text to build.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="img/h1.jpg" alt="" class="card-img-top">
+                            <div class="card-body">
+                            <h5 class="card-title">Cerro verde</h5>
+                            <p class="card-text">Some quick example text to build.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="img/h1.jpg" alt="" class="card-img-top">
+                            <div class="card-body">
+                            <h5 class="card-title">Cerro verde</h5>
+                            <p class="card-text">Some quick example text to build.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="img/hh2.jpg" alt="" class="card-img-top">
+                            <div class="card-body">
+                            <h5 class="card-title">Cerro verde</h5>
+                            <p class="card-text">Some quick example text to build.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div><br><br>
 
 <?=$this->endSection()?>
