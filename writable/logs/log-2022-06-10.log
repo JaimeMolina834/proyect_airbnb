@@ -1,0 +1,11 @@
+CRITICAL - 2022-06-10 15:57:53 --> Undefined variable: idiomas
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\inicio.php(80): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 80, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/inici...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(20): view('anfitrion/inici...')
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->index()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -63,6 +63,7 @@ Inicio
                             <div class="card-body">
                             <h5 class="card-title">Cerro verde</h5>
                             <p class="card-text">Some quick example text to build.</p>
+                            <a href="#" class="btn btn-primary">Ir</a>
                             </div>
                         </div>
                     </div>
@@ -72,6 +73,7 @@ Inicio
                             <div class="card-body">
                             <h5 class="card-title">Cerro verde</h5>
                             <p class="card-text">Some quick example text to build.</p>
+                            <a href="#" class="btn btn-primary">Ir</a>
                             </div>
                         </div>
                     </div>
@@ -81,6 +83,7 @@ Inicio
                             <div class="card-body">
                             <h5 class="card-title">Cerro verde</h5>
                             <p class="card-text">Some quick example text to build.</p>
+                            <a href="#" class="btn btn-primary">Ir</a>
                             </div>
                         </div>
                     </div>
@@ -90,6 +93,7 @@ Inicio
                             <div class="card-body">
                             <h5 class="card-title">Cerro verde</h5>
                             <p class="card-text">Some quick example text to build.</p>
+                            <a href="#" class="btn btn-primary">Ir</a>
                             </div>
                         </div>
                     </div>

@@ -28,4 +28,6 @@ Inicio Anfitrion
         <?php endif; ?>
     </div>
 </section>
+
+
 <?=$this->endSection()?>
