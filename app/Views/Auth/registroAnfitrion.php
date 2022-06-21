@@ -12,16 +12,15 @@ Hazte Anfitrión
 <?=$this->section('content')?>
 <section>
     <!-- Contenedor -->
-<div class="container mt-5 pt-5">
+<div class="container-fluid mt-5 pt-5">
         <div class="row">
           <div class="col-md-6 m-auto">
             <div class="card border-0 shadow">
                 <div class="card-body">
-
+    
     <h1 class="title">Registrate para ser anfitrión</h1>
-    <h2 class="subtitle">
-        Llena los siguientes datos para poder ser anfitrión.
-    </h2>
+    <h2 class="subtitle">Llena los siguientes datos para poder ser anfitrión.</h2>
+    
 
     <form action="<?=base_url('auth/registrar-anfitrion')?>" method="POST">
     <!-- PRIMERA FILA -->
@@ -47,10 +46,15 @@ Hazte Anfitrión
             </div>
             <p class="is-danger help"><?=session('errors.apellido')?></p>
         </div>
+</div>
+</div>
 
+    <!-- SEGUNDA FILA -->
+    <div class="form-group">
+        <div class="row">
 
-    <!-- tercera columna -->    
-        <div class="col-md-4">
+    <!-- primera columna -->
+    <div class="col">
             <label class="label">Correo Electronico</label>
             <div class="control has-icons-left has-icons-right">
                 <input name='email' value='<?=old('email')?>' class="input" type="" placeholder="email@gmail.com"
@@ -63,11 +67,11 @@ Hazte Anfitrión
                 </span>
             </div>
             <p class="is-danger help"><?=session('errors.email')?></p>
-        </div>
+        </div>   
 </div>
 </div>
 
-    <!-- SEGUNDA FILA -->
+    <!-- TERCERA FILA -->
     <div class="form-group">
         <div class="row">
 
@@ -109,7 +113,7 @@ Hazte Anfitrión
             <p class="is-danger help"><?=session('errors.descripcion')?></p>
         </div>
     
-    <!-- TERCERA FILA -->
+    <!-- CUARTA FILA -->
         <div class="form-group">
         <div class="row">
 
@@ -134,7 +138,7 @@ Hazte Anfitrión
 </div>
 </div>
     
-<!-- CUARTA FILA -->
+<!-- QUINTA FILA -->
 <div class="form-group">
         <div class="row">
     
@@ -154,7 +158,7 @@ Hazte Anfitrión
             <p class="is-danger help"><?=session('errors.idiomaPrimario')?></p>
         </div>
     
-    <!-- sunda columna -->
+    <!-- segunda columna -->
         <div class="col-md-4">
             <label class="label">Idioma secundario</label>
             <div class="control select is-link">
@@ -186,7 +190,7 @@ Hazte Anfitrión
     </div>
     </div>
 
-        <div class="text-center mt-3">
+        <div class="text-center mt-6">
             <div class="control">
                 <button class="button is-primary">Registrarse</button>
             </div>
@@ -199,5 +203,5 @@ Hazte Anfitrión
 </div>
 </div>
 </section>
-<br>
+<br><br>
 <?=$this->endSection()?>

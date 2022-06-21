@@ -45,7 +45,7 @@ Login
                 </p>
                 <p class="is-danger help"><?=session('errors.password')?></p>
             </div>
-            <div class="text-center mt-3">
+            <div class="text-center mt-6">
                 <p class="control">
                     <input type="submit" class="btn btn-primary" value="Ingresar">
                 </p>
