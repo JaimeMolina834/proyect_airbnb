@@ -27,6 +27,10 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                             <li>
+                                <a class="dropdown-item" href="<?=base_url(route_to('perfil'))?>">Perfil
+                                    </a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('hazteAnfitrion'))?>">Hazte
                                     anfitrión</a>
                             </li>
