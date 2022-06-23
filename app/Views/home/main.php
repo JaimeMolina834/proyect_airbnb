@@ -27,27 +27,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
-    
 
 </head>
-<!-- stylo para el carusel 
-<style>
-
-/*body{  
-    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
-    background: linear-gradient(to right, #ec2F4B, #009FFF);
-}    
-body{
-     background: rgb(2, 2, 2);
-}*/
-
-/* Para un comportamiento responsive */
-.carousel-inner img {
-width: 100%;
-height: 100%;
-}
-
-</style> -->
 
 <body>
     <?=$this->include('home/layout/header')?>

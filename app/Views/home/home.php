@@ -10,12 +10,11 @@ Inicio
 <?=$this->endSection()?>
 
 <?=$this->section('content')?>
-<!-- carrusel -->
 <!-- Carousel principal -->
 <section>
     <div class="container-fluid"style="background-color:black";><br><br>
         <div id="carousel1" class="carousel" data-ride="carousel">
-            <div class="carousel-inner" style="width: 90%;margin: 0 auto;">
+            <div class="rounded carousel-inner" style="width: 90%;margin: 0 auto;">
             <div class="carousel-item active">
                <img src="img/h1.jpg" alt="" width="1920" height="10">
             </div>
