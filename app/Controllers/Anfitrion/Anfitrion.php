@@ -8,16 +8,28 @@ use App\Controllers\BaseController;
 class Anfitrion extends BaseController{
     /*Variable global*/
     protected $configs;
+    protected $modelAnfitrion;
+    protected $modelUsuario;
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
     public function __construct(){
         $this->configs=config('Airbnb');
+        $this->modelAnfitrion = model('AnfitrionesModel');
+        $this->modelUsuario = model('UsuarioModel');
     }
 
 /*--Funcion para vista de inicio del anfitrion-----------------------------------------------------------*/    
     public function index(){
         /*Muestra la vista de inicio del anfitrion*/
         return view('anfitrion/inicio');
+    }
+
+/*--Funcion para vista de inicio del anfitrion-----------------------------------------------------------*/    
+    public function perfil(){
+        return view('anfitrion/perfil',[
+            'usuario' => $this->modelUsuario->find(session('idUsuario')),
+            'anfitrion' => $this->modelAnfitrion->find(session('idAnfitrion')),
+        ]);
     }
 /*-------------------------------------------------------------------------------------------------------*/
 

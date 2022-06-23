@@ -8,10 +8,12 @@ use App\Controllers\BaseController;
 class Login extends BaseController{
     /*Variable global*/
     protected $configs;
+    protected $modelAnfitrion;
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
     public function __construct(){
         $this->configs=config('Airbnb');
+        $this->modelAnfitrion = model('AnfitrionesModel');
     }
 
 /*--Funcin para vista de iniciar sesion-----------------------------------------------------------------*/
@@ -71,10 +73,16 @@ class Login extends BaseController{
         /*Si el usuario es correcto y la contraseña, busca los roles correspondiente al usuario*/
         $model->buscarRol($usuario->idRol);
         $model->buscarRolDos($usuario->idRol2);
+        $idAnfitrion = $this->modelAnfitrion->where('idUsuario',$usuario->idUsuario)->findColumn('idAnfitrion');
+        if($idAnfitrion == null){
+            $idAnfitrion[0] = 0;
+        }
+        //dd($idAnfitrion[0]);
 
         /*Carga las diferentes propiedades del usuario en session*/
         session()->set([
             'idUsuario' => $usuario->idUsuario,
+            'idAnfitrion' => $idAnfitrion[0],
             'username' => $usuario->username,
             'idRol' => $usuario->idRol,
             'rol'=>$model->asignarVistaRol,

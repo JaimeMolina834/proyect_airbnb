@@ -1,0 +1,169 @@
+CRITICAL - 2022-06-23 02:02:01 --> Call to a member function findAll() on null
+#0 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#1 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#2 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-23 02:02:29 --> Undefined variable: modelAnfitrion
+#0 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 29, Array)
+#1 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#2 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#3 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-23 02:08:04 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(32): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:09:01 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(32): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:09:35 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(32): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:11:25 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(32): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:13:55 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(33): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:16:29 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(33): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:17:56 --> Trying to get property 'banco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(73): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 73, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(33): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:21:05 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(35): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:26:38 --> Call to undefined function App\Controllers\Anfitrion\int()
+#0 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#1 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#2 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-23 02:32:51 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(38): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:36:26 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(37): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 02:37:04 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 65, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(33): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 10:37:56 --> Undefined variable: key
+#0 C:\laragon\www\proyect_airbnb\app\Views\usuario\perfil.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 30, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('usuario/perfil', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Usuario\Usuarios.php(32): view('usuario/perfil', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Usuario\Usuarios->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario\Usuarios))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-23 10:38:52 --> Trying to access array offset on value of type null
+#0 C:\laragon\www\proyect_airbnb\app\Controllers\Auth\Login.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\laragon\\www\\...', 83, Array)
+#1 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#2 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#3 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-23 10:39:53 --> Trying to get property 'imagen' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\usuario\perfil.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 30, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('usuario/perfil', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Usuario\Usuarios.php(32): view('usuario/perfil', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Usuario\Usuarios->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario\Usuarios))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

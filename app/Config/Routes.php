@@ -47,6 +47,7 @@ $routes->group('auth',['namespace'=>'App\Controllers\Auth', 'filter' => 'auth'],
 
 $routes->group('usuario',['namespace'=>'App\Controllers\Usuario', 'filter' => 'roles:Usuario'],function($routes){
     $routes->get('registrar', 'Usuarios::hazteAnfitrion', ['as'=>'hazteAnfitrion']);
+    $routes->get('perfil', 'Usuarios::perfil', ['as'=>'perfilUser']);
     $routes->get('cerrar', 'Usuarios::cerrar', ['as'=>'usuarioSignout']);
     $routes->get('inicio', 'Usuarios::index', ['as'=>'usuarioInicio']);
     $routes->post('registrarAnfitrion', 'Usuarios::registrarAnfitrion', ['as'=>'registrarA']);
@@ -54,6 +55,7 @@ $routes->group('usuario',['namespace'=>'App\Controllers\Usuario', 'filter' => 'r
 
 $routes->group('anfitrion',['namespace'=>'App\Controllers\Anfitrion', 'filter' => 'roles:Anfitrion'],function($routes){
     $routes->get('inicio', 'Anfitrion::index', ['as'=>'anfitrionInicio']);
+    $routes->get('perfil', 'Anfitrion::perfil', ['as'=>'perfil']);
     $routes->get('buscar', 'Anfitrion::buscar', ['as'=>'anfitrionBusqueda']);
     $routes->get('cerrar', 'Anfitrion::cerrar', ['as'=>'anfitrionSignout']);
     $routes->get('regresar-usuario', 'Anfitrion::regresarUsuario', ['as'=>'regresarAUsuario']);
