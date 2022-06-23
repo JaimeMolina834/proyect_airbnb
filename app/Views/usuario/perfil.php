@@ -64,7 +64,7 @@ Perfil de usuario
                                         <h5>Email</h5>
                                     </label>
                                     <input type="email" class="form-control" value="<?=$usuario->email?>">
-                                    <br><br>
+                                    <br><br><br><br><br><br><br><br>
                                 </div>
                             </div>
                         </div>
