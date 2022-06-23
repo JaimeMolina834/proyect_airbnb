@@ -255,3 +255,14 @@ CRITICAL - 2022-06-23 13:50:28 --> Trying to get property 'imagen' of non-object
 #7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2022-06-23 14:06:13 --> Trying to get property 'imagen' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\usuario\perfil.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 31, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('usuario/perfil', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Usuario\Usuarios.php(32): view('usuario/perfil', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Usuario\Usuarios->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario\Usuarios))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -30,7 +30,7 @@
     
 
 </head>
-<!-- stylo para el carusel -->
+<!-- stylo para el carusel 
 <style>
 
 /*body{  
@@ -47,7 +47,7 @@ width: 100%;
 height: 100%;
 }
 
-</style> 
+</style> -->
 
 <body>
     <?=$this->include('home/layout/header')?>
