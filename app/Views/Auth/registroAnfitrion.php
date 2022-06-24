@@ -13,6 +13,13 @@ Hazte Anfitrión
 <section>
     <!-- Contenedor -->
     <div class="container-fluid mt-5 pt-5">
+        <?php if(session('msg')):?>
+        <article class="message is-<?=session('msg.type')?>">
+            <div class="message-body">
+                <?=session('msg.body')?>
+            </div>
+        </article>
+        <?php endif; ?>
         <div class="row">
             <div class="col-md-6 m-auto">
                 <div class="card border-0 shadow">
@@ -21,18 +28,19 @@ Hazte Anfitrión
                         <h1 class="title">Registrate para ser anfitrión</h1>
                         <h2 class="subtitle">Llena los siguientes datos para poder ser anfitrión.</h2>
 
-                        <!-- AGREGAR FOTO -->
-                        <div class="field">
-                            <label class="label">Agrega una foto</label>
-                            <div class="text-left">
-                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                    class="avatar img-circle img-thumbnail" alt="avatar">
-                                <h6>Foto</h6>
-                                <input type="file" class="text-left left-block file-upload">
+                        <form action="<?=base_url('auth/registrar-anfitrion')?>" method="POST"
+                            enctype="multipart/form-data">
+                            <!-- AGREGAR FOTO -->
+                            <div class="field">
+                                <label class="label">Agrega una foto</label>
+                                <div class="text-left">
+                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        class="avatar img-circle img-thumbnail" alt="avatar">
+                                    <h6>Foto</h6>
+                                    <input type="file" name="imagen" class="text-left left-block file-upload">
+                                    <p class="is-danger help"><?=session('errorImg.imagen')?></p>
+                                </div>
                             </div>
-                        </div>
-
-                        <form action="<?=base_url('auth/registrar-anfitrion')?>" method="POST">
                             <!-- PRIMERA FILA -->
                             <div class="form-group">
                                 <div class="row">
@@ -215,6 +223,6 @@ Hazte Anfitrión
             </div>
         </div>
     </div>
-    </section>
-    <br><br>
+</section>
+<br><br>
 <?=$this->endSection()?>

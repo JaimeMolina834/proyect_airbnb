@@ -14,6 +14,13 @@ Hazte anfitrión
 <section>
     <!-- Contenedor -->
     <div class="container-fluid mt-5 pt-5">
+        <?php if(session('msg')):?>
+        <article class="message is-<?=session('msg.type')?>">
+            <div class="message-body">
+                <?=session('msg.body')?>
+            </div>
+        </article>
+        <?php endif; ?>
         <div class="row">
             <div class="col-md-6 m-auto">
                 <div class="card border-0 shadow">
@@ -23,18 +30,20 @@ Hazte anfitrión
                         <h2 class="subtitle">
                             Llena los siguientes datos para hacerte anfitrión.
                         </h2>
-                        <!-- AGREGAR FOTO -->
-                        <div class="field">
-                            <label class="label">Agrega una foto</label>
-                            <div class="text-left">
-                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                    class="avatar img-circle img-thumbnail" alt="avatar">
-                                <h6>Foto</h6>
-                                <input type="file" class="text-left left-block file-upload">
-                            </div>
-                        </div>
                         <!-- PRIMERA FILA -->
-                        <form action="<?=base_url('usuario/registrarAnfitrion')?>" method="POST">
+                        <form action="<?=base_url('usuario/registrarAnfitrion')?>" method="POST"
+                            enctype="multipart/form-data">
+                            <!-- AGREGAR FOTO -->
+                            <div class="field">
+                                <label class="label">Agrega una foto</label>
+                                <div class="text-left">
+                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        class="avatar img-circle img-thumbnail" alt="avatar">
+                                    <h6>Foto</h6>
+                                    <input type="file" name="imagen" class="text-left left-block file-upload">
+                                    <p class="is-danger help"><?=session('errorImg.imagen')?></p>
+                                </div>
+                            </div>
                             <div class="field">
                                 <label class="label">Descripcion</label>
                                 <div class="control">
@@ -136,6 +145,6 @@ Hazte anfitrión
             </div>
         </div>
     </div>
-    </section>
-    <br><br>
+</section>
+<br><br>
 <?=$this->endSection()?>

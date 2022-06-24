@@ -50,7 +50,7 @@ $routes->group('usuario',['namespace'=>'App\Controllers\Usuario', 'filter' => 'r
     $routes->get('perfil', 'Usuarios::perfil', ['as'=>'perfilUser']);
     $routes->get('cerrar', 'Usuarios::cerrar', ['as'=>'usuarioSignout']);
     $routes->get('inicio', 'Usuarios::index', ['as'=>'usuarioInicio']);
-    $routes->post('registrarAnfitrion', 'Usuarios::registrarAnfitrion', ['as'=>'registrarA']);
+    $routes->post('registrarAnfitrion', 'Usuarios::registrarAnfitrion');
 });
 
 $routes->group('anfitrion',['namespace'=>'App\Controllers\Anfitrion', 'filter' => 'roles:Anfitrion'],function($routes){

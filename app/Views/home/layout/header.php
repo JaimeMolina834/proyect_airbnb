@@ -22,8 +22,8 @@
                     <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <a class="navbar-brand" href="#"><img src="/img/linicio.png" class="img-fluid" width="50px"
-                                    height="30px" alt="">
+                            <a class="navbar-brand" href="#"><img src="/img/linicio.png" class="img-fluid" width="80px"
+                                    height="60px" alt="">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>

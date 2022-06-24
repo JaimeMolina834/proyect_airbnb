@@ -122,6 +122,42 @@ class Usuarios extends BaseController{
             return redirect()->back()->withInput()->with('errors',$validar->getErrors());
         }
 
+        $imageFile = $this->request->getFile('imagen');
+        $validationRules = [
+            'imagen' => [
+                'rules' => [
+                    'uploaded[imagen]',
+                    'mime_in[imagen,image/png,image/jpg,image/jpeg]',
+                   /* 'max_size[imagePerfil,100]',
+                    'max_dims[imagePerfil,1024,768]',*/
+                ],
+                'errors' => [
+                    'uploaded' => 'No ha subido imagen',
+                    'mime_in' => 'Tipo de imagen no disponible'
+                ],
+            ]
+        ];
+        if (! $this->validate($validationRules)) {
+            return redirect()->back()->withInput()->with('errorImg',$this->validator->getErrors());
+        }
+
+        if(!$imageFile->isValid() && $imageFile->hasMoved()){
+            return redirect()->back()->withInput()->with('errorImg',$this->validator->getErrors());
+        }
+        
+        $imagen = \Config\Services::image()->withFile($imageFile)->fit(500,500)->save($imageFile);
+        
+        $newName=$imageFile->getRandomName();
+        
+        $direccion='C:/laragon/www/proyect_airbnb/public/img/perfiles/';
+        $direccionGuardado='/img/perfiles/'.$newName;
+        
+        if(!$imageFile->move($direccion,$newName)){
+            return redirect()->back()->withInput()->with('msg',[
+                'type'=>'Danger',
+                'body'=>'Imagen no se pudo guardar.']);
+        }
+
         /*Si ninguna regla falla obtiene todos los datos en la entidad anfitrion*/
         $anfitrion = new Anfitrion($this->request->getPost());
         
@@ -133,6 +169,7 @@ class Usuarios extends BaseController{
         $model->agregarIdiomaPrimario($this->request->getPost('idiomaPrimario'));
         $model->agregarIdiomaSecundario($this->request->getPost('idiomaSecundario'));
         $model->agregarIdiomaExtra($this->request->getPost('idiomaExtra'));
+        $model->agregarFoto($direccionGuardado);
 
         /*Se cambia el rol a anfitrion*/
         $modelUsuario->agregarCambiarRol($this->configs->defaultRolAnfitrion);
@@ -141,7 +178,7 @@ class Usuarios extends BaseController{
         $data=[
             'idUsuario' => session('idUsuario'),
             'idRol' => $modelUsuario->asignarCambiarRol,
-            'idRol2' => $modelUsuario->asignarCambiarRol
+            'idRol2' => $modelUsuario->asignarCambiarRol,
         ];
         /*Se guardan los datos actualizados del usuario*/
         $modelUsuario->save($data);
@@ -156,9 +193,15 @@ class Usuarios extends BaseController{
         $modelUsuario->buscarRol($modelUsuario->asignarCambiarRol);
         $modelUsuario->buscarRolDos($modelUsuario->asignarCambiarRol);
 
+        $idAnfitrion = $model->where('idUsuario',session('idUsuario'))->findColumn('idAnfitrion');
+        if($idAnfitrion == null){
+            $idAnfitrion[0] = 0;
+        }
+
         /*Se agregan los nuevos roles a la session*/
         session()->set([
             'idRol' => $modelUsuario->asignarCambiarRol,
+            'idAnfitrion' => $idAnfitrion[0],
             'rol' => $modelUsuario->asignarVistaRol,
             'rol2' => $modelUsuario->asignarVistaDosRol
         ]);

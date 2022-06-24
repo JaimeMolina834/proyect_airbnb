@@ -1,7 +1,7 @@
 <?=$this->extend('anfitrion/main')?>
 
 <?=$this->section('title')?>
-Inicio Anfitrion
+Perfil
 <?=$this->endSection()?>
 
 <?=$this->section('css')?>
@@ -13,12 +13,19 @@ Inicio Anfitrion
 
 <!-- PERFIL ANFITRION -->
 <div class="container">
+    <?php if(session('msg')):?>
+    <article class="message is-<?=session('msg.type')?>">
+        <div class="message-body">
+            <?=session('msg.body')?>
+        </div>
+    </article>
+    <?php endif; ?>
     <div class="row">
         <div class="col-md-8 offset-md-2"><br><br>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                        aria-controls="home" aria-selected="true">Perfil anfitrio</a>
+                        aria-controls="home" aria-selected="true">Perfil</a>
                 </li>
 
             </ul>
@@ -27,7 +34,7 @@ Inicio Anfitrion
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row">
                         <div class="col-sm-4">
-                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$anfitrion->imagen)): ?>
+                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$anfitrion->foto)): ?>
                             <img class="img-thumbnail" src="<?=$anfitrion->foto?>" alt="">
                             <?php else: ?>
                             <img class="img-thumbnail" src="/img/perfiles/default.jpg" alt="">

@@ -17,13 +17,14 @@ class AnfitrionesModel extends Model{
     protected $updatedField  = 'date_update';
 
     /*Variables para antes de insertar en la tabla*/
-    protected $beforeInsert = ['agregarUsuario','addPuntaje','addTotalPuntaje','addIdiomaPrimario','addIdiomaSecundario','addIdiomaExtra'];
+    protected $beforeInsert = ['agregarUsuario','addPuntaje','addTotalPuntaje','addIdiomaPrimario','addIdiomaSecundario','addIdiomaExtra','addFoto'];
 
     protected $agregarUnUsuario;
     protected $addPuntajeInicial;
     protected $asignarIdiomaPrimario;
     protected $asignarIdiomaSecundario;
     protected $asignarIdiomaExtra;
+    protected $asignarFoto;
 
 /*--Funcion para agregar en la tabla anfitriones un idUsuario---------------------------------------------*/
     protected function agregarUsuario($data){
@@ -40,6 +41,18 @@ class AnfitrionesModel extends Model{
         }
     }
 /*-------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+    public function agregarFoto(string $foto){
+        $this->asignarFoto = $foto;
+    }
+
+/*--Funcion para agregar puntaje total inicial-----------------------------------------------------------*/
+    public function addFoto($data){
+        $data['data']['foto'] = $this->asignarFoto;
+        return $data;
+    }
 
 /*--Funcion para agregar puntaje inicial-----------------------------------------------------------------*/
     public function addPuntaje($data){

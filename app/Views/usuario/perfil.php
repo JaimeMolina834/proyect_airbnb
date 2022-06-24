@@ -1,7 +1,7 @@
 <?=$this->extend('usuario/main')?>
 
 <?=$this->section('title')?>
-Perfil de usuario
+Perfil
 <?=$this->endSection()?>
 
 <?=$this->section('css')?>
@@ -13,6 +13,13 @@ Perfil de usuario
 
 <!-- PERFIL USUARIO -->
 <div class="container">
+    <?php if(session('msg')):?>
+    <article class="message is-<?=session('msg.type')?>">
+        <div class="message-body">
+            <?=session('msg.body')?>
+        </div>
+    </article>
+    <?php endif; ?>
     <div class="row">
         <div class="col-md-8 offset-md-2"><br><br>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -28,7 +35,7 @@ Perfil de usuario
                     <div class="row">
                         <div class="col-sm-4">
                             <?php if($usuario->idRol2 == 3): ?>
-                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$anfitrion->imagen)): ?>
+                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$anfitrion->foto)): ?>
                             <img class="img-thumbnail" src="<?=$anfitrion->foto?>" alt="">
                             <?php else: ?>
                             <img class="img-thumbnail" src="/img/perfiles/default.jpg" alt="">
