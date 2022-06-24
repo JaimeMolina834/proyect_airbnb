@@ -25,7 +25,7 @@
                             <a class="navbar-brand" href="#"><img src="/img/linicio.png" class="img-fluid" width="50px"
                                     height="30px" alt="">
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('perfil'))?>">Perfil</a>
                             </li>

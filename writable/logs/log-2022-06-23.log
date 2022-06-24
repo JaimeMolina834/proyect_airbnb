@@ -266,3 +266,17 @@ CRITICAL - 2022-06-23 14:06:13 --> Trying to get property 'imagen' of non-object
 #7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2022-06-23 18:27:43 --> syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN)
+#0 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(424): CodeIgniter\View\View->render('home/layout/hea...', NULL, true)
+#2 C:\laragon\www\proyect_airbnb\app\Views\home\main.php(34): CodeIgniter\View\View->include('home/layout/hea...')
+#3 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#4 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\laragon\www\proyect_airbnb\system\View\View.php(226): CodeIgniter\View\View->render('home/main', Array, true)
+#6 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('/home/home', Array, true)
+#7 C:\laragon\www\proyect_airbnb\app\Controllers\Home\Home.php(11): view('/home/home')
+#8 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Home\Home->index()
+#9 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home\Home))
+#10 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
