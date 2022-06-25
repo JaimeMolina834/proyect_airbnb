@@ -34,7 +34,7 @@ Hazte anfitrión
                         <form action="<?=base_url('usuario/registrarAnfitrion')?>" method="POST"
                             enctype="multipart/form-data">
                             <!-- AGREGAR FOTO -->
-                            <div class="field">
+                            <!--<div class="field">
                                 <label class="label">Agrega una foto</label>
                                 <div class="text-left">
                                     <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -43,7 +43,7 @@ Hazte anfitrión
                                     <input type="file" name="imagen" class="text-left left-block file-upload">
                                     <p class="is-danger help"><?=session('errorImg.imagen')?></p>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="field">
                                 <label class="label">Descripcion</label>
                                 <div class="control">

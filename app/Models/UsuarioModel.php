@@ -21,15 +21,29 @@ class UsuarioModel extends Model{
     protected $deletedField  = 'date_delete';
     
     /*Variables para antes de insertar en la tabla*/
-    protected $beforeInsert = ['agregarRol'];
+    protected $beforeInsert = ['agregarRol','addFoto'];
 
     protected $asignarRol;
     protected $asignarCambiarRol;
+
+    protected $asignarFoto;
 
     protected $asignarVistaRol;
     protected $asignarVistaDosRol;
 
 
+    /*-------------------------------------------------------------------------------------------------------*/
+
+    public function agregarFoto(string $foto){
+        $this->asignarFoto = $foto;
+    }
+
+/*--Funcion para agregar puntaje total inicial-----------------------------------------------------------*/
+    public function addFoto($data){
+        $data['data']['foto'] = $this->asignarFoto;
+        return $data;
+    }
+    
     protected function agregarRol($data){
         $data['data']['idRol'] = $this->asignarRol;
         $data['data']['idRol2'] = $this->asignarRol;

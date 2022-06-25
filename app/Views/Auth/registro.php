@@ -30,10 +30,23 @@ Registro
                             Llena los siguientes datos para poder ingresar.
                         </h2>
 
-                        <form action="<?=base_url('auth/registrar')?>" method="POST">
+                        <form action="<?=base_url('auth/registrar')?>" method="POST" enctype="multipart/form-data">
                             <!-- primera fila -->
                             <div class="form-group">
                                 <div class="row">
+                                    <!-- AGREGAR FOTO -->
+                                    <div class="field">
+                                        <label class="label">Agrega una foto</label>
+                                        <div class="text-left">
+                                            <img id="imagenPrevisualizacion" width="210" height="50"
+                                                src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                                class="avatar img-circle img-thumbnail" alt="avatar">
+                                            <h6></h6>
+                                            <input id="seleccionArchivos" type="file" name="imagen"
+                                                class="text-left left-block file-upload">
+                                            <p class="is-danger help"><?=session('errorImg.imagen')?></p>
+                                        </div>
+                                    </div>
 
                                     <!-- primera columna -->
                                     <div class="col-md-6">
@@ -70,9 +83,6 @@ Registro
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                             </span>
-                                            <span class="icon is-small is-right">
-                                                <i class="fas fa-exclamation-triangle"></i>
-                                            </span>
                                         </div>
                                         <p class="is-danger help"><?=session('errors.email')?></p>
                                     </div>
@@ -97,7 +107,8 @@ Registro
                                     <div class="col-md-6">
                                         <label class="label">Contraseña</label>
                                         <div class="control">
-                                            <input name='password' class="input" type="text" placeholder="Contraseña">
+                                            <input name='password' class="input" type="password"
+                                                placeholder="Contraseña">
                                         </div>
                                         <p class="is-danger help"><?=session('errors.password')?></p>
                                     </div>
@@ -106,7 +117,7 @@ Registro
                                     <div class="col-md-6">
                                         <label class="label">Confirma tu contraseña</label>
                                         <div class="control">
-                                            <input name='c-password' class="input" type="text"
+                                            <input name='c-password' class="input" type="password"
                                                 placeholder="Repite contraseña">
                                         </div>
                                     </div>

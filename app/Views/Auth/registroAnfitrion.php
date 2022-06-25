@@ -34,10 +34,12 @@ Hazte Anfitrión
                             <div class="field">
                                 <label class="label">Agrega una foto</label>
                                 <div class="text-left">
-                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                    <img id="imagenPrevisualizacion" width="210" height="50"
+                                        src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                         class="avatar img-circle img-thumbnail" alt="avatar">
-                                    <h6>Foto</h6>
-                                    <input type="file" name="imagen" class="text-left left-block file-upload">
+                                    <h6></h6>
+                                    <input id="seleccionArchivos" type="file" name="imagen"
+                                        class="text-left left-block file-upload">
                                     <p class="is-danger help"><?=session('errorImg.imagen')?></p>
                                 </div>
                             </div>
@@ -80,9 +82,6 @@ Hazte Anfitrión
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                             </span>
-                                            <span class="icon is-small is-right">
-                                                <i class="fas fa-exclamation-triangle"></i>
-                                            </span>
                                         </div>
                                         <p class="is-danger help"><?=session('errors.email')?></p>
                                     </div>
@@ -107,7 +106,8 @@ Hazte Anfitrión
                                     <div class="col-md-4">
                                         <label class="label">Contraseña</label>
                                         <div class="control">
-                                            <input name='password' class="input" type="text" placeholder="Contraseña">
+                                            <input name='password' class="input" type="password"
+                                                placeholder="Contraseña">
                                         </div>
                                         <p class="is-danger help"><?=session('errors.password')?></p>
                                     </div>
@@ -116,7 +116,7 @@ Hazte Anfitrión
                                     <div class="col-md-4">
                                         <label class="label">Confirma tu contraseña</label>
                                         <div class="control">
-                                            <input name='c-password' class="input" type="text"
+                                            <input name='c-password' class="input" type="password"
                                                 placeholder="Repite contraseña">
                                         </div>
                                     </div>

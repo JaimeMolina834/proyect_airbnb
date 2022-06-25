@@ -65,6 +65,43 @@ class Registro extends BaseController{
             return redirect()->back()->withInput()->with('errors',$validar->getErrors());
         }
 
+        $imageFile = $this->request->getFile('imagen');
+        $validationRules = [
+            'imagen' => [
+                'rules' => [
+                    'uploaded[imagen]',
+                    'mime_in[imagen,image/png,image/jpg,image/jpeg]',
+                   /* 'max_size[imagePerfil,100]',
+                    'max_dims[imagePerfil,1024,768]',*/
+                ],
+                'errors' => [
+                    'uploaded' => 'No ha subido imagen',
+                    'mime_in' => 'Tipo de imagen no disponible'
+                ],
+            ]
+        ];
+        if (! $this->validate($validationRules)) {
+            return redirect()->back()->withInput()->with('errorImg',$this->validator->getErrors());
+        }
+
+        if(!$imageFile->isValid() && $imageFile->hasMoved()){
+            return redirect()->back()->withInput()->with('errorImg',$this->validator->getErrors());
+        }
+        
+        $imagen = \Config\Services::image()->withFile($imageFile)->fit(500,500)->save($imageFile);
+        
+        $newName=$imageFile->getRandomName();
+        
+        $direccion='C:/laragon/www/proyect_airbnb/public/img/perfiles/';
+        $direccionGuardado='/img/perfiles/'.$newName;
+        
+        if(!$imageFile->move($direccion,$newName)){
+            return redirect()->back()->withInput()->with('msg',[
+                'type'=>'Danger',
+                'body'=>'Imagen no se pudo guardar.']);
+        }
+
+
         /*Si ninguna regla falla obtiene todos los datos en la entidad usuario*/
         $usuario = new Usuario($this->request->getPost());
         /*Genera un username*/
@@ -75,6 +112,8 @@ class Registro extends BaseController{
         /*Asigna un rol al usuario*/
         $model->agregarUnRol($this->configs->defaultRolUsuario);
         //$model->agregarUnDosRol($this->configs->defaultRolUsuario);
+
+        $model->agregarFoto($direccionGuardado);
 
         /*Guarda los datos del usuario*/
         $model->save($usuario);
@@ -218,6 +257,7 @@ class Registro extends BaseController{
         
         /*Se agrega el rol al usuario*/
         $modelUsuario->agregarUnRol($this->configs->defaultRolAnfitrion);
+        $modelUsuario->agregarFoto($direccionGuardado);
 
         /*Se guarda el usuario*/
         $modelUsuario->save($usuario);
@@ -236,7 +276,6 @@ class Registro extends BaseController{
         $model->agregarIdiomaPrimario($this->request->getPost('idiomaPrimario'));
         $model->agregarIdiomaSecundario($this->request->getPost('idiomaSecundario'));
         $model->agregarIdiomaExtra($this->request->getPost('idiomaExtra'));
-        $model->agregarFoto($direccionGuardado);
         
         /*Se agrega el idUsuario correspondiente al anfitrion*/
         $model->agregarElUsuario($this->request->getPost('email'));

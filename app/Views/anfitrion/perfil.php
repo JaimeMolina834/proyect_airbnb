@@ -34,8 +34,8 @@ Perfil
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row">
                         <div class="col-sm-4">
-                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$anfitrion->foto)): ?>
-                            <img class="img-thumbnail" src="<?=$anfitrion->foto?>" alt="">
+                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$usuario->foto)): ?>
+                            <img class="img-thumbnail" src="<?=$usuario->foto?>" alt="">
                             <?php else: ?>
                             <img class="img-thumbnail" src="/img/perfiles/default.jpg" alt="">
                             <?php endif; ?>

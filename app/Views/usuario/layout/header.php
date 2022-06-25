@@ -46,6 +46,8 @@
 
 
 </section>
+<?php if(service('request')->uri->getPath() == 'usuario/perfil') : ?>
+<?php else: ?>
 <section>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -99,3 +101,4 @@
         </div>
     </nav>
 </section>
+<?php endif;?>

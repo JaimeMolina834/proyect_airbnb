@@ -122,7 +122,7 @@ class Usuarios extends BaseController{
             return redirect()->back()->withInput()->with('errors',$validar->getErrors());
         }
 
-        $imageFile = $this->request->getFile('imagen');
+        /*$imageFile = $this->request->getFile('imagen');
         $validationRules = [
             'imagen' => [
                 'rules' => [
@@ -130,7 +130,7 @@ class Usuarios extends BaseController{
                     'mime_in[imagen,image/png,image/jpg,image/jpeg]',
                    /* 'max_size[imagePerfil,100]',
                     'max_dims[imagePerfil,1024,768]',*/
-                ],
+                /*],
                 'errors' => [
                     'uploaded' => 'No ha subido imagen',
                     'mime_in' => 'Tipo de imagen no disponible'
@@ -156,7 +156,7 @@ class Usuarios extends BaseController{
             return redirect()->back()->withInput()->with('msg',[
                 'type'=>'Danger',
                 'body'=>'Imagen no se pudo guardar.']);
-        }
+        }*/
 
         /*Si ninguna regla falla obtiene todos los datos en la entidad anfitrion*/
         $anfitrion = new Anfitrion($this->request->getPost());
@@ -169,7 +169,7 @@ class Usuarios extends BaseController{
         $model->agregarIdiomaPrimario($this->request->getPost('idiomaPrimario'));
         $model->agregarIdiomaSecundario($this->request->getPost('idiomaSecundario'));
         $model->agregarIdiomaExtra($this->request->getPost('idiomaExtra'));
-        $model->agregarFoto($direccionGuardado);
+        //$model->agregarFoto($direccionGuardado);
 
         /*Se cambia el rol a anfitrion*/
         $modelUsuario->agregarCambiarRol($this->configs->defaultRolAnfitrion);
