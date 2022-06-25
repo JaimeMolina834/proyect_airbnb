@@ -104,7 +104,7 @@ Hazte anfitrión
                                     </div>
 
                                     <!-- segunda columna -->
-                                    <div class="col-md-4">
+                                    <!--<div class="col-md-4">
                                         <label class="label">Idioma secundario</label>
                                         <div class="control select is-link">
                                             <select name='idiomaSecundario'>
@@ -116,9 +116,9 @@ Hazte anfitrión
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- tercera columna -->
-                                    <div class="col-md-4">
+                                    <!--<div class="col-md-4">
                                         <label class="label">Idioma extra</label>
                                         <div class="control select is-link">
                                             <select name='idiomaExtra'>
@@ -130,7 +130,7 @@ Hazte anfitrión
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                             <!-- BOTON -->

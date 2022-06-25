@@ -56,6 +56,7 @@
 </section>
 <?php if(service('request')->uri->getPath() == 'usuario/perfil') : ?>
 <?php elseif(service('request')->uri->getPath() == 'usuario/inicio') : ?>
+<?php elseif(service('request')->uri->getPath() == 'usuario/registrar') : ?>
 <?php else: ?>
 <section>
     <nav class="navbar navbar-expand-lg bg-light">
