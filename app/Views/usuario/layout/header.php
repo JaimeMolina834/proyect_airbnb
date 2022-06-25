@@ -13,7 +13,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Alojamiento</a>
+                            <a class="nav-link active" aria-current="page"
+                                href="<?=base_url(route_to('alojamiento'))?>">Alojamiento</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Experiencias</a>
@@ -26,10 +27,7 @@
                                     height="30px" alt="">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a class="dropdown-item" href="<?=base_url(route_to('perfilUser'))?>">Perfil
-                                </a>
-                            </li>
+                            <?php if(service('request')->uri->getPath() == 'usuario/perfil') : ?>
                             <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('hazteAnfitrion'))?>">Hazte
                                     anfitrión</a>
@@ -38,6 +36,16 @@
                                 <a class="dropdown-item" href="<?=base_url(route_to('usuarioSignout'))?>">Cerrar
                                     Sesión</a>
                             </li>
+                            <?php else: ?>
+                            <li>
+                                <a class="dropdown-item" href="<?=base_url(route_to('perfilUser'))?>">Perfil
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="<?=base_url(route_to('usuarioSignout'))?>">Cerrar
+                                    Sesión</a>
+                            </li>
+                            <?php endif;?>
                         </ul>
                     </div>
                 </div>
@@ -47,6 +55,7 @@
 
 </section>
 <?php if(service('request')->uri->getPath() == 'usuario/perfil') : ?>
+<?php elseif(service('request')->uri->getPath() == 'usuario/inicio') : ?>
 <?php else: ?>
 <section>
     <nav class="navbar navbar-expand-lg bg-light">

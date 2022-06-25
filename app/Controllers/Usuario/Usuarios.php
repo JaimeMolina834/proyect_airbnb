@@ -24,6 +24,12 @@ class Usuarios extends BaseController{
         /*Muestra la vista del inicio del usuario*/
         return view('usuario/inicio');
     }
+
+    /*--Funcin para vista de inicio del usuario--------------------------------------------------------------*/
+    public function alojamiento(){
+        /*Muestra la vista del inicio del usuario*/
+        return view('usuario/alojamientos');
+    }
 /*--Funcion para vista de inicio del anfitrion-----------------------------------------------------------*/    
     public function perfil(){
         /*Muestra la vista de inicio del anfitrion*/

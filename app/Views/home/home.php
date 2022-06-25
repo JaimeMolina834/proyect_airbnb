@@ -13,22 +13,22 @@ Inicio
 
 <!-- Carousel principal -->
 <section>
-<div class="container-fluid"style="background-color:black";><br><br>
+    <div class="container-fluid" style="background-color:black" ;><br><br>
         <div id="carousel1" class="carousel" data-ride="carousel">
             <div class="rounded carousel-inner" style="width: 90%;margin: 0 auto;">
-            <div class="carousel-item active">
-               <img src="img/h1.jpg" alt="" width="1920" height="10">
+                <div class="carousel-item active">
+                    <img src="img/h1.jpg" alt="" width="1920" height="10">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/hh2.jpg" alt="" width="1920" height="10">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/c1.jpg" alt="" width="1920" height="10">
+                </div>
             </div>
 
-            <div class="carousel-item">
-               <img src="img/hh2.jpg" alt="" width="1920" height="10">
-            </div>
-            
-            <div class="carousel-item">
-               <img src="img/c1.jpg" alt="" width="1920" height="10">
-            </div>
-            </div>
-            
             <!--Controles sigiente y anterior-->
             <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -44,9 +44,9 @@ Inicio
                 <li data-target="#carousel1" data-slide-to="1"></li>
                 <li data-target="#carousel1" data-slide-to="2"></li>
             </ol>
-            
+
         </div><br><br>
-        </div>
+    </div>
 </section>
 
 

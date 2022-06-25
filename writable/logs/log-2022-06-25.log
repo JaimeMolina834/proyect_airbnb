@@ -1,0 +1,9 @@
+CRITICAL - 2022-06-25 02:57:27 --> Invalid file: usuario/alojamiento.php
+#0 C:\laragon\www\proyect_airbnb\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('usuario/alojami...')
+#1 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('usuario/alojami...', Array, true)
+#2 C:\laragon\www\proyect_airbnb\app\Controllers\Usuario\Usuarios.php(31): view('usuario/alojami...')
+#3 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Usuario\Usuarios->alojamiento()
+#4 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario\Usuarios))
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

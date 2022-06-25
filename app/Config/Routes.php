@@ -50,6 +50,7 @@ $routes->group('usuario',['namespace'=>'App\Controllers\Usuario', 'filter' => 'r
     $routes->get('perfil', 'Usuarios::perfil', ['as'=>'perfilUser']);
     $routes->get('cerrar', 'Usuarios::cerrar', ['as'=>'usuarioSignout']);
     $routes->get('inicio', 'Usuarios::index', ['as'=>'usuarioInicio']);
+    $routes->get('alojamiento', 'Usuarios::alojamiento', ['as'=>'alojamiento']);
     $routes->post('registrarAnfitrion', 'Usuarios::registrarAnfitrion');
 });
 
