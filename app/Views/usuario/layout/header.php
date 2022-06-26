@@ -23,15 +23,21 @@
                     <div class="btn-group" role="group">
                         <a id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img src="/img/linicio.png" class="img-fluid" width="50px"
-                                    height="30px" alt="">
+                            <img src="/img/linicio.png" class="img-fluid" width="50px" height="30px" alt="">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <?php if(service('request')->uri->getPath() == 'usuario/perfil') : ?>
+                            <?php if(session('rol2') == 'Anfitrion'): ?>
+                            <li>
+                                <a class="dropdown-item" href="<?=base_url(route_to('hazteAnfitrion'))?>">Modo
+                                    anfitrion</a>
+                            </li>
+                            <?php else: ?>
                             <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('hazteAnfitrion'))?>">Hazte
                                     anfitrión</a>
                             </li>
+                            <?php endif;?>
                             <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('usuarioSignout'))?>">Cerrar
                                     Sesión</a>
@@ -41,6 +47,17 @@
                                 <a class="dropdown-item" href="<?=base_url(route_to('perfilUser'))?>">Perfil
                                 </a>
                             </li>
+                            <?php if(session('rol2') == 'Anfitrion'): ?>
+                            <li>
+                                <a class="dropdown-item" href="<?=base_url(route_to('hazteAnfitrion'))?>">Modo
+                                    anfitrion</a>
+                            </li>
+                            <?php else: ?>
+                            <li>
+                                <a class="dropdown-item" href="<?=base_url(route_to('hazteAnfitrion'))?>">Hazte
+                                    anfitrión</a>
+                            </li>
+                            <?php endif;?>
                             <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('usuarioSignout'))?>">Cerrar
                                     Sesión</a>
@@ -93,19 +110,19 @@
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                         </ul>
                 </ul>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto mb-2 mb-lg-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Precio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Departamentos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Huespedes</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Precio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Departamentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Huespedes</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         </div>

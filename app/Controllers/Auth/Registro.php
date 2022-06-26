@@ -274,8 +274,8 @@ class Registro extends BaseController{
 
         /*Se agregan lo idiomas al anfitrion*/
         $model->agregarIdiomaPrimario($this->request->getPost('idiomaPrimario'));
-        $model->agregarIdiomaSecundario($this->request->getPost('idiomaSecundario'));
-        $model->agregarIdiomaExtra($this->request->getPost('idiomaExtra'));
+        //$model->agregarIdiomaSecundario($this->request->getPost('idiomaSecundario'));
+        //$model->agregarIdiomaExtra($this->request->getPost('idiomaExtra'));
         
         /*Se agrega el idUsuario correspondiente al anfitrion*/
         $model->agregarElUsuario($this->request->getPost('email'));
