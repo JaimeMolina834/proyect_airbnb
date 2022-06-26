@@ -19,12 +19,10 @@
                             <a class="nav-link active" aria-current="page" href="#">Experiencias</a>
                         </li>
                     </ul>
-                    <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <a class="navbar-brand" href="#"><img src="/img/linicio.png" class="img-fluid" width="50px"
-                                    height="30px" alt="">
-                        </button>
+                    <div  class="btn-group" role="group">
+                        <a  id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown">
+                            <img src="/img/linicio.png" class="img-fluid" width="50px" height="30px" alt="">
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('register'))?>">Registrarse</a>

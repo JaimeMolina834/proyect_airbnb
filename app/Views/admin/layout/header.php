@@ -20,11 +20,11 @@
                         </li>
                     </ul>
                     <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
+                        <a id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <a class="navbar-brand" href="#"><img src="/img/linicio.png" class="img-fluid" width="80px"
+                           <img src="/img/linicio.png" class="img-fluid" width="80px"
                                     height="60px" alt="">
-                        </button>
+                                </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <a class="dropdown-item" href="<?=base_url(route_to('adminBusqueda'))?>">Buscar</a>

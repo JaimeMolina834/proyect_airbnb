@@ -92,7 +92,7 @@ Registro
                                         <label class="label">Número de telefono</label>
                                         <div class="control">
                                             <input name='numeroTelefono' value='<?=old('numeroTelefono')?>'
-                                                class="input" type="text" placeholder="75757575">
+                                                class="input" type="text" placeholder="75757575" maxlength="8"/>
                                         </div>
                                         <p class="is-danger help"><?=session('errors.numeroTelefono')?></p>
                                     </div>

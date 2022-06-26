@@ -21,11 +21,11 @@
                         </li>
                     </ul>
                     <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
+                        <a id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <a class="navbar-brand" href="#"><img src="/img/linicio.png" class="img-fluid" width="50px"
+                            <img src="/img/linicio.png" class="img-fluid" width="50px"
                                     height="30px" alt="">
-                        </button>
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <?php if(service('request')->uri->getPath() == 'usuario/perfil') : ?>
                             <li>
@@ -58,8 +58,8 @@
 <?php elseif(service('request')->uri->getPath() == 'usuario/inicio') : ?>
 <?php elseif(service('request')->uri->getPath() == 'usuario/registrar') : ?>
 <?php else: ?>
-<section>
-    <nav class="navbar navbar-expand-lg bg-light">
+<section><br><br>
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Inicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -93,19 +93,19 @@
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                         </ul>
                 </ul>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto mb-2 mb-lg-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Precio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Departamentos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Huespedes</a>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mb-2 mb-lg-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Precio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Departamentos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Huespedes</a>
+                            </li>
+                        </ul>
+                    </div>
             </div>
         </div>
         </div>
