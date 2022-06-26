@@ -47,7 +47,7 @@ Perfil
                                     <label for="nombres">
                                         <h5>Nombres</h5>
                                     </label>
-                                    <input type="text" class="form-control"
+                                    <input disabled type="text" class="form-control"
                                         value="<?=$usuario->nombre?> <?=$usuario->apellido?>">
                                 </div>
                             </div>
@@ -57,7 +57,7 @@ Perfil
                                     <label for="telefono">
                                         <h5>Telefono</h5>
                                     </label>
-                                    <input type="text" class="form-control" value="<?=$usuario->numeroTelefono?>">
+                                    <input disabled type="text" class="form-control" value="<?=$usuario->numeroTelefono?>">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -66,7 +66,7 @@ Perfil
                                     <label for="email">
                                         <h5>Email</h5>
                                     </label>
-                                    <input type="email" class="form-control" value="<?=$usuario->email?>">
+                                    <input disabled type="email" class="form-control" value="<?=$usuario->email?>">
                                     <br><br><br><br><br><br><br><br>
                                 </div>
                             </div>
