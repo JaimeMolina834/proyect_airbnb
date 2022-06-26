@@ -1,43 +1,42 @@
-<?=$this->extend('auth/main')?>
+<?= $this->extend('auth/main') ?>
 
-<?=$this->section('title')?>
+<?= $this->section('title') ?>
 Login
-<?=$this->endSection()?>
+<?= $this->endSection() ?>
 
-<?=$this->section('css')?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css
-">
-<?=$this->endSection()?>
+<?= $this->section('css') ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+<?= $this->endSection() ?>
 
-<?=$this->section('content')?>
+<?= $this->section('content') ?>
 
 <section>
     <div class="container mt-5 pt-5">
-        <?php if(session('msg')):?>
-        <article class="message is-<?=session('msg.type')?>">
-            <div class="message-body">
-                <?=session('msg.body')?>
-            </div>
-        </article>
-        <?php endif; ?>
+
         <div class="row">
             <div class="col-md-6 m-auto">
                 <div class="card border-0 shadow">
                     <div class="card-body">
+                        <?php if (session('msg')) : ?>
+                            <article class="message is-<?= session('msg.type') ?>">
+                                <div class="message-body">
+                                    <?= session('msg.body') ?>
+                                </div>
+                            </article>
+                        <?php endif; ?>
 
                         <h1 class="title">Airbnb</h1>
                         <h2 class="subtitle">Inicia sesión en tu cuenta.</h2>
 
-                        <form action="<?=base_url(route_to('signin'))?>" method="POST">
+                        <form action="<?= base_url(route_to('signin')) ?>" method="POST">
                             <div class="form-outline mb-4">
                                 <p class="control has-icons-left has-icons-right">
-                                    <input class="input" name="email" value='<?=old('email')?>' type=""
-                                        placeholder="Correo Electronico">
+                                    <input class="input" name="email" value='<?= old('email') ?>' type="" placeholder="Correo Electronico">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
                                 </p>
-                                <p class="is-danger help"><?=session('errors.email')?></p>
+                                <p class="is-danger help"><?= session('errors.email') ?></p>
                             </div>
 
                             <div class="form-outline mb-4">
@@ -47,7 +46,7 @@ Login
                                         <i class="fas fa-lock"></i>
                                     </span>
                                 </p>
-                                <p class="is-danger help"><?=session('errors.password')?></p>
+                                <p class="is-danger help"><?= session('errors.password') ?></p>
                             </div>
                             <div class="text-center mt-6">
                                 <p class="control">
@@ -64,4 +63,4 @@ Login
     </div>
 </section>
 <br><br>
-<?=$this->endSection()?>
+<?= $this->endSection() ?>
