@@ -75,6 +75,8 @@
 <?php elseif(service('request')->uri->getPath() == 'usuario/inicio') : ?>
 <?php elseif(service('request')->uri->getPath() == 'usuario/registrar') : ?>
 <?php else: ?>
+
+<!-- nav 2
 <section><br><br>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -128,4 +130,53 @@
         </div>
     </nav>
 </section>
+-->
+
+<ul class="nav justify-content-center" style="background: linear-gradient(#D8BFD8, #fdfd96, #D8BFD8);">
+    <li class="nav-item">
+      <a class="nav-link link-dark" href=""> Inicio </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link link-dark" href=""> Minicasas </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link link-dark" href=""> Rancho de playa </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link link-dark" href=""> Cabañas</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link link-dark" href=""> Manciones</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link link-dark" href=""> </a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link link-dark dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Mas
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+      </ul>
+
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link link-dark" aria-current="page" href="#">Precio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-dark" aria-current="page" href="#">Departamentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-dark " aria-current="page" href="#">Huespedes</a>
+        </li>
+      </ul>
+  </ul>
+
 <?php endif;?>

@@ -62,7 +62,7 @@ class Login extends BaseController{
         }
 
         /*Si el usuario es correcto y la contraseña, busca los roles correspondiente al usuario*/
-        $this->modelUsiario->buscarRol($usuario->idRol);
+        $this->modelUsuario->buscarRol($usuario->idRol);
         $this->modelUsuario->buscarRolDos($usuario->idRol2);
         $idAnfitrion = $this->modelAnfitrion->where('idUsuario',$usuario->idUsuario)->findColumn('idAnfitrion');
         if($idAnfitrion == null){
