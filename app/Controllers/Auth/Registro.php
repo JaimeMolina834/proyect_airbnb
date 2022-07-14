@@ -9,19 +9,15 @@ use App\Controllers\BaseController;
 class Registro extends BaseController{
     /*Variable global*/
     protected $configs;
+    protected $modelUsuario;
+    protected $modelAnfitrion;
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
     public function __construct(){
         $this->configs=config('Airbnb');
+        $this->modelUsuario = model('UsuarioModel');
+        $this->modelAnfitrion = model('AnfitrionesModel');
     }
-
-/*--Funcin para vista de registro de usuario-------------------------------------------------------------*/
-    public function index(){
-        /*Muestra la vista de registro*/
-        return view('auth/registro');
-    }
-/*-------------------------------------------------------------------------------------------------------*/
-
 /*--Funcion para registrar usuario-----------------------------------------------------------------------*/
     public function registrar(){
         /*Valida las diferentes reglas para los campos de registro de usuario*/
@@ -106,34 +102,20 @@ class Registro extends BaseController{
         $usuario = new Usuario($this->request->getPost());
         /*Genera un username*/
         $usuario->generarUsername();
-
-        /*Se carga el modelo UsuarioModel*/
-        $model=model('UsuarioModel');
+        
         /*Asigna un rol al usuario*/
-        $model->agregarUnRol($this->configs->defaultRolUsuario);
+        $this->modelUsuario->agregarUnRol($this->configs->defaultRolUsuario);
         //$model->agregarUnDosRol($this->configs->defaultRolUsuario);
 
-        $model->agregarFoto($direccionGuardado);
+        $this->modelUsuario->agregarFoto($direccionGuardado);
 
         /*Guarda los datos del usuario*/
-        $model->save($usuario);
+        $this->modelUsuario->save($usuario);
 
         /*Redirecciona a la vista login y muestra un mensaje de exito*/
         return redirect()->route('login')->with('msg',[
             'type'=>'success',
             'body'=>'Usuario registrado correctamente'
-        ]);
-    }
-/*-------------------------------------------------------------------------------------------------------*/
-
-/*--Funcion para vista de registro de anfitri-----------------------------------------------------------*/
-    public function vistaRegistrarAnfitrion(){
-        /*Carga el modelo IdiomasModel*/
-        $model = model('IdiomasModel');
-
-        /*Muestra la vista de registro del anfitrión y se pasa los parametros de todos los idiomas*/
-        return view ('auth/registroAnfitrion',[
-            'idiomas' => $model->findAll()
         ]);
     }
 /*-------------------------------------------------------------------------------------------------------*/
@@ -251,16 +233,12 @@ class Registro extends BaseController{
         /*Se genera un username*/
         $usuario->generarUsername();
         
-        /*Se carga el modelo AnfitrionesModel y el modelo UsuarioModel*/
-        $model=model('AnfitrionesModel');
-        $modelUsuario=model('UsuarioModel');
-        
         /*Se agrega el rol al usuario*/
-        $modelUsuario->agregarUnRol($this->configs->defaultRolAnfitrion);
-        $modelUsuario->agregarFoto($direccionGuardado);
+        $this->modelUsuario->agregarUnRol($this->configs->defaultRolAnfitrion);
+        $this->modelUsuario->agregarFoto($direccionGuardado);
 
         /*Se guarda el usuario*/
-        $modelUsuario->save($usuario);
+        $this->modelUsuario->save($usuario);
 
         /*Se obtiene los datos para el anfitrion*/
         $recuperarPostAnfitrion=[
@@ -273,15 +251,15 @@ class Registro extends BaseController{
         $anfitrion = new Anfitrion($recuperarPostAnfitrion);
 
         /*Se agregan lo idiomas al anfitrion*/
-        $model->agregarIdiomaPrimario($this->request->getPost('idiomaPrimario'));
+        $this->modelAnfitrion->agregarIdiomaPrimario($this->request->getPost('idiomaPrimario'));
         //$model->agregarIdiomaSecundario($this->request->getPost('idiomaSecundario'));
         //$model->agregarIdiomaExtra($this->request->getPost('idiomaExtra'));
         
         /*Se agrega el idUsuario correspondiente al anfitrion*/
-        $model->agregarElUsuario($this->request->getPost('email'));
+        $this->modelAnfitrion->agregarElUsuario($this->request->getPost('email'));
         
         /*Se guarda los datos del anfitrion*/
-        $model->save($anfitrion);
+        $this->modelAnfitrion->save($anfitrion);
 
         /*Redirecciona a la vista login y se muestra un mensaje de exito*/
         return redirect()->route('login')->with('msg',[

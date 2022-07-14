@@ -1,0 +1,32 @@
+CRITICAL - 2022-07-14 14:27:04 --> Undefined variable: modelUsuario
+#0 C:\laragon\www\proyect_airbnb\app\Controllers\Usuario\Registro.php(117): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 117, Array)
+#1 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Usuario\Registro->registrarAnfitrion()
+#2 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario\Registro))
+#3 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-14 14:27:56 --> Undefined variable: modelUsuario
+#0 C:\laragon\www\proyect_airbnb\app\Controllers\Usuario\Registro.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 130, Array)
+#1 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Usuario\Registro->registrarAnfitrion()
+#2 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario\Registro))
+#3 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-14 14:28:33 --> Trying to get property 'cuentaBanco' of non-object
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\perfil.php(71): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 71, Array)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/perfi...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(31): view('anfitrion/perfi...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->perfil()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-07-14 14:33:23 --> Undefined variable: modelUsuario
+#0 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 57, Array)
+#1 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->regresarUsuario()
+#2 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#3 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -48,25 +48,23 @@ class Anfitrion extends BaseController{
 
 /*--Funcion para regresar a la vista de usuario-----------------------------------------------------------*/
     public function regresarUsuario(){
-        /*Se carga el model UsuarioModel*/
-        $modelUsuario=model('UsuarioModel');
         
         /*Se agrega el cambio del rol al usuario*/
-        $modelUsuario->agregarCambiarRol($this->configs->defaultRolUsuario);
+        $this->modelUsuario->agregarCambiarRol($this->configs->defaultRolUsuario);
         /*Se actualizan los datos de rol del usuario*/
         $data=[
             'idUsuario' => session('idUsuario'),
-            'idRol' => $modelUsuario->asignarCambiarRol
+            'idRol' => $this->modelUsuario->asignarCambiarRol
         ];
         /*Se guardan los datos actualizados del usuario*/
-        $modelUsuario->save($data);
+        $this->modelUsuario->save($data);
 
         /*Se busca los roles para la vista de los usuarios*/
-        $modelUsuario->buscarRol($modelUsuario->asignarCambiarRol);
+        $this->modelUsuario->buscarRol($this->modelUsuario->asignarCambiarRol);
         /*Se carga las nuevas vista de roles en session*/
         session()->set([
-            'idRol' => $modelUsuario->asignarCambiarRol,
-            'rol' => $modelUsuario->asignarVistaRol
+            'idRol' => $this->modelUsuario->asignarCambiarRol,
+            'rol' => $this->modelUsuario->asignarVistaRol
         ]);
         
         /*Redirecciona a la vista de incio de usuario con un mensaje*/

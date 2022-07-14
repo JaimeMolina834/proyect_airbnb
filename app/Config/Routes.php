@@ -33,25 +33,29 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->group('/',['namespace'=>'App\Controllers\Home', 'filter' => 'auth'],function($routes){
     $routes->get('', 'Home::index', ['as'=>'home']);
+    $routes->get('subir', 'Home::subirVista', ['as'=>'subir']);
+    $routes->post('subir-post', 'Home::subir');
+
+    $routes->get('idiomas', 'Home::idiomas');
 });
 
 $routes->group('auth',['namespace'=>'App\Controllers\Auth', 'filter' => 'auth'],function($routes){
-    $routes->get('registro', 'Registro::index', ['as'=>'register']);
+    $routes->get('registro', 'Vistas::index', ['as'=>'register']);
     $routes->post('registrar', 'Registro::registrar');
-    $routes->get('registro-anfitrion', 'Registro::vistaRegistrarAnfitrion', ['as'=>'registerAnfittrion']);
+    $routes->get('registro-anfitrion', 'Vistas::registrarAnfitrion', ['as'=>'registerAnfittrion']);
     $routes->post('registrar-anfitrion', 'Registro::registrarAnfitrion');
-    $routes->get('login', 'Login::index', ['as'=>'login']);
+    $routes->get('login', 'Vistas::login', ['as'=>'login']);
     $routes->post('checklogin', 'Login::signin', ['as'=>'signin']);
 });
 
 
 $routes->group('usuario',['namespace'=>'App\Controllers\Usuario', 'filter' => 'roles:Usuario'],function($routes){
-    $routes->get('registrar', 'Usuarios::hazteAnfitrion', ['as'=>'hazteAnfitrion']);
-    $routes->get('perfil', 'Usuarios::perfil', ['as'=>'perfilUser']);
-    $routes->get('cerrar', 'Usuarios::cerrar', ['as'=>'usuarioSignout']);
-    $routes->get('inicio', 'Usuarios::index', ['as'=>'usuarioInicio']);
-    $routes->get('alojamiento', 'Usuarios::alojamiento', ['as'=>'alojamiento']);
-    $routes->post('registrarAnfitrion', 'Usuarios::registrarAnfitrion');
+    $routes->get('registrar', 'Vistas::hazteAnfitrion', ['as'=>'hazteAnfitrion']);
+    $routes->get('perfil', 'Vistas::perfil', ['as'=>'perfilUser']);
+    $routes->get('inicio', 'Vistas::index', ['as'=>'usuarioInicio']);
+    $routes->get('alojamiento', 'Vistas::alojamiento', ['as'=>'alojamiento']);
+    $routes->post('registrarAnfitrion', 'Registro::registrarAnfitrion');
+    $routes->get('cerrar', 'Registro::cerrar', ['as'=>'usuarioSignout']);
 });
 
 $routes->group('anfitrion',['namespace'=>'App\Controllers\Anfitrion', 'filter' => 'roles:Anfitrion'],function($routes){

@@ -8,21 +8,15 @@ use App\Controllers\BaseController;
 class Login extends BaseController{
     /*Variable global*/
     protected $configs;
+    protected $modelUsuario;
     protected $modelAnfitrion;
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
     public function __construct(){
         $this->configs=config('Airbnb');
+        $this->modelUsuario = model('UsuarioModel');
         $this->modelAnfitrion = model('AnfitrionesModel');
     }
-
-/*--Funcin para vista de iniciar sesion-----------------------------------------------------------------*/
-    public function index(){
-        /*Muestra la vista de registro*/
-        return view ('auth/login');
-    }
-/*-------------------------------------------------------------------------------------------------------*/
-
 
 /*--Funcin para iniciar sesion---------------------------------------------------------------------------*/
     public function signin(){
@@ -47,11 +41,8 @@ class Login extends BaseController{
         $email = trim($this->request->getVar('email'));
         $password = trim($this->request->getVar('password'));
 
-        /*Se carga el modelo UsuarioModel*/
-        $model = model('UsuarioModel');
-
         /*Busca si existe un usuario con ese email ingresado*/
-        if(!$usuario = $model->buscarUsuario('email', $email)){
+        if(!$usuario = $this->modelUsuario->buscarUsuario('email', $email)){
             /*Si no existe un usuario regresa a la vista y muestra el error*/
             return redirect()
                     ->back()
@@ -71,8 +62,8 @@ class Login extends BaseController{
         }
 
         /*Si el usuario es correcto y la contraseña, busca los roles correspondiente al usuario*/
-        $model->buscarRol($usuario->idRol);
-        $model->buscarRolDos($usuario->idRol2);
+        $this->modelUsiario->buscarRol($usuario->idRol);
+        $this->modelUsuario->buscarRolDos($usuario->idRol2);
         $idAnfitrion = $this->modelAnfitrion->where('idUsuario',$usuario->idUsuario)->findColumn('idAnfitrion');
         if($idAnfitrion == null){
             $idAnfitrion[0] = 0;
@@ -85,30 +76,30 @@ class Login extends BaseController{
             'idAnfitrion' => $idAnfitrion[0],
             'username' => $usuario->username,
             'idRol' => $usuario->idRol,
-            'rol'=>$model->asignarVistaRol,
+            'rol'=>$this->modelUsuario->asignarVistaRol,
             'email' =>$usuario->email,
-            'rol2'=>$model->asignarVistaDosRol,
+            'rol2'=>$this->modelUsuario->asignarVistaDosRol,
             'is_logged' => true
         ]);
 
         /*Redireccion a la vista correspondiente al rol del usuario*/
 
         /*Redirecciona al inicio del rol usuario*/
-        if($model->asignarVistaRol == $this->configs->defaultRolUsuario){
+        if($this->modelUsuario->asignarVistaRol == $this->configs->defaultRolUsuario){
             return redirect()->route('usuarioInicio')->with('msg',[
                 'type'=>'success',
                 'body'=>'Bienvenido '.$usuario->username]);
         }
 
         /*Redirecciona al inicio del rol anfitrion*/
-        if($model->asignarVistaRol == $this->configs->defaultRolAnfitrion){
+        if($this->modelUsuario->asignarVistaRol == $this->configs->defaultRolAnfitrion){
             return redirect()->route('anfitrionInicio')->with('msg',[
                 'type'=>'success',
                 'body'=>'Bienvenido '.$usuario->username]);
         }
 
         /*Redirecciona al inicio del rol admin*/
-        if($model->asignarVistaRol == $this->configs->defaultRolAdmin){
+        if($this->modelUsuario->asignarVistaRol == $this->configs->defaultRolAdmin){
             return redirect()->route('adminInicio')->with('msg',[
                 'type'=>'success',
                 'body'=>'Bienvenido '.$usuario->username]);
