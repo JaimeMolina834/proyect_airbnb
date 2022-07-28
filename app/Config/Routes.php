@@ -61,6 +61,8 @@ $routes->group('usuario',['namespace'=>'App\Controllers\Usuario', 'filter' => 'r
 $routes->group('anfitrion',['namespace'=>'App\Controllers\Anfitrion', 'filter' => 'roles:Anfitrion'],function($routes){
     $routes->get('inicio', 'Anfitrion::index', ['as'=>'anfitrionInicio']);
     $routes->get('perfil', 'Anfitrion::perfil', ['as'=>'perfil']);
+    $routes->get('publicar','Anfitrion::publicar');
+    $routes->post('RegistrarPublicacion', 'Anfitrion::RegistrarPublicacion');
     $routes->get('buscar', 'Anfitrion::buscar', ['as'=>'anfitrionBusqueda']);
     $routes->get('cerrar', 'Anfitrion::cerrar', ['as'=>'anfitrionSignout']);
     $routes->get('regresar-usuario', 'Anfitrion::regresarUsuario', ['as'=>'regresarAUsuario']);
