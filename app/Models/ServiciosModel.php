@@ -19,8 +19,6 @@ class ServiciosModel extends Model{
     protected $deletedField  = 'date_delete';
     
     /*Variables para antes de insertar en la tabla*/
-    protected $beforeInsert = ['addFoto'];
-
     protected $asignarFoto;
 
     /*-------------------------------------------------------------------------------------------------------*/
