@@ -41,9 +41,9 @@ Publicar
                                 <div class="field">
                                     <label class="label">Agrega una foto</label>
                                     <div class="text-left">
-                                        <img  value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="210" height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="210" height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
                                         <h6></h6>
-                                        <input  value='<?= old('foto') ?>' id="seleccionArchivos" type="file" name="foto" class="text-left left-block file-upload">
+                                        <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file" name="foto" class="text-left left-block file-upload">
                                         <p class="is-danger help"><?= session('errorImg.foto') ?></p>
                                     </div>
                                 </div>
@@ -126,8 +126,8 @@ Publicar
                         <div class="form-group">
                             <div class="row">
 
-                             <!-- primera columna -->
-                             <div class="col-md-6">
+                                <!-- primera columna -->
+                                <div class="col-md-6">
                                     <label class="label">Disponibilidad</label>
                                     <div class="control has-icons-left has-icons-right">
                                         <input name='disponibilidad' value='<?= old('disponibilidad') ?>' class="input" type="number" placeholder="Ej: 1">
@@ -151,7 +151,7 @@ Publicar
                                     <p class="is-danger help"><?= session('errors.idAnfitrion') ?></p>
                                 </div>
 
-                              
+
                             </div>
                         </div>
 

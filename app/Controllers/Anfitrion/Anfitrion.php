@@ -99,45 +99,46 @@ class Anfitrion extends BaseController
 
         $validar->setRules(
             [
-                'nombre' => 'required|alpha_space',
-                'descripcion' => 'required|alpha_space',
-                'idTipoHospedaje' => 'required|is_unique[tbl_tipo_hospedajes.tipoHospedaje]',
-                'direccion' => 'required|alpha_space',
-                'idTarifa' => 'required|numeric|is_unique[tbl_tarifas.precio]',
-                'idMunicipio' => 'required|is_unique[tbl_municipios.municipio]',
+                'nombre' => 'required',
+                'descripcion' => 'required',
+                'idTipoHospedaje' => 'required|is_not_unique[tbl_tipo_hospedajes.tipoHospedaje]',
+                'direccion' => 'required',
+                'idTarifa' => 'required|numeric|is_not_unique[tbl_tarifas.precio]',
+                'idMunicipio' => 'required|is_not_unique[tbl_municipios.municipio]',
                 'disponibilidad' => 'required|numeric',
-                'idAnfitrion' => 'required|numeric|is_unique[tbl_anfitriones.idAnfitrion]'
+                'idAnfitrion' => 'required|numeric|is_not_unique[tbl_anfitriones.idAnfitrion]'
             ],
             [
                 'nombre' => [
-                    'required' => 'Digite un nombre',
-                    'alpha_space' => 'Caracteres no permitidos'
+                    'required' => 'Digite un nombre del hospedaje',
                 ],
                 'descripcion' => [
                     'required' => 'Digite una descripcion',
-                    'alpha_space' => 'Caracteres no permitidos'
                 ],
                 'idTipoHospedaje' => [
-                    'required' => 'Digite un tipo de hospedaje',
-                    'is_unique' => 'Este hospedaje ya existe'
+                    'required' => 'Seleccione un tipo de hospedaje',
+                    'is_not_unique' => 'Este tipo de hospedaje no existe'
+                ],
+                'direccion' => [
+                    'required' => 'Digite una direccion de hospedaje',
                 ],
                 'idTarifa' => [
-                    'required' => 'Digite precio de hospedaje',
+                    'required' => 'Seleccione precio de hospedaje',
                     'numeric' => 'Solo digite numeros',
-                    'is_unique' => 'Este precio ya existe'
+                    'is_not_unique' => 'Esta tarifa no existe'
                 ],
                 'idMunicipio' => [
-                    'required' => 'Digite una direccion',
-                    'is_unique' => 'Este municipio ya existe'
+                    'required' => 'Seleccione un municipio',
+                    'is_not_unique' => 'Este municipio no existe'
                 ],
                 'disponibilidad' => [
-                    'required' => 'Digite una disponibilidad',
+                    'required' => 'Seleccione una disponibilidad',
                     'numeric' => 'Solo digite numeros',
                 ],
                 'idAnfitrion' => [
-                    'required' => 'Digite un anfitrion',
+                    'required' => 'Seleccione un anfitrion',
                     'numeric' => 'Solo numeros',
-                    'is_unique' => 'Este anfitrion ya existe'
+                    'is_not_unique' => 'Este anfitrion no existe'
                 ],
             ]
         );
@@ -186,9 +187,10 @@ class Anfitrion extends BaseController
          $recuperarPostUsuario=[
             'nombre' => $this->request->getPost('nombre'),
             'descripcion' => $this->request->getPost('descripcion'),
-            'idTipoHospedaje' => $this->request->getPost('idTipoHospedaje'),
-            'idTarifa' => $this->request->getPost('idTarifa'),
-            'idMunicipio' => $this->request->getPost('idMunicipio'),
+            'tipoHospedaje' => $this->request->getPost('idTipoHospedaje'),
+            'direccion' => $this->request->getPost('direccion'),
+            'precio' => $this->request->getPost('idTarifa'),
+            'municipio' => $this->request->getPost('idMunicipio'),
             'disponibilidad' => $this->request->getPost('disponibilidad'),
             'idAnfitrion' => $this->request->getPost('idAnfitrion')           
         ];
