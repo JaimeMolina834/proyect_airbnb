@@ -28,14 +28,8 @@ class ServiciosModel extends Model{
         $this->asignarFoto = $foto;
     }
  /*-------------------------------------------------------------------------------------------------------*/
-     public function insert_data($data){
-        $this->db->insert("tbl_servicios",$data);
-    }
+   
  /*-------------------------------------------------------------------------------------------------------*/
 
-    public function fetch_data(){
-       // $query = $this->db->get("tbl_servicios");
-       $query = $this->db->query("select * from tbl_servicios");
-        return $query;
-    }
+  
 }

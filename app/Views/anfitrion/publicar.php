@@ -154,7 +154,7 @@ Publicar
                         <div class="form-group">
                             <div class="row">
 
-                                <!-- boton registro -->
+                                <!-- boton publicar -->
                                 <div class="text-center mt-6">
                                     <div class="control">
                                         <button class="btn btn-primary">Publicar</button>
