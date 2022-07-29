@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use CodeIgniter\Database\Query;
 use CodeIgniter\Model;
 
 class ServiciosModel extends Model{
@@ -25,5 +26,16 @@ class ServiciosModel extends Model{
 
     public function agregarFoto(string $foto){
         $this->asignarFoto = $foto;
+    }
+ /*-------------------------------------------------------------------------------------------------------*/
+     public function insert_data($data){
+        $this->db->insert("tbl_servicios",$data);
+    }
+ /*-------------------------------------------------------------------------------------------------------*/
+
+    public function fetch_data(){
+       // $query = $this->db->get("tbl_servicios");
+       $query = $this->db->query("select * from tbl_servicios");
+        return $query;
     }
 }

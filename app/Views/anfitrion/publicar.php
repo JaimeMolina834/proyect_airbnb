@@ -142,19 +142,13 @@ Publicar
                                 <!-- primera columna -->
                                 <div class="col-md-6">
                                     <label class="label">idAnfitrion</label>
-                                    <div class="control has-icons-left has-icons-right">
-                                        <input name='idAnfitrion' value='<?= old('idAnfitrion') ?>' class="input" type="number" placeholder="id: 00">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                    </div>
+                                    <select name="idAnfitrion" id="idAnfitrion">
+                                        <option value='<?= session('idAnfitrion') ?>'><?= session('idAnfitrion') ?></option>
+                                    </select>
                                     <p class="is-danger help"><?= session('errors.idAnfitrion') ?></p>
                                 </div>
-
-
                             </div>
                         </div>
-
 
                         <!-- tercera fila  -->
                         <div class="form-group">

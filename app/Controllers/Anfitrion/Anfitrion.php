@@ -50,7 +50,11 @@ class Anfitrion extends BaseController
 
     public function buscar()
     {
-        return view('anfitrion/buscar');
+        $data = [
+            'idUsuario' => session('idUsuario'),
+            'idRol' => $this->modelUsuario->asignarCambiarRol
+        ];
+        return view('anfitrion/buscar',$data);
     }
 
     /*--Funcion para cerrar sesion del anfitrion--------------------------------------------------------------*/
@@ -94,6 +98,7 @@ class Anfitrion extends BaseController
      /*--Funcion para publicar hospedaje como Anfitrion-----------------------------------------------------------*/
     public function RegistrarPublicacion()
     {
+
         /*Valida las reglas para publicar hospedaje como anfitrion*/
         $validar = service('validation');
 
@@ -200,14 +205,15 @@ class Anfitrion extends BaseController
             /*Guarda los datos del usuario*/
         $this->modelServicio->save($recuperarPostUsuario);
 
+       
+        
         
         /*Redirecciona a la vista login y muestra un mensaje de exito*/
-        return redirect()->route('anfitrionInicio')->with('msg',[
+        return redirect()->route('anfitrion/publicar')->with('msg',[
             'type'=>'success',
             'body'=>'Publicacion registrada con exito!'
         ]);
-
+        
        
-
     }
 }
