@@ -148,9 +148,8 @@ Inicio Anfitrion
     </div>
 
 
-</section>
 
-<div class="modal bd-example-modal-lg" id="Modal" tabindex="-1" role="dialog"
+    <div class="modal bd-example-modal-lg" id="Modal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -226,5 +225,6 @@ Inicio Anfitrion
         </div>
     </div>
     
+</section>
 
 <?= $this->endSection() ?>
