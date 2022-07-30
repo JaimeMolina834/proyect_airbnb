@@ -21,14 +21,16 @@ class ServiciosModel extends Model{
     
     /*Variables para antes de insertar en la tabla*/
     protected $asignarFoto;
+    protected $asignarTipoHospedaje;
 
     /*-------------------------------------------------------------------------------------------------------*/
 
     public function agregarFoto(string $foto){
         $this->asignarFoto = $foto;
     }
- /*-------------------------------------------------------------------------------------------------------*/
-   
+
+
+
  /*-------------------------------------------------------------------------------------------------------*/
 
   

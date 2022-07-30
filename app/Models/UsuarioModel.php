@@ -52,6 +52,7 @@ class UsuarioModel extends Model{
 
     public function agregarUnRol(string $rol){
         $row = $this->db()->table('tbl_roles')->where('rol',$rol)->get()->getFirstRow();
+       
         if($row !== null){
             $this->asignarRol = $row->idRol;
         }

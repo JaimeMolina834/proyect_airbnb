@@ -11,5 +11,7 @@ class IdiomasModel extends Model{
     protected $returnType     = 'object';
     protected $allowedFields = ['idioma'];
 
+
     protected $useTimestamps =true;
+
 }

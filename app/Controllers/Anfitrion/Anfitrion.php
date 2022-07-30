@@ -5,6 +5,7 @@ namespace App\Controllers\Anfitrion;
 use App\Entities\Usuario;
 
 use App\Controllers\BaseController;
+use CodeIgniter\Database\Query;
 
 class Anfitrion extends BaseController
 {
@@ -13,6 +14,9 @@ class Anfitrion extends BaseController
     protected $modelAnfitrion;
     protected $modelUsuario;
     protected $modelServicio;
+    protected $modelTarifas;
+    protected $modelMunicipio;
+
 
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
@@ -22,6 +26,11 @@ class Anfitrion extends BaseController
         $this->modelAnfitrion = model('AnfitrionesModel');
         $this->modelUsuario = model('UsuarioModel');
         $this->modelServicio = model('ServiciosModel');
+        $this->modelTarifas = model('TarifasModel');
+        $this->modelMunicipio = model('TarifasModel');
+
+
+
     }
 
     /*--Funcion para vista de inicio del anfitrion-----------------------------------------------------------*/
@@ -44,7 +53,16 @@ class Anfitrion extends BaseController
     /*--Funcion para publicar servicios del anfitrion-----------------------------------------------------------*/
     public function publicar()
     {
-        return view('anfitrion/publicar');
+           /*Carga el modelo TipoHospedajesModel*/
+           $model = model('TipoHospedajesModel');
+           $modelMunicipio = model('MunicipiosModel');
+
+           /*Muestra la vista de publicar del anfitrión y se pasa los parametros de todos los tipo de hospedajes*/
+           return view ('anfitrion/publicar',[
+               'tipoHospedajes' => $model->findAll(),
+               'municipios' => $modelMunicipio->findAll(),
+
+           ]);
     }
     /*-------------------------------------------------------------------------------------------------------*/
 
@@ -106,12 +124,11 @@ class Anfitrion extends BaseController
             [
                 'nombre' => 'required',
                 'descripcion' => 'required',
-                'idTipoHospedaje' => 'required|is_not_unique[tbl_tipo_hospedajes.tipoHospedaje]',
+                'idTipoHospedaje' => 'required|is_not_unique[tbl_tipo_hospedajes.idTipoHospedaje]',
                 'direccion' => 'required',
-                'idTarifa' => 'required|numeric|is_not_unique[tbl_tarifas.precio]',
-                'idMunicipio' => 'required|is_not_unique[tbl_municipios.municipio]',
-                'disponibilidad' => 'required|numeric',
-                'idAnfitrion' => 'required|numeric|is_not_unique[tbl_anfitriones.idAnfitrion]'
+                'precio' => 'required|numeric',
+                'idMunicipio' => 'required|is_not_unique[tbl_municipios.idMunicipio]',
+                'descuento' => 'required|numeric',
             ],
             [
                 'nombre' => [
@@ -127,23 +144,17 @@ class Anfitrion extends BaseController
                 'direccion' => [
                     'required' => 'Digite una direccion de hospedaje',
                 ],
-                'idTarifa' => [
+                'precio' => [
                     'required' => 'Seleccione precio de hospedaje',
                     'numeric' => 'Solo digite numeros',
-                    'is_not_unique' => 'Esta tarifa no existe'
                 ],
                 'idMunicipio' => [
                     'required' => 'Seleccione un municipio',
                     'is_not_unique' => 'Este municipio no existe'
                 ],
-                'disponibilidad' => [
-                    'required' => 'Seleccione una disponibilidad',
+                'descuento' => [
+                    'required' => 'Digite un descuento',
                     'numeric' => 'Solo digite numeros',
-                ],
-                'idAnfitrion' => [
-                    'required' => 'Seleccione un anfitrion',
-                    'numeric' => 'Solo numeros',
-                    'is_not_unique' => 'Este anfitrion no existe'
                 ],
             ]
         );
@@ -188,32 +199,40 @@ class Anfitrion extends BaseController
             ]);
         }
 
+        $recuperarPostPublicaciones=[
+            'precio' => $this->request->getPost('precio'),
+            'descuento' => $this->request->getPost('descuento'),
+        ];       
+        /*Se guarda la tarifa en la tabla tarifa que el Anfitrion asignó para su servicio */
+        $this->modelTarifas->save($recuperarPostPublicaciones);
+
+        /*Se recupera el ID despues de insertar en la tabla tarifas*/
+        $lastIdTarifa = $this->modelTarifas->getInsertID();
+
          /*Si ninguna regla falla se obtiene los datos para el usuario*/
          $recuperarPostUsuario=[
             'nombre' => $this->request->getPost('nombre'),
             'descripcion' => $this->request->getPost('descripcion'),
-            'tipoHospedaje' => $this->request->getPost('idTipoHospedaje'),
+            'idTipoHospedaje' => $this->request->getPost('idTipoHospedaje'),
             'direccion' => $this->request->getPost('direccion'),
-            'precio' => $this->request->getPost('idTarifa'),
-            'municipio' => $this->request->getPost('idMunicipio'),
-            'disponibilidad' => $this->request->getPost('disponibilidad'),
-            'idAnfitrion' => $this->request->getPost('idAnfitrion')           
+            'idTarifa' => $lastIdTarifa,
+            'idMunicipio' => $this->request->getPost('idMunicipio'),
+            'disponibilidad' => 1,
+            'foto' => $direccionGuardado,
+            'idAnfitrion' => session('idAnfitrion')      
         ];
-           /*Guarda la imagen en un directorio del proyecto*/
+
+        /*Guarda la imagen en un directorio del proyecto*/
         $this->modelServicio->agregarFoto($direccionGuardado);
 
             /*Guarda los datos del usuario*/
         $this->modelServicio->save($recuperarPostUsuario);
 
-       
-        
-        
         /*Redirecciona a la vista login y muestra un mensaje de exito*/
-        return redirect()->route('anfitrion/publicar')->with('msg',[
+        return redirect()->route('anfitrionInicio')->with('msg',[
             'type'=>'success',
             'body'=>'Publicacion registrada con exito!'
-        ]);
-        
-       
-    }
+        ]);  
+    }  
+    
 }

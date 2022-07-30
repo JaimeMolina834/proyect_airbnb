@@ -73,28 +73,47 @@ Publicar
                             <div class="row">
 
                                 <!-- primera columna -->
-                                <div class="col-md-6">
-                                    <label class="label">Tipo de hospedaje</label>
+                               
+                                <div class="col-md-3">
+                                        <label class="label">Tipo de hospedaje</label>
+                                        <div class="control select is-link">
+                                            <select name='idTipoHospedaje'>
+                                                <option>...</option>
+                                                <?php foreach($tipoHospedajes as $key): ?>
+                                                <option value="<?=$key->idTipoHospedaje ?>"
+                                                    <?php if($key->idTipoHospedaje == old('tipoHospedaje')): ?>selected<?php endif;?>>
+                                                    <?=$key->tipoHospedaje?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                        <p class="is-danger help"><?=session('errors.idTipoHospedaje')?></p>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                    <label class="label">Tarifa</label>
                                     <div class="control has-icons-left has-icons-right">
-                                        <input name='idTipoHospedaje' value='<?= old('idTipoHospedaje') ?>' class="input" type="text" placeholder="Ej: Cabañas">
+                                        <input name='precio' value='<?= old('precio') ?>' class="input" type="number" placeholder="$100.00">
                                         <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-dollar-sign"></i>
                                         </span>
                                     </div>
-                                    <p class="is-danger help"><?= session('errors.idTipoHospedaje') ?></p>
+                                    <p class="is-danger help"><?= session('errors.precio') ?></p>
                                 </div>
 
-                                <!-- tercera columna -->
-                                <div class="col-md-6">
-                                    <label class="label">Direccion</label>
-                                    <div class="control">
-                                        <input name='direccion' value='<?= old('direccion') ?>' class="input" type="text" placeholder="Ej: 3Av Norte." />
+                                <div class="col-md-3">
+                                    <label class="label">Descuento</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input name='descuento' value='<?= old('descuento') ?>' class="input" type="number" placeholder="10%">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-dollar-sign"></i>
+                                        </span>
                                     </div>
-                                    <p class="is-danger help"><?= session('errors.direccion') ?></p>
+                                    <p class="is-danger help"><?= session('errors.descuento') ?></p>
                                 </div>
+
+                        
                             </div>
                         </div>
-
 
                         <!-- segunda fila -->
                         <div class="form-group">
@@ -102,54 +121,37 @@ Publicar
 
                                 <!-- primera columna -->
                                 <div class="col-md-6">
-                                    <label class="label">Tarifa</label>
-                                    <div class="control has-icons-left has-icons-right">
-                                        <input name='idTarifa' value='<?= old('idTarifa') ?>' class="input" type="number" placeholder="$100.00">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                    </div>
-                                    <p class="is-danger help"><?= session('errors.idTarifa') ?></p>
-                                </div>
-
-                                <!-- segunda columna -->
-                                <div class="col-md-6">
-                                    <label class="label">Municipio</label>
+                                    <label class="label">Direccion</label>
                                     <div class="control">
-                                        <input name='idMunicipio' value='<?= old('idMunicipio') ?>' class="input" type="text" placeholder="Ej: 3Av Norte." />
+                                        <input name='direccion' value='<?= old('direccion') ?>' class="input" type="text" placeholder="Ej: 3Av Norte." />
                                     </div>
-                                    <p class="is-danger help"><?= session('errors.idMunicipio') ?></p>
+                                    <p class="is-danger help"><?= session('errors.direccion') ?></p>
                                 </div>
+
+                                 
+                                <!-- segunda columna -->
+
+                                <div class="col-md-3">
+                                        <label class="label">Municipio</label>
+                                        <div class="control select is-link">
+                                            <select name='idMunicipio'>
+                                                <option>...</option>
+                                                <?php foreach($municipios as $key): ?>
+                                                <option value="<?=$key->idMunicipio ?>"
+                                                    <?php if($key->idMunicipio == old('municipio')): ?>selected<?php endif;?>>
+                                                    <?=$key->municipio?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                        <p class="is-danger help"><?=session('errors.idMunicipio')?></p>
+                                    </div>
+
+
+
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="row">
-
-                                <!-- primera columna -->
-                                <div class="col-md-6">
-                                    <label class="label">Disponibilidad</label>
-                                    <div class="control has-icons-left has-icons-right">
-                                        <input name='disponibilidad' value='<?= old('disponibilidad') ?>' class="input" type="number" placeholder="Ej: 1">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                    </div>
-                                    <p class="is-danger help"><?= session('errors.disponibilidad') ?></p>
-                                </div>
-
-
-                                <!-- primera columna -->
-                                <div class="col-md-6">
-                                    <label class="label">idAnfitrion</label>
-                                    <select name="idAnfitrion" id="idAnfitrion">
-                                        <option value='<?= session('idAnfitrion') ?>'><?= session('idAnfitrion') ?></option>
-                                    </select>
-                                    <p class="is-danger help"><?= session('errors.idAnfitrion') ?></p>
-                                </div>
-                            </div>
-                        </div>
-
+                     
                         <!-- tercera fila  -->
                         <div class="form-group">
                             <div class="row">

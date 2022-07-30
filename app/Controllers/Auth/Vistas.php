@@ -23,6 +23,7 @@ class Vistas extends BaseController{
         ]);
     }
     
+    
 /*--Funcin para vista de iniciar sesion-----------------------------------------------------------------*/
     public function login(){
         /*Muestra la vista de registro*/
