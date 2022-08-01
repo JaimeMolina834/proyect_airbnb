@@ -15,8 +15,6 @@ class Anfitrion extends BaseController
     protected $modelUsuario;
     protected $modelServicio;
     protected $modelTarifas;
-    protected $modelMunicipio;
-
 
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
@@ -27,17 +25,17 @@ class Anfitrion extends BaseController
         $this->modelUsuario = model('UsuarioModel');
         $this->modelServicio = model('ServiciosModel');
         $this->modelTarifas = model('TarifasModel');
-        $this->modelMunicipio = model('TarifasModel');
-
-
-
     }
 
     /*--Funcion para vista de inicio del anfitrion-----------------------------------------------------------*/
     public function index()
     {
         /*Muestra la vista de inicio del anfitrion*/
-        return view('anfitrion/inicio');
+        return view('anfitrion/inicio', [
+        'servicios' => $this->modelServicio->where('idAnfitrion', session('idAnfitrion'))->findAll()
+        ]);
+        
+        //'servicios' => $this->modelServicio->where('idAnfitrion',session('idAnfitrion'))->findAll();
     }
 
     /*--Funcion para vista de inicio del anfitrion-----------------------------------------------------------*/

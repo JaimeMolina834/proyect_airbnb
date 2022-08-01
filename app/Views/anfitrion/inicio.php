@@ -37,120 +37,42 @@ Inicio Anfitrion
         <?php endif; ?>
 
         <!------------------------------Inicio de Body-------------------------->
+
         <div class="row">
             <div class="form-row">
-                <div class="col-3"><br>
-                    <div class="card">
-                        <div class="card" style="width: 22rem;">
-                            <img src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=" class="card-img-top">
-                            <div class="card-content">
-                                <div class="media-content">
+                <?php foreach ($servicios as $key):?>
+                    <div class="col-3"><br>
+                        <div class="card">
+                            <div class="card" style="width: 22rem;">
+                                <img src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=" class="card-img-top">
+                                <div class="card-content">
+                                    <div class="media-content">
 
-                                    <p class="title is-4">Cabañas de Madera</p>
-                                    <p class="subtitle is-6">@Anfitrio-Bryan</p>
-                                </div>
-                                <div class="content">
-                                    <br>
-                                    <p>Cabaña super comoda</p>
-                                    <p>Áhuachapan - El Salvador</p>
-                                    <time>Hace 1 minuto</time><br>
-                                    <a href="" class="btn btn-primary">Ir</a>
+                                        <p class="title is-4"><?=$key->nombre?></p>
+                                        <p class="subtitle is-6">@<?= session('username') ?></p>
+                                    </div>
+                                    <div class="content">
+                                        <br>
+                                        <p>Cabaña super comoda</p>
+                                        <p>Áhuachapan - El Salvador</p>
+                                        <time>Hace 1 minuto</time><br>
+                                        <a href="" class="btn btn-primary">Ir</a>
 
-                                    <a href="#Modal" data-toggle="modal" class="btn btn-primary">Ver</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-3"><br>
-                    <div class="card">
-                        <div class="card" style="width: 22rem;">
-                            <img src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=" class="card-img-top">
-                            <div class="card-content">
-                                <div class="media-content">
-
-                                    <p class="title is-4">Cabañas de Madera</p>
-                                    <p class="subtitle is-6">@Anfitrio-Bryan</p>
-                                </div>
-                                <div class="content">
-                                    <br>
-                                    <p>Cabaña super comoda</p>
-                                    <p>Áhuachapan - El Salvador</p>
-                                    <time>Hace 1 minuto</time><br>
-                                    <a href="" class="btn btn-primary">Ir</a>
-
-                                    <a href="#Modal" data-toggle="modal" class="btn btn-primary">Ver</a>
+                                        <a href="#Modal" data-toggle="modal" class="btn btn-primary">Ver</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="col-3"><br>
-                    <div class="card">
-                        <div class="card" style="width: 22rem;">
-                            <img src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=" class="card-img-top">
-                            <div class="card-content">
-                                <div class="media-content">
-
-                                    <p class="title is-4">Cabañas de Madera</p>
-                                    <p class="subtitle is-6">@Anfitrio-Bryan</p>
-                                </div>
-                                <div class="content">
-                                    <br>
-                                    <p>Cabaña super comoda</p>
-                                    <p>Áhuachapan - El Salvador</p>
-                                    <time>Hace 1 minuto</time><br>
-                                    <a href="" class="btn btn-primary">Ir</a>
-
-                                    <a href="#Modal" data-toggle="modal" class="btn btn-primary">Ver</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-3"><br>
-                    <div class="card">
-                        <div class="card" style="width: 22rem;">
-                            <img src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=" class="card-img-top">
-                            <div class="card-content">
-                                <div class="media-content">
-
-                                    <p class="title is-4">Cabañas de Madera</p>
-                                    <p class="subtitle is-6">@Anfitrio-Bryan</p>
-                                </div>
-                                <div class="content">
-                                    <br>
-                                    <p>Cabaña super comoda</p>
-                                    <p>Áhuachapan - El Salvador</p>
-                                    <time>Hace 1 minuto</time><br>
-                                    <a href="" class="btn btn-primary">Ir</a>
-
-                                    <a href="#Modal" data-toggle="modal" class="btn btn-primary">Ver</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                <?php endforeach; ?>
             </div>
         </div>
-
-        
-
 
     </div>
 
 
 
-    <div class="modal bd-example-modal-lg" id="Modal" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal bd-example-modal-lg" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -162,7 +84,7 @@ Inicio Anfitrion
                 <div class="modal-body">
                     <form class="form-row" action="#" method="POST">
                         <div class="form-group col-md-12">
-                            
+
                             <img class="mx-auto d-block" src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=">
                         </div>
 
@@ -186,10 +108,10 @@ Inicio Anfitrion
 
                         <div class="form-group col-md-4">
                             <label class="label has-text-centered">Municipio</label>
-                            <h6 class="subtitle is-6 has-text-centered">Apaneca</h6> 
+                            <h6 class="subtitle is-6 has-text-centered">Apaneca</h6>
                         </div>
 
-                        
+
                         <div class="form-group col-md-6">
                             <label class="label has-text-centered">Direccion</label>
                             <h6 class="subtitle is-6 has-text-centered">Av. Norte</h6>
@@ -213,7 +135,7 @@ Inicio Anfitrion
                             <label class="label has-text-centered">Publicada</label>
                             <h6 class="subtitle is-6 has-text-centered">Hace 1 minuto</h6>
                         </div>
-                       
+
 
                     </form>
 
@@ -224,7 +146,7 @@ Inicio Anfitrion
             </div>
         </div>
     </div>
-    
+
 </section>
 
 <?= $this->endSection() ?>
