@@ -59,7 +59,7 @@ Inicio Anfitrion
                                         <?php foreach ($municipios as $keyMunicipio) : ?>
 
                                             <?php if ($key->idMunicipio == $keyMunicipio->idMunicipio) : ?>
-                                                <p><?= $keyMunicipio->municipio ?></p>
+                                                <p>Municipio-<?= $keyMunicipio->municipio ?></p>
                                             <?php endif; ?>
 
                                         <?php endforeach; ?>
@@ -110,7 +110,6 @@ Inicio Anfitrion
 
                             </div>
 
-
                             <div class="form-group col-md-4">
                                 <label class="label has-text-centered">Tipo de Hospedaje</label>
                                 <?php foreach ($tipoHospedajes as $keyTipoHospedaje) : ?>
@@ -121,42 +120,55 @@ Inicio Anfitrion
 
                                 <?php endforeach; ?>
                             </div>
-                            
+
                             <div class="form-group col-md-4">
                                 <label class="label has-text-centered">Disponibilidad</label>
-                                <h6 class="subtitle is-6 has-text-centered">Sin reservar</h6>
+                                <?php if ($key->disponibilidad == 1) : ?>
+                                    <h6 class="subtitle is-6 has-text-centered">Sin reservar</h6>
+                                <?php elseif ($key->disponibilidad == 2) :  ?>
+                                    <h6 class="subtitle is-6 has-text-centered">Reservado</h6>
+                                <?php else : ?>
+                                    <h6 class="subtitle is-6 has-text-centered">De baja</h6>
+                                <?php endif; ?>
                             </div>
 
 
 
                             <div class="form-group col-md-4">
                                 <label class="label has-text-centered">Municipio</label>
-                                <h6 class="subtitle is-6 has-text-centered">Apaneca</h6>
+                                <?php foreach ($municipios as $keyMunicipio) : ?>
+
+                                    <?php if ($key->idMunicipio == $keyMunicipio->idMunicipio) : ?>
+                                        <h6 class="subtitle is-6 has-text-centered"><?= $keyMunicipio->municipio ?></h6>  
+                                    <?php endif; ?>
+
+                                <?php endforeach; ?>
+                               
                             </div>
 
 
                             <div class="form-group col-md-6">
                                 <label class="label has-text-centered">Direccion</label>
-                                <h6 class="subtitle is-6 has-text-centered">Av. Norte</h6>
+                                <h6 class="subtitle is-6 has-text-centered"><?=$key->direccion?></h6>
                             </div>
 
 
                             <div class="form-group col-md-6">
                                 <label class="label has-text-centered">Descripción del hospedaje</label>
-                                <h6 class="subtitle is-6 has-text-centered">Cabaña super comoda</h6>
+                                <h6 class="subtitle is-6 has-text-centered"><?= $key->descripcion ?></h6>
                             </div>
 
 
 
                             <div class="form-group col-md-3">
                                 <label class="label has-text-centered">Publicada por</label>
-                                <h6 class="subtitle is-6 has-text-centered">@Anfitrion-Bryan</h6>
+                                <h6 class="subtitle is-6 has-text-centered">@<?= session('username') ?></h6>
                             </div>
 
 
                             <div class="form-group col-md-3">
                                 <label class="label has-text-centered">Publicada</label>
-                                <h6 class="subtitle is-6 has-text-centered">Hace 1 minuto</h6>
+                                <h6 class="subtitle is-6 has-text-centered"><?= $key->date_update?></h6>
                             </div>
 
                         </form>
