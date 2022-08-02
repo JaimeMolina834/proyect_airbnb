@@ -38,7 +38,9 @@ class Anfitrion extends BaseController
         return view('anfitrion/inicio', [
         'servicios' => $this->modelServicio->where('idAnfitrion', session('idAnfitrion'))->findAll(),
         'municipios' => $this->modelMunicipio->findAll(),
-        ]);
+        'tarifas' => $this->modelTarifas->findAll(),
+        'tipoHospedajes' => $this->model->findAll(),
+    ]);
         
         //'servicios' => $this->modelServicio->where('idAnfitrion',session('idAnfitrion'))->findAll();
     }

@@ -744,3 +744,14 @@ CRITICAL - 2022-08-01 20:21:04 --> You have an error in your SQL syntax; check t
 #9 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #10 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #11 {main}
+CRITICAL - 2022-08-01 20:40:11 --> Undefined property: stdClass::$idServicios
+#0 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\inicio.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\laragon\\www\\...', 105)
+#1 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/inici...', Array, true)
+#4 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(41): view('anfitrion/inici...', Array)
+#5 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->index()
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
