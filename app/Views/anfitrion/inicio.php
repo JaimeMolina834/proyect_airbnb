@@ -38,17 +38,37 @@ Inicio Anfitrion
 
         <!------------------------------Inicio de Body-------------------------->
 
+
+
         <div class="row">
             <div class="form-row">
                 <?php foreach ($servicios as $key) : ?>
                     <div class="col-3"><br>
                         <div class="card">
                             <div class="card" style="width: 22rem;">
-                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$key->foto)): ?>
-                        <img src="<?=$key->foto?>" class="mx-auto d-block">
-                        <?php else: ?>
-                        <img src="C:/laragon/www/proyect_airbnb/public/img/publicaciones/default.jpg" class="mx-auto d-block">
-                        <?php endif;?>
+
+        <!------------------------------Inicio de carousel -------------------------->
+                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                        <?php if (file_exists("C:/laragon/www/proyect_airbnb/public")) : ?>
+                                            <img class="mx-auto d-block" src="<?= $key->foto ?>" alt="First slide">
+                                        </div>
+                                        <?php else : ?>
+                                            <img src="../../../public/img/publicaciones/default.jpg" class="mx-auto d-block"  alt="Third slide">
+                                        <?php endif; ?>
+                                        </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+
                                 <div class="card-content">
                                     <div class="media-content">
 
@@ -68,7 +88,7 @@ Inicio Anfitrion
 
                                         <?php endforeach; ?>
 
-                                        <time><?=$key->date_update ?></time><br>
+                                        <time><?= $key->date_update ?></time><br>
                                         <a href="" class="btn btn-primary">Ir</a>
 
 
@@ -98,12 +118,12 @@ Inicio Anfitrion
                     <div class="modal-body">
                         <form class="form-row" action="#" method="POST">
                             <div class="form-group col-md-12">
-                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$key->foto)): ?>
-                        <img src="<?=$key->foto?>" class="mx-auto d-block">
-                        <?php else: ?>
-                        <img src="C:/laragon/www/proyect_airbnb/public/img/publicaciones/default.jpg" class="mx-auto d-block">
-                        <?php endif;?>
-                             
+                                <?php if (file_exists("C:/laragon/www/proyect_airbnb/public" . $key->foto)) : ?>
+                                    <img src="<?= $key->foto ?>" class="mx-auto d-block">
+                                <?php else : ?>
+                                    <img src="C:/laragon/www/proyect_airbnb/public/img/publicaciones/default.jpg" class="mx-auto d-block">
+                                <?php endif; ?>
+
                             </div>
 
                             <div class="form-group col-md-4">
@@ -147,17 +167,17 @@ Inicio Anfitrion
                                 <?php foreach ($municipios as $keyMunicipio) : ?>
 
                                     <?php if ($key->idMunicipio == $keyMunicipio->idMunicipio) : ?>
-                                        <h6 class="subtitle is-6 has-text-centered"><?= $keyMunicipio->municipio ?></h6>  
+                                        <h6 class="subtitle is-6 has-text-centered"><?= $keyMunicipio->municipio ?></h6>
                                     <?php endif; ?>
 
                                 <?php endforeach; ?>
-                               
+
                             </div>
 
 
                             <div class="form-group col-md-6">
                                 <label class="label has-text-centered">Direccion</label>
-                                <h6 class="subtitle is-6 has-text-centered"><?=$key->direccion?></h6>
+                                <h6 class="subtitle is-6 has-text-centered"><?= $key->direccion ?></h6>
                             </div>
 
 
@@ -176,7 +196,7 @@ Inicio Anfitrion
 
                             <div class="form-group col-md-3">
                                 <label class="label has-text-centered">Publicada</label>
-                                <h6 class="subtitle is-6 has-text-centered"><?= $key->date_update?></h6>
+                                <h6 class="subtitle is-6 has-text-centered"><?= $key->date_update ?></h6>
                             </div>
 
                         </form>

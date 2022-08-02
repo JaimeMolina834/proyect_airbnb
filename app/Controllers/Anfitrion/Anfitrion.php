@@ -189,9 +189,11 @@ class Anfitrion extends BaseController
         $imagen = \Config\Services::image()->withFile($imageFile)->fit(500, 500)->save($imageFile);
 
         $newName = $imageFile->getRandomName();
+        $fileAnfitrion = session('idAnfitrion');
 
-        $direccion = 'C:/laragon/www/proyect_airbnb/public/img/publicaciones/';
-        $direccionGuardado = '/img/publicaciones/' . $newName;
+
+        $direccion = 'C:/laragon/www/proyect_airbnb/public/img/publicaciones/' . $fileAnfitrion;
+        $direccionGuardado = '/img/publicaciones/' . $fileAnfitrion . '/';
 
         if (!$imageFile->move($direccion, $newName)) {
             return redirect()->back()->withInput()->with('msg', [
