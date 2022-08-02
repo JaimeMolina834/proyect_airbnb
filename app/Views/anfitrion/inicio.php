@@ -88,7 +88,7 @@ Inicio Anfitrion
                                         <a href="" class="btn btn-primary">Ir</a>
 
 
-                                        <a href="#Modal<?= $key->idServicio ?>" data-toggle="modal" class="btn btn-primary">Ver</a>
+                                        <a href="#Modal<?= $key->idServicio ?>" data-backdrop="false" data-toggle="modal" class="btn btn-primary">Ver</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,9 +102,8 @@ Inicio Anfitrion
  
 
 
-
     <?php foreach ($servicios as $key) : ?>
-        <div class="modal fade bd-example-modal-lg" id="Modal<?= $key->idServicio ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal" id="Modal<?= $key->idServicio ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" >
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -158,8 +157,6 @@ Inicio Anfitrion
                                 <?php endif; ?>
                             </div>
 
-
-
                             <div class="form-group col-md-4">
                                 <label class="label has-text-centered">Municipio</label>
                                 <?php foreach ($municipios as $keyMunicipio) : ?>
@@ -172,31 +169,25 @@ Inicio Anfitrion
 
                             </div>
 
-
                             <div class="form-group col-md-6">
                                 <label class="label has-text-centered">Direccion</label>
                                 <h6 class="subtitle is-6 has-text-centered"><?= $key->direccion ?></h6>
                             </div>
-
 
                             <div class="form-group col-md-6">
                                 <label class="label has-text-centered">Descripción del hospedaje</label>
                                 <h6 class="subtitle is-6 has-text-centered"><?= $key->descripcion ?></h6>
                             </div>
 
-
-
                             <div class="form-group col-md-3">
                                 <label class="label has-text-centered">Publicada por</label>
                                 <h6 class="subtitle is-6 has-text-centered">@<?= session('username') ?></h6>
                             </div>
 
-
                             <div class="form-group col-md-3">
                                 <label class="label has-text-centered">Publicada</label>
                                 <h6 class="subtitle is-6 has-text-centered"><?= $key->date_update ?></h6>
                             </div>
-
                         </form>
 
                     </div>
