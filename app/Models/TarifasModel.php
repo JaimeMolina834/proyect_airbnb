@@ -17,8 +17,6 @@ class TarifasModel extends Model{
     protected $useTimestamps =true;
 
 
-    
-
 }
 
 //select idTarifa  from tbl_tarifas order by idTarifa desc  limit 1;

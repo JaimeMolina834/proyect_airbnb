@@ -44,19 +44,28 @@ Inicio Anfitrion
                     <div class="col-3"><br>
                         <div class="card">
                             <div class="card" style="width: 22rem;">
-                                <img src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=" class="card-img-top">
+                                <img src="<?= $key->foto ?>" class="card-img-top">
                                 <div class="card-content">
                                     <div class="media-content">
 
-                                        <p class="title is-4"><?=$key->nombre?></p>
-                                        <p class="subtitle is-6">@<?= session('username') ?></p>
+                                        <p class="title is-4"><?= $key->nombre ?></p>
+                                        <p class="subtitle is-6">@<?=session('username')?></p>
                                     </div>
+                                
                                     <div class="content">
                                         <br>
-                                        <p>Cabaña super comoda</p>
-                                        <p>Áhuachapan - El Salvador</p>
-                                        <time>Hace 1 minuto</time><br>
+                                        <p><?= $key->descripcion ?></p>
+
+                                        <?php foreach ($municipios as $k):?>
+                                        <?php if($key->idMunicipio == $k->idMunicipio ): ?>
+                                        <p><?= $k->municipio?></p>
+                                        <?php endif;?>
+                                        
+                                        <?php endforeach; ?>
+                                     
+                                        <time><?=$key->date_update?></time><br>
                                         <a href="" class="btn btn-primary">Ir</a>
+                                        
 
                                         <a href="#Modal" data-toggle="modal" class="btn btn-primary">Ver</a>
                                     </div>
@@ -64,7 +73,7 @@ Inicio Anfitrion
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
             </div>
         </div>
 

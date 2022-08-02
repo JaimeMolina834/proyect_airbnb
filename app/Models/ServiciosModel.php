@@ -11,6 +11,7 @@ class ServiciosModel extends Model{
     protected $useAutoIncrement = true;
 
     protected $useSoftDeletes = true;
+    protected $returnType     = 'object';
 
     protected $allowedFields = ['nombre','foto','descripcion', 'disponibilidad','direccion','idAnfitrion','idTipoHospedaje','idTarifa','idMunicipio','idHuesped'];
 

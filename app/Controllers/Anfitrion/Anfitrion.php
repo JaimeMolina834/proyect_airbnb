@@ -15,6 +15,8 @@ class Anfitrion extends BaseController
     protected $modelUsuario;
     protected $modelServicio;
     protected $modelTarifas;
+    protected $model;
+    protected $modelMunicipio;
 
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
@@ -25,6 +27,8 @@ class Anfitrion extends BaseController
         $this->modelUsuario = model('UsuarioModel');
         $this->modelServicio = model('ServiciosModel');
         $this->modelTarifas = model('TarifasModel');
+        $this->model = model('TipoHospedajesModel');
+        $this->modelMunicipio = model('MunicipiosModel');
     }
 
     /*--Funcion para vista de inicio del anfitrion-----------------------------------------------------------*/
@@ -32,7 +36,8 @@ class Anfitrion extends BaseController
     {
         /*Muestra la vista de inicio del anfitrion*/
         return view('anfitrion/inicio', [
-        'servicios' => $this->modelServicio->where('idAnfitrion', session('idAnfitrion'))->findAll()
+        'servicios' => $this->modelServicio->where('idAnfitrion', session('idAnfitrion'))->findAll(),
+        'municipios' => $this->modelMunicipio->findAll(),
         ]);
         
         //'servicios' => $this->modelServicio->where('idAnfitrion',session('idAnfitrion'))->findAll();
@@ -51,14 +56,10 @@ class Anfitrion extends BaseController
     /*--Funcion para publicar servicios del anfitrion-----------------------------------------------------------*/
     public function publicar()
     {
-           /*Carga el modelo TipoHospedajesModel*/
-           $model = model('TipoHospedajesModel');
-           $modelMunicipio = model('MunicipiosModel');
-
            /*Muestra la vista de publicar del anfitrión y se pasa los parametros de todos los tipo de hospedajes*/
            return view ('anfitrion/publicar',[
-               'tipoHospedajes' => $model->findAll(),
-               'municipios' => $modelMunicipio->findAll(),
+               'tipoHospedajes' => $this->model->findAll(),
+               'municipios' => $this->modelMunicipio->findAll(),
 
            ]);
     }
