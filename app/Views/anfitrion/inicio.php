@@ -44,7 +44,11 @@ Inicio Anfitrion
                     <div class="col-3"><br>
                         <div class="card">
                             <div class="card" style="width: 22rem;">
-                                <img src="<?= $key->foto ?>" class="card-img-top">
+                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$key->foto)): ?>
+                        <img src="<?=$key->foto?>" class="mx-auto d-block">
+                        <?php else: ?>
+                        <img src="C:/laragon/www/proyect_airbnb/public/img/publicaciones/default.jpg" class="mx-auto d-block">
+                        <?php endif;?>
                                 <div class="card-content">
                                     <div class="media-content">
 
@@ -64,7 +68,7 @@ Inicio Anfitrion
 
                                         <?php endforeach; ?>
 
-                                        <time><?= $key->date_update ?></time><br>
+                                        <time><?=$key->date_update ?></time><br>
                                         <a href="" class="btn btn-primary">Ir</a>
 
 
@@ -82,8 +86,8 @@ Inicio Anfitrion
 
 
     <?php foreach ($servicios as $key) : ?>
-        <div class="modal bd-example-modal-lg" id="Modal<?= $key->idServicio ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+        <div class="modal fade bd-example-modal-lg" id="Modal<?= $key->idServicio ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3 class="title"><?= $key->nombre ?></h3>
@@ -94,8 +98,12 @@ Inicio Anfitrion
                     <div class="modal-body">
                         <form class="form-row" action="#" method="POST">
                             <div class="form-group col-md-12">
-
-                                <img class="mx-auto d-block" src="https://media.istockphoto.com/photos/log-cabin-in-the-forest-picture-id93463536?k=20&m=93463536&s=612x612&w=0&h=u9SV0-O19ShiawpRi6vnsVgdXdYpDKcB56G0DB0Gt7o=">
+                            <?php if(file_exists("C:/laragon/www/proyect_airbnb/public".$key->foto)): ?>
+                        <img src="<?=$key->foto?>" class="mx-auto d-block">
+                        <?php else: ?>
+                        <img src="C:/laragon/www/proyect_airbnb/public/img/publicaciones/default.jpg" class="mx-auto d-block">
+                        <?php endif;?>
+                             
                             </div>
 
                             <div class="form-group col-md-4">
