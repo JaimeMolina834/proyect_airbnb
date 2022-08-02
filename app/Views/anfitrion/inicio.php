@@ -47,30 +47,30 @@ Inicio Anfitrion
                         <div class="card">
                             <div class="card" style="width: 22rem;">
 
-        <!------------------------------Inicio de carousel -------------------------->
-                            
+                                <!------------------------------Inicio de carousel -------------------------->
+
 
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <img class="mx-auto d-block" src="https://i.pinimg.com/550x/75/52/af/7552aff15679b363cf717dab353884a3.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-    <img class="mx-auto d-block" src="https://fachadasde-casas.com/wp-content/uploads/2018/01/fachadas-de-casas-sencillas-de-un-solo-piso.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-    <img class="mx-auto d-block" src="http://verfachadasdecasas.com/wp-content/uploads/2017/12/Fachada-sencilla-y-bonita-para-casa-de-un-piso-peque%C3%B1a.jpg" alt="First slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img class="mx-auto d-block" src="https://i.pinimg.com/550x/75/52/af/7552aff15679b363cf717dab353884a3.jpg" alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="mx-auto d-block" src="https://fachadasde-casas.com/wp-content/uploads/2018/01/fachadas-de-casas-sencillas-de-un-solo-piso.jpg" alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="mx-auto d-block" src="http://verfachadasdecasas.com/wp-content/uploads/2017/12/Fachada-sencilla-y-bonita-para-casa-de-un-piso-peque%C3%B1a.jpg" alt="First slide">
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
 
 
                                 <div class="card-content">
