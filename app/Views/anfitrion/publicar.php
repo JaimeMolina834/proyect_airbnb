@@ -73,23 +73,22 @@ Publicar
                             <div class="row">
 
                                 <!-- primera columna -->
-                               
-                                <div class="col-md-3">
-                                        <label class="label">Tipo de hospedaje</label>
-                                        <div class="control select is-link">
-                                            <select name='idTipoHospedaje'>
-                                                <option>...</option>
-                                                <?php foreach($tipoHospedajes as $key): ?>
-                                                <option value="<?=$key->idTipoHospedaje ?>"
-                                                    <?php if($key->idTipoHospedaje == old('tipoHospedaje')): ?>selected<?php endif;?>>
-                                                    <?=$key->tipoHospedaje?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                        <p class="is-danger help"><?=session('errors.idTipoHospedaje')?></p>
-                                    </div>
 
-                                    <div class="col-md-3">
+                                <div class="col-md-3">
+                                    <label class="label">Tipo de hospedaje</label>
+                                    <div class="control select is-link">
+                                        <select name='idTipoHospedaje'>
+                                            <option>...</option>
+                                            <?php foreach ($tipoHospedajes as $key) : ?>
+                                                <option value="<?= $key->idTipoHospedaje ?>" <?php if ($key->idTipoHospedaje == old('tipoHospedaje')) : ?>selected<?php endif; ?>>
+                                                    <?= $key->tipoHospedaje ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <p class="is-danger help"><?= session('errors.idTipoHospedaje') ?></p>
+                                </div>
+
+                                <div class="col-md-3">
                                     <label class="label">Tarifa</label>
                                     <div class="control has-icons-left has-icons-right">
                                         <input name='precio' value='<?= old('precio') ?>' class="input" type="number" placeholder="$100.00">
@@ -111,7 +110,6 @@ Publicar
                                     <p class="is-danger help"><?= session('errors.descuento') ?></p>
                                 </div>
 
-                        
                             </div>
                         </div>
 
@@ -128,30 +126,27 @@ Publicar
                                     <p class="is-danger help"><?= session('errors.direccion') ?></p>
                                 </div>
 
-                                 
+
                                 <!-- segunda columna -->
 
                                 <div class="col-md-3">
-                                        <label class="label">Municipio</label>
-                                        <div class="control select is-link">
-                                            <select name='idMunicipio'>
-                                                <option>...</option>
-                                                <?php foreach($municipios as $key): ?>
-                                                <option value="<?=$key->idMunicipio ?>"
-                                                    <?php if($key->idMunicipio == old('municipio')): ?>selected<?php endif;?>>
-                                                    <?=$key->municipio?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                        <p class="is-danger help"><?=session('errors.idMunicipio')?></p>
+                                    <label class="label">Municipio</label>
+                                    <div class="control select is-link">
+                                        <select name='idMunicipio'>
+                                            <option>...</option>
+                                            <?php foreach ($municipios as $key) : ?>
+                                                <option value="<?= $key->idMunicipio ?>" <?php if ($key->idMunicipio == old('municipio')) : ?>selected<?php endif; ?>>
+                                                    <?= $key->municipio ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
-
-
+                                    <p class="is-danger help"><?= session('errors.idMunicipio') ?></p>
+                                </div>
 
                             </div>
                         </div>
 
-                     
+
                         <!-- tercera fila  -->
                         <div class="form-group">
                             <div class="row">
@@ -164,12 +159,11 @@ Publicar
                                 </div>
                             </div>
                         </div>
-                </div>
+                     </div>
                 </form>
             </div>
         </div>
     </div>
-
 
 
 </div>

@@ -16,6 +16,7 @@ class Anfitrion extends BaseController
     protected $modelServicio;
     protected $modelTarifas;
     protected $model;
+    protected $modelPais;
     protected $modelMunicipio;
 
 
@@ -28,6 +29,8 @@ class Anfitrion extends BaseController
         $this->modelServicio = model('ServiciosModel');
         $this->modelTarifas = model('TarifasModel');
         $this->model = model('TipoHospedajesModel');
+        $this->modelPais = model('PaisesModel');
+        $this->modelDepartamento = model('DepartamentosModel');
         $this->modelMunicipio = model('MunicipiosModel');
     }
 
@@ -61,6 +64,8 @@ class Anfitrion extends BaseController
            /*Muestra la vista de publicar del anfitrión y se pasa los parametros de todos los tipo de hospedajes*/
            return view ('anfitrion/publicar',[
                'tipoHospedajes' => $this->model->findAll(),
+               'paises' => $this->modelPais->findAll(),
+               'departamentos' => $this->modelDepartamento->findAll(),
                'municipios' => $this->modelMunicipio->findAll(),
 
            ]);

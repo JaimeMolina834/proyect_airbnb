@@ -62,14 +62,6 @@ Inicio Anfitrion
                                             <img class="mx-auto d-block" src="http://verfachadasdecasas.com/wp-content/uploads/2017/12/Fachada-sencilla-y-bonita-para-casa-de-un-piso-peque%C3%B1a.jpg" alt="First slide">
                                         </div>
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
                                 </div>
 
 
@@ -92,7 +84,7 @@ Inicio Anfitrion
 
                                         <?php endforeach; ?>
 
-                                        <time><?= $key->date_update ?></time><br>
+                                        <time><?= $key->date_update->humanize();?></time><br>
                                         <a href="" class="btn btn-primary">Ir</a>
 
 
@@ -107,6 +99,8 @@ Inicio Anfitrion
         </div>
 
     </div>
+ 
+
 
 
     <?php foreach ($servicios as $key) : ?>

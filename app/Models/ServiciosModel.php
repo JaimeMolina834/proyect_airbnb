@@ -3,6 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Database\Query;
 use CodeIgniter\Model;
+use App\Entities\Servicio;
 
 class ServiciosModel extends Model{
     protected $table      = 'tbl_servicios';
@@ -11,7 +12,7 @@ class ServiciosModel extends Model{
     protected $useAutoIncrement = true;
 
     protected $useSoftDeletes = true;
-    protected $returnType     = 'object';
+    protected $returnType     = Servicio::class;
 
     protected $allowedFields = ['nombre','foto','descripcion', 'disponibilidad','direccion','idAnfitrion','idTipoHospedaje','idTarifa','idMunicipio','idHuesped'];
 
