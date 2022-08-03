@@ -38,8 +38,6 @@ Inicio Anfitrion
 
         <!------------------------------Inicio de Body-------------------------->
 
-
-
         <div class="row">
             <div class="form-row">
                 <?php foreach ($servicios as $key) : ?>
