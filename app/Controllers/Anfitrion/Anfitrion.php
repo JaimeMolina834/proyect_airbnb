@@ -170,7 +170,36 @@ class Anfitrion extends BaseController
             return redirect()->back()->withInput()->with('errors', $validar->getErrors());
         }
 
-        $imageFile = $this->request->getFile('foto');
+        $archivoTamano = count($_FILES['foto']);
+        
+        $fileAnfitrion = session('idAnfitrion');
+        $direccionGuardado = '/img/publicaciones/' . $fileAnfitrion . '/';
+
+        $estructura = 'C:/laragon/www/proyect_airbnb/public/img/publicaciones/'.$fileAnfitrion.'/';
+        
+        if(!file_exists($estructura)){
+            mkdir($estructura, 0777, true);
+        }
+
+        for($i=0 ; $i < 3; $i++){
+            $imagen = \Config\Services::image()->withFile($_FILES['foto']['tmp_name'][$i])->fit(500,500)->save($_FILES['foto']['tmp_name'][$i]);
+    
+            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $path = $_FILES['foto']['name'][$i];
+            $extension = pathinfo($path, PATHINFO_EXTENSION);
+            $newName = substr(str_shuffle($permitted_chars), 0, 16).'.'.$extension;                    
+            //$newName=$_FILES['image']['name'][$i]->getRandomName();
+            
+            $direccion='C:/laragon/www/proyect_airbnb/public/img/publicaciones/'.$fileAnfitrion.'/'.$newName;
+            move_uploaded_file($_FILES['foto']['tmp_name'][$i],$direccion);
+            /*if(!$_FILES['image']['tmp_name'][$i]->move($direccion,$newName)){
+                return redirect()->back()->withInput()->with('msg',[
+                    'type'=>'Danger',
+                    'body'=>'Imagen no se pudo guardar.']);
+            }*/
+        }
+
+        /*$imageFile = $this->request->getFile('foto');
         $validationRules = [
             'foto' => [
                 'rules' => [
@@ -197,7 +226,7 @@ class Anfitrion extends BaseController
         $fileAnfitrion = session('idAnfitrion');
 
 
-        $direccion = 'C:/laragon/www/proyect_airbnb/public/img/publicaciones/' . $fileAnfitrion;
+        $direccion = 'C:/laragon/www/univo/public/img/publicaciones/' . $fileAnfitrion;
         $direccionGuardado = '/img/publicaciones/' . $fileAnfitrion . '/';
 
         if (!$imageFile->move($direccion, $newName)) {
@@ -205,7 +234,7 @@ class Anfitrion extends BaseController
                 'type' => 'Danger',
                 'body' => 'Imagen no se pudo guardar.'
             ]);
-        }
+        }*/
 
         $recuperarPostPublicaciones=[
             'precio' => $this->request->getPost('precio'),
