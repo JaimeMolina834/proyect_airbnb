@@ -173,9 +173,11 @@ class Anfitrion extends BaseController
         $archivoTamano = count($_FILES['foto']);
         
         $fileAnfitrion = session('idAnfitrion');
-        $direccionGuardado = '/img/publicaciones/' . $fileAnfitrion . '/';
+        $numberRandomFile = rand(1,10000);
 
-        $estructura = 'C:/laragon/www/proyect_airbnb/public/img/publicaciones/'.$fileAnfitrion.'/';
+
+        $direccionGuardado = '/img/publicaciones/' . $fileAnfitrion . '/' . $numberRandomFile .'/';
+        $estructura = 'C:/laragon/www/proyect_airbnb/public/img/publicaciones/'.$fileAnfitrion.'/' . $numberRandomFile .'/';
         
         if(!file_exists($estructura)){
             mkdir($estructura, 0777, true);
@@ -190,7 +192,7 @@ class Anfitrion extends BaseController
             $newName = substr(str_shuffle($permitted_chars), 0, 16).'.'.$extension;                    
             //$newName=$_FILES['image']['name'][$i]->getRandomName();
             
-            $direccion='C:/laragon/www/proyect_airbnb/public/img/publicaciones/'.$fileAnfitrion.'/'.$newName;
+            $direccion='C:/laragon/www/proyect_airbnb/public/img/publicaciones/'.$fileAnfitrion.'/' . $numberRandomFile .'/' .$newName;
             move_uploaded_file($_FILES['foto']['tmp_name'][$i],$direccion);
             /*if(!$_FILES['image']['tmp_name'][$i]->move($direccion,$newName)){
                 return redirect()->back()->withInput()->with('msg',[
