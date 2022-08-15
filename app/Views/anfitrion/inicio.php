@@ -124,16 +124,34 @@ Inicio Anfitrion
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-row" action="#" method="POST">
-                        <div class="form-group col-md-12">
-                            <?php if (file_exists("C:/laragon/www/proyect_airbnb/public" . $key->foto)) : ?>
-                            <img src="<?= $key->foto ?>" class="mx-auto d-block">
-                            <?php else : ?>
-                            <img src="C:/laragon/www/proyect_airbnb/public/img/publicaciones/default.jpg"
-                                class="mx-auto d-block">
-                            <?php endif; ?>
+
+                <div class="form-group col-md-12">
+                      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" style="width: 60%; margin: 0 auto" >
+                                    <?php
+                                    $directorio = opendir("C:/laragon/www/proyect_airbnb/public".$key->foto);
+                                    $i = 0;
+                                    while($elemento = readdir($directorio)){
+                                        if($elemento != "." && $elemento != ".."){
+                                                        if($i == 2){ ?>
+                                                        <div class="carousel-item active">
+                                                            <img class="mx-auto d-block" src="<?=$key->foto.$elemento?>" alt="First slide">
+                                                        </div>
+                                                        <?php
+                                            }else{ ?>
+                                                        <div class="carousel-item ">
+                                                            <img class="mx-auto d-block"  src="<?=$key->foto.$elemento?>" alt="First slide">
+                                                        </div>
+                                                        <?php
+                                            }
+                                        }
+                                        $i++;
+                                    }
+                                ?>
 
                         </div>
+                    <form class="form-row" action="#" method="POST">
+                        
 
                         <div class="form-group col-md-4">
                             <label class="label has-text-centered">Tarifa</label>
