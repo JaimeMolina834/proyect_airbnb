@@ -38,9 +38,9 @@ Registro
                                     <div class="field">
                                         <label class="label">Agrega una foto</label>
                                         <div class="text-left">
-                                            <img id="imagenPrevisualizacion" width="210" height="50"
+                                            <img id="imagenPrevisualizacion" width="150" height="50"
                                                 src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                                class="avatar img-circle img-thumbnail" alt="avatar">
+                                                class="avatar img-thumbnail rounded-circle" alt="avatar">
                                             <h6></h6>
                                             <input id="seleccionArchivos" type="file" name="imagen"
                                                 class="text-left left-block file-upload">

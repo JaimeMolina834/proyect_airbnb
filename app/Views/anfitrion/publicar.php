@@ -39,38 +39,39 @@ Publicar
                         <div class="form-group">
                             <div class="row">
                                 <!-- AGREGAR FOTO -->
-                                <div class="field">
+                                <div class="col-md-4">
                                     <label class="label">Agrega una foto</label>
                                     <div class="text-left">
-                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="210"
+                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="150"
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                            class="avatar img-circle img-thumbnail" alt="avatar">
+                                            class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
                                         <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
                                             name="foto[]" class="text-left left-block file-upload">
                                         <p class="is-danger help"><?= session('errorImg.foto') ?></p>
                                     </div>
                                 </div>
+                                <!-- segunda columna -->
 
-                                <div class="field">
+                                <div class="col-md-4">
                                     <label class="label">Agrega una foto</label>
                                     <div class="text-left">
-                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="210"
+                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="150"
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                            class="avatar img-circle img-thumbnail" alt="avatar">
+                                            class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
                                         <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
                                             name="foto[]" class="text-left left-block file-upload">
                                         <p class="is-danger help"><?= session('errorImg.foto') ?></p>
                                     </div>
                                 </div>
-
-                                <div class="field">
+                                <!-- tercera columna -->
+                                <div class="col-md-4">
                                     <label class="label">Agrega una foto</label>
                                     <div class="text-left">
-                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="210"
+                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="150"
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                            class="avatar img-circle img-thumbnail" alt="avatar">
+                                            class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
                                         <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
                                             name="foto[]" class="text-left left-block file-upload">
@@ -201,9 +202,7 @@ Publicar
             </div>
         </div>
     </div>
-
-
-</div>
+</div><br><br>
 
 
 <?= $this->endSection() ?>

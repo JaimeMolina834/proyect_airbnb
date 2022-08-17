@@ -49,7 +49,7 @@ Inicio Anfitrion
 
 
                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
+                                <div class="rounded carousel-inner">
                                     <?php
                 $directorio = opendir("C:/laragon/www/proyect_airbnb/public".$key->foto);
                 $i = 0;
@@ -127,7 +127,7 @@ Inicio Anfitrion
 
                 <div class="form-group col-md-12">
                       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" style="width: 60%; margin: 0 auto" >
+                                <div class="rounded carousel-inner" style="width: 50%; margin: 0 auto" >
                                     <?php
                                     $directorio = opendir("C:/laragon/www/proyect_airbnb/public".$key->foto);
                                     $i = 0;

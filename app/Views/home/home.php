@@ -17,15 +17,15 @@ Inicio
         <div id="carousel1" class="carousel" data-ride="carousel">
             <div class="rounded carousel-inner" style="width: 90%;margin: 0 auto;">
                 <div class="carousel-item active">
-                    <img src="img/h1.jpg" alt="" width="1920" height="10">
+                    <img src="img/h1.jpg" alt="" width="1920" height="800">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="img/hh2.jpg" alt="" width="1920" height="10">
+                    <img src="img/hh2.jpg" alt="" width="1920" height="800">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="img/c1.jpg" alt="" width="1920" height="10">
+                    <img src="img/c1.jpg" alt="" width="1920" height="800">
                 </div>
             </div>
 
