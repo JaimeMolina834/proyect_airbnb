@@ -7,6 +7,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href= "<?php echo base_url('css/style.css'); ?>" >
+    
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -26,6 +27,34 @@
     <title><?=$this->renderSection('title')?>&nbsp;-&nbsp;Proyect Airbnb 2022</title>
     <?=$this->renderSection('css')?>
 </head>
+<!-- estilos para el boton de agregar fotos -->
+<style>
+    .btn-warning{
+  position: relative;
+  padding: 9px 25px;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #7887ea ;
+  border: 0;
+  transition: 0.2s;
+  overflow: hidden; 
+}
+
+.btn-warning input[type = "file"]{
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: scale(3);
+  opacity: 0;
+}
+
+.btn-warning:hover{
+  background-color: #d9a400;
+}
+</style>
 
 <body>
     <?=$this->include('anfitrion/layout/header')?>
