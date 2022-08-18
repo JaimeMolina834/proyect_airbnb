@@ -38,13 +38,16 @@ Registro
                                     <div class="field">
                                         <label class="label">Agrega una foto</label>
                                         <div class="text-left">
-                                            <img id="imagenPrevisualizacion" width="150" height="50"
+                                            <img id="imagenPrevisualizacion" width="118" height="50"
                                                 src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                                 class="avatar img-thumbnail rounded-circle" alt="avatar">
                                             <h6></h6>
+                                            <button type = "button" class = "btn-warning">
+                                            <i class = "fa fa-camera"></i> Subir foto
                                             <input id="seleccionArchivos" type="file" name="imagen"
                                                 class="text-left left-block file-upload">
                                             <p class="is-danger help"><?=session('errorImg.imagen')?></p>
+                                            </button>
                                         </div>
                                     </div>
 

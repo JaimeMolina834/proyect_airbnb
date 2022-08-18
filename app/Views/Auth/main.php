@@ -22,7 +22,35 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
+<!-- estilo del boton de subir foto -->
+<style>
+    .btn-warning{
+  position: relative;
+  padding: 5px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #7887ea;
+  border: 0;
+  transition: 0.2s;
+  overflow: hidden; 
+}
 
+.btn-warning input[type = "file"]{
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: scale(3);
+  opacity: 0;
+}
+
+.btn-warning:hover{
+  background-color: #d9a400;
+}
+
+</style>
 <body>
     <?=$this->include('auth/layout/header')?>
     <?=$this->renderSection('content')?>

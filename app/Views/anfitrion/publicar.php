@@ -42,12 +42,12 @@ Publicar
                                 <div class="col-md-4">
                                     <label class="label">Agrega una foto</label>
                                     <div class="text-left">
-                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="125"
+                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="118"
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                             class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
                                         <button type = "button" class = "btn-warning">
-                                        <i class = "fa fa-upload"></i> Subirr foto
+                                        <i class = "fa fa-camera"></i> Subirr foto
                                         <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
                                         name="foto[]" class="text-left left-block file-upload">
                                         <p class="is-danger help"><?= session('errorImg.foto') ?></p>
@@ -59,12 +59,12 @@ Publicar
                                 <div class="col-md-4">
                                     <label class="label">Agrega una foto</label>
                                     <div class="text-left">
-                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="125"
+                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="118"
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                             class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
                                         <button type = "button" class = "btn-warning">
-                                        <i class = "fa fa-upload"></i> Subir foto
+                                        <i class = "fa fa-camera"></i> Subir foto
                                         <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
                                         name="foto[]" class="text-left left-block file-upload">
                                         <p class="is-danger help"><?= session('errorImg.foto') ?></p>
@@ -75,12 +75,12 @@ Publicar
                                 <div class="col-md-4">
                                     <label class="label">Agrega una foto</label>
                                     <div class="text-left">
-                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="125"
+                                        <img value='<?= old('foto') ?>' id="imagenPrevisualizacion" width="118"
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                             class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
                                         <button type = "button" class = "btn-warning">
-                                        <i class = "fa fa-upload"></i> Subir foto
+                                        <i class = "fa fa-camera"></i> Subir foto
                                         <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
                                         name="foto[]" class="text-left left-block file-upload">
                                         <p class="is-danger help"><?= session('errorImg.foto') ?></p>

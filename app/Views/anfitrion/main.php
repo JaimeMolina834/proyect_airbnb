@@ -31,7 +31,7 @@
 <style>
     .btn-warning{
   position: relative;
-  padding: 9px 25px;
+  padding: 5px 16px;
   font-size: 15px;
   line-height: 1.5;
   border-radius: 3px;
