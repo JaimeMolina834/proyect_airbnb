@@ -125,7 +125,7 @@ Inicio Anfitrion
                 </div>
                 <div class="modal-body">
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-12">
                       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                 <div class="rounded carousel-inner" style="width: 50%; margin: 0 auto" >
                                     <?php
