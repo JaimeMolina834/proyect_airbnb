@@ -81,6 +81,48 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
     <script>
+    const $foto1 = document.querySelector("#foto1"),
+        $imagenPre1 = document.querySelector("#imagenPre1");
+
+    $foto1.addEventListener("change", () => {
+        const archivos = $foto1.files;
+        if (!archivos || !archivos.length) {
+            $imagenPre1.src = "";
+            return;
+        }
+        const primerArchivo = archivos[0];
+        const objectURL = URL.createObjectURL(primerArchivo);
+        $imagenPre1.src = objectURL;
+    })
+
+    const $foto2 = document.querySelector("#foto2"),
+        $imagenPre2 = document.querySelector("#imagenPre2");
+
+    $foto2.addEventListener("change", () => {
+        const archivos = $foto2.files;
+        if (!archivos || !archivos.length) {
+            $imagenPre2.src = "";
+            return;
+        }
+        const primerArchivo = archivos[0];
+        const objectURL = URL.createObjectURL(primerArchivo);
+        $imagenPre2.src = objectURL;
+    })
+
+    const $foto3 = document.querySelector("#foto3"),
+        $imagenPre3 = document.querySelector("#imagenPre3");
+
+    $foto3.addEventListener("change", () => {
+        const archivos = $foto3.files;
+        if (!archivos || !archivos.length) {
+            $imagenPre3.src = "";
+            return;
+        }
+        const primerArchivo = archivos[0];
+        const objectURL = URL.createObjectURL(primerArchivo);
+        $imagenPre3.src = objectURL;
+    })
+
     let pais = document.querySelector('#pais')
     let departamento = document.querySelector('#departamento')
     let municipio = document.querySelector('#municipio')
