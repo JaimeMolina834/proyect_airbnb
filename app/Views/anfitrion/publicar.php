@@ -46,12 +46,12 @@ Publicar
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                             class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
-                                        <button type = "button" class = "btn-warning">
-                                        <i class = "fa fa-camera"></i> Subirr foto
-                                        <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
-                                        name="foto[]" class="text-left left-block file-upload">
-                                        <p class="is-danger help"><?= session('errorImg.foto') ?></p>
-                                    </button>
+                                        <button type="button" class="btn-warning">
+                                            <i class="fa fa-camera"></i> Subirr foto
+                                            <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
+                                                name="foto[]" class="text-left left-block file-upload">
+                                            <p class="is-danger help"><?= session('errorImg.foto') ?></p>
+                                        </button>
                                     </div>
                                 </div>
                                 <!-- segunda columna -->
@@ -63,12 +63,12 @@ Publicar
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                             class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
-                                        <button type = "button" class = "btn-warning">
-                                        <i class = "fa fa-camera"></i> Subir foto
-                                        <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
-                                        name="foto[]" class="text-left left-block file-upload">
-                                        <p class="is-danger help"><?= session('errorImg.foto') ?></p>
-                                    </button>
+                                        <button type="button" class="btn-warning">
+                                            <i class="fa fa-camera"></i> Subir foto
+                                            <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
+                                                name="foto[]" class="text-left left-block file-upload">
+                                            <p class="is-danger help"><?= session('errorImg.foto') ?></p>
+                                        </button>
                                     </div>
                                 </div>
                                 <!-- tercera columna -->
@@ -79,12 +79,12 @@ Publicar
                                             height="50" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                                             class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
-                                        <button type = "button" class = "btn-warning">
-                                        <i class = "fa fa-camera"></i> Subir foto
-                                        <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
-                                        name="foto[]" class="text-left left-block file-upload">
-                                        <p class="is-danger help"><?= session('errorImg.foto') ?></p>
-                                    </button>
+                                        <button type="button" class="btn-warning">
+                                            <i class="fa fa-camera"></i> Subir foto
+                                            <input value='<?= old('foto') ?>' id="seleccionArchivos" type="file"
+                                                name="foto[]" class="text-left left-block file-upload">
+                                            <p class="is-danger help"><?= session('errorImg.foto') ?></p>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -176,6 +176,35 @@ Publicar
                                 <!-- segunda columna -->
 
                                 <div class="col-md-3">
+                                    <label class="label">Pais</label>
+                                    <div class="control select is-link">
+                                        <select id='pais'>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                    <p class="is-danger help"><?= session('errors.idMunicipio') ?></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="label">Departamento</label>
+                                    <div class="control select is-link">
+                                        <select id='departamento'>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                    <p class="is-danger help"><?= session('errors.idMunicipio') ?></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="label">Municipio</label>
+                                    <div class="control select is-link">
+                                        <select id='municipio' name='idMunicipio'>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                    <p class="is-danger help"><?= session('errors.idMunicipio') ?></p>
+                                </div>
+
+
+                                <!--<div class="col-md-3">
                                     <label class="label">Municipio</label>
                                     <div class="control select is-link">
                                         <select name='idMunicipio'>
@@ -188,7 +217,7 @@ Publicar
                                         </select>
                                     </div>
                                     <p class="is-danger help"><?= session('errors.idMunicipio') ?></p>
-                                </div>
+                                </div>-->
 
                             </div>
                         </div>

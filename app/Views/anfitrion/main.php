@@ -2,12 +2,12 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" type="text/css" href= "<?php echo base_url('css/style.css'); ?>" >
-    
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
+
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -29,30 +29,30 @@
 </head>
 <!-- estilos para el boton de agregar fotos -->
 <style>
-    .btn-warning{
-  position: relative;
-  padding: 5px 16px;
-  font-size: 15px;
-  line-height: 1.5;
-  border-radius: 3px;
-  color: #fff;
-  background-color: #7887ea ;
-  border: 0;
-  transition: 0.2s;
-  overflow: hidden; 
+.btn-warning {
+    position: relative;
+    padding: 5px 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #7887ea;
+    border: 0;
+    transition: 0.2s;
+    overflow: hidden;
 }
 
-.btn-warning input[type = "file"]{
-  cursor: pointer;
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  transform: scale(3);
-  opacity: 0;
+.btn-warning input[type="file"] {
+    cursor: pointer;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    transform: scale(3);
+    opacity: 0;
 }
 
-.btn-warning:hover{
-  background-color: #d9a400;
+.btn-warning:hover {
+    background-color: #d9a400;
 }
 </style>
 
@@ -79,6 +79,58 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+    <script>
+    let pais = document.querySelector('#pais')
+    let departamento = document.querySelector('#departamento')
+    let municipio = document.querySelector('#municipio')
+
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch('http://prueba.test/paises').then(data => {
+            return data.json()
+        }).then(cargarPaises)
+    })
+
+    const cargarPaises = data => {
+        for (let index = 0; index < data.paises.length; index++) {
+            pais.innerHTML +=
+                `<option value="${data.paises[index].idPais}">${data.paises[index].pais}</option>`
+        }
+    }
+
+    pais.addEventListener("change", () => {
+        departamento.innerHTML = ``
+        fetch(`http://prueba.test/departamentos/${pais.value}`, {
+            'mode': 'cors'
+        }).then(data => {
+            return data.json()
+        }).then(cargarDepartamentos)
+    })
+
+    const cargarDepartamentos = data => {
+        departamento.innerHTML += `<option value="">...</option>`
+        for (let index = 0; index < data.departamentos.length; index++) {
+            departamento.innerHTML +=
+                `<option value="${data.departamentos[index].idDepartamento}">${data.departamentos[index].departamento}</option>`
+        }
+    }
+
+    departamento.addEventListener("change", () => {
+        municipio.innerHTML = ``
+        fetch(`http://prueba.test/municipios/${departamento.value}`, {
+            'mode': 'cors'
+        }).then(data => {
+            return data.json()
+        }).then(cargarMunicipios)
+    })
+
+    const cargarMunicipios = data => {
+        municipio.innerHTML += `<option value="">...</option>`
+        for (let index = 0; index < data.municipios.length; index++) {
+            municipio.innerHTML +=
+                `<option value="${data.municipios[index].idMunicipio}">${data.municipios[index].municipio}</option>`
+        }
+    }
     </script>
     <?=$this->renderSection('js')?>
 </body>
