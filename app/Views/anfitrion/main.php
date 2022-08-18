@@ -86,7 +86,7 @@
     let municipio = document.querySelector('#municipio')
 
     document.addEventListener("DOMContentLoaded", () => {
-        fetch('http://prueba.test/paises').then(data => {
+        fetch('http://api_airbnb.test/paises').then(data => {
             return data.json()
         }).then(cargarPaises)
     })
@@ -100,7 +100,7 @@
 
     pais.addEventListener("change", () => {
         departamento.innerHTML = ``
-        fetch(`http://prueba.test/departamentos/${pais.value}`, {
+        fetch(`http://api_airbnb.test/departamentos/${pais.value}`, {
             'mode': 'cors'
         }).then(data => {
             return data.json()
@@ -117,7 +117,7 @@
 
     departamento.addEventListener("change", () => {
         municipio.innerHTML = ``
-        fetch(`http://prueba.test/municipios/${departamento.value}`, {
+        fetch(`http://api_airbnb.test/municipios/${departamento.value}`, {
             'mode': 'cors'
         }).then(data => {
             return data.json()
