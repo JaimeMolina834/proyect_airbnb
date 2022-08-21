@@ -24,16 +24,16 @@ Inicio Anfitrion
         </div>
 
         <?php if (session('msg')) : ?>
-        <article class="message is-<?= session('msg.type') ?>">
-            <div class="message-body">
-                <?= session('msg.body') ?>
-            </div>
-        </article>
+            <article class="message is-<?= session('msg.type') ?>">
+                <div class="message-body">
+                    <?= session('msg.body') ?>
+                </div>
+            </article>
         <?php endif; ?>
         <?php if (session()->is_logged) : ?>
-        <h5>Estoy en inicio, soy <?= session('rol') ?></h5>
+            <h5>Estoy en inicio, soy <?= session('rol') ?></h5>
         <?php else : ?>
-        <h5>Es el incio</h5>
+            <h5>Es el incio</h5>
         <?php endif; ?>
 
         <!------------------------------Inicio de Body-------------------------->
@@ -41,69 +41,86 @@ Inicio Anfitrion
         <div class="row">
             <div class="form-row">
                 <?php foreach ($servicios as $key) : ?>
-                <div class="col-3"><br>
-                    <div class="card">
-                        <div class="card" style="width: 22rem;">
+                    <div class="col-3"><br>
+                        <div class="card">
+                            <div class="card" style="width: 22rem;">
 
-                            <!------------------------------Inicio de carousel -------------------------->
+                                <!------------------------------Inicio de carousel -------------------------->
 
 
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                <div class="rounded carousel-inner">
-                                    <?php
-                $directorio = opendir("C:/laragon/www/proyect_airbnb/public".$key->foto);
-                $i = 0;
-                while($elemento = readdir($directorio)){
-                    if($elemento != "." && $elemento != ".."){
-                                    if($i == 2){ ?>
-                                    <div class="carousel-item active">
-                                        <img class="mx-auto d-block" src="<?=$key->foto.$elemento?>" alt="First slide">
+                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="rounded carousel-inner">
+                                        <?php
+                                        $directorio = opendir("C:/laragon/www/proyect_airbnb/public" . $key->foto);
+                                        $i = 0;
+                                        while ($elemento = readdir($directorio)) {
+                                            if ($elemento != "." && $elemento != "..") {
+                                                if ($i == 2) { ?>
+                                                    <div class="carousel-item active">
+                                                        <img class="mx-auto d-block" src="<?= $key->foto . $elemento ?>" alt="First slide">
+                                                    </div>
+                                                <?php
+                                                } else { ?>
+                                                    <div class="carousel-item">
+                                                        <img class="mx-auto d-block" src="<?= $key->foto . $elemento ?>" alt="First slide">
+                                                    </div>
+                                        <?php
+                                                }
+                                            }
+                                            $i++;
+                                        }
+                                        ?>
+
                                     </div>
-                                    <?php
-                        }else{ ?>
-                                    <div class="carousel-item">
-                                        <img class="mx-auto d-block" src="<?=$key->foto.$elemento?>" alt="First slide">
-                                    </div>
-                                    <?php
-                        }
-                    }
-                    $i++;
-                }
-            ?>
-
-                                </div>
-                            </div>
-
-                            <div class="card-content">
-                                <div class="media-content">
-
-                                    <p class="title is-4"><?= $key->nombre ?></p>
-                                    <p class="subtitle is-6">@<?= session('username') ?></p>
                                 </div>
 
-                                <div class="content">
-                                    <br>
-                                    <p><?= $key->descripcion ?></p>
+                                <div class="card-content">
+                                    <div class="media-content">
 
-                                    <?php foreach ($municipios as $keyMunicipio) : ?>
+                                        <p class="title is-4"><?= $key->nombre ?></p>
+                                        <p class="subtitle is-6">@<?= session('username') ?></p>
+                                    </div>
 
-                                    <?php if ($key->idMunicipio == $keyMunicipio->idMunicipio) : ?>
-                                    <p>Municipio-<?= $keyMunicipio->municipio ?></p>
-                                    <?php endif; ?>
+                                    <div class="content">
+                                        <br>
+                                        <p><?= $key->descripcion ?></p>
 
-                                    <?php endforeach; ?>
+                                        <?php foreach ($municipios as $keyMunicipio) : ?>
 
-                                    <time><?= $key->date_update->humanize();?></time><br>
-                                    <a href="" class="btn btn-primary">Ir</a>
+                                            <?php if ($key->idMunicipio == $keyMunicipio->idMunicipio) : ?>
+
+                                                <?php foreach ($departamento as $keyDepartamento) : ?>
+
+                                                    <?php if ($keyMunicipio->idDepartamento == $keyDepartamento->idDepartamento) : ?>
+
+                                                        <?php foreach ($paises as $keyPais) : ?>
+
+                                                            <?php if ($keyDepartamento->idPais == $keyPais->idPais) : ?>
+
+                                                                <p><?= $keyPais->pais?> - <?= $keyDepartamento->departamento ?> - <?= $keyMunicipio->municipio ?></p>
+
+                                                            <?php endif; ?>
+
+                                                        <?php endforeach; ?>
+
+                                                    <?php endif; ?>
+
+                                                <?php endforeach; ?>
+
+                                            <?php endif; ?>
+
+                                        <?php endforeach; ?>
+
+                                        <time><?= $key->date_update->humanize(); ?></time><br>
+                                        <a href="" class="btn btn-primary">Ir</a>
 
 
-                                    <a href="#Modal<?= $key->idServicio ?>" data-backdrop="false" data-toggle="modal"
-                                        class="btn btn-primary">Ver</a>
+                                        <a href="#Modal<?= $key->idServicio ?>" data-backdrop="false" data-toggle="modal" class="btn btn-primary">Ver</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -111,123 +128,121 @@ Inicio Anfitrion
     </div>
 
 
-
     <?php foreach ($servicios as $key) : ?>
-    <div class="modal" id="Modal<?= $key->idServicio ?>" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="title"><?= $key->nombre ?></h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
+        <div class="modal" id="Modal<?= $key->idServicio ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="title"><?= $key->nombre ?></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
-                <div class="form-group col-md-12">
-                      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                <div class="rounded carousel-inner" style="width: 50%; margin: 0 auto" >
+                        <div class="form-group col-md-12">
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="rounded carousel-inner" style="width: 50%; margin: 0 auto">
                                     <?php
-                                    $directorio = opendir("C:/laragon/www/proyect_airbnb/public".$key->foto);
+                                    $directorio = opendir("C:/laragon/www/proyect_airbnb/public" . $key->foto);
                                     $i = 0;
-                                    while($elemento = readdir($directorio)){
-                                        if($elemento != "." && $elemento != ".."){
-                                                        if($i == 2){ ?>
-                                                        <div class="carousel-item active">
-                                                            <img class="mx-auto d-block" src="<?=$key->foto.$elemento?>" alt="First slide">
-                                                        </div>
-                                                        <?php
-                                            }else{ ?>
-                                                        <div class="carousel-item ">
-                                                            <img class="mx-auto d-block"  src="<?=$key->foto.$elemento?>" alt="First slide">
-                                                        </div>
-                                                        <?php
+                                    while ($elemento = readdir($directorio)) {
+                                        if ($elemento != "." && $elemento != "..") {
+                                            if ($i == 2) { ?>
+                                                <div class="carousel-item active">
+                                                    <img class="mx-auto d-block" src="<?= $key->foto . $elemento ?>" alt="First slide">
+                                                </div>
+                                            <?php
+                                            } else { ?>
+                                                <div class="carousel-item ">
+                                                    <img class="mx-auto d-block" src="<?= $key->foto . $elemento ?>" alt="First slide">
+                                                </div>
+                                    <?php
                                             }
                                         }
                                         $i++;
                                     }
-                                ?>
+                                    ?>
 
+                                </div>
+                                <form class="form-row" action="#" method="POST">
+
+
+                                    <div class="form-group col-md-4">
+                                        <label class="label has-text-centered">Tarifa</label>
+                                        <?php foreach ($tarifas as $keyTarifa) : ?>
+
+                                            <?php if ($key->idTarifa == $keyTarifa->idTarifa) : ?>
+                                                <h6 class="subtitle is-6 has-text-centered">$<?= $keyTarifa->precio ?></h6>
+                                            <?php endif; ?>
+
+                                        <?php endforeach; ?>
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label class="label has-text-centered">Tipo de Hospedaje</label>
+                                        <?php foreach ($tipoHospedajes as $keyTipoHospedaje) : ?>
+
+                                            <?php if ($key->idTipoHospedaje == $keyTipoHospedaje->idTipoHospedaje) : ?>
+                                                <h6 class="subtitle is-6 has-text-centered"><?= $keyTipoHospedaje->tipoHospedaje ?></h6>
+                                            <?php endif; ?>
+
+                                        <?php endforeach; ?>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label class="label has-text-centered">Disponibilidad</label>
+                                        <?php if ($key->disponibilidad == 1) : ?>
+                                            <h6 class="subtitle is-6 has-text-centered">Sin reservar</h6>
+                                        <?php elseif ($key->disponibilidad == 2) :  ?>
+                                            <h6 class="subtitle is-6 has-text-centered">Reservado</h6>
+                                        <?php else : ?>
+                                            <h6 class="subtitle is-6 has-text-centered">De baja</h6>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label class="label has-text-centered">Municipio</label>
+                                        <?php foreach ($municipios as $keyMunicipio) : ?>
+
+                                            <?php if ($key->idMunicipio == $keyMunicipio->idMunicipio) : ?>
+                                                <h6 class="subtitle is-6 has-text-centered"><?= $keyMunicipio->municipio ?></h6>
+                                            <?php endif; ?>
+
+                                        <?php endforeach; ?>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6">
+                                        <label class="label has-text-centered">Direccion</label>
+                                        <h6 class="subtitle is-6 has-text-centered"><?= $key->direccion ?></h6>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label class="label has-text-centered">Descripción del hospedaje</label>
+                                        <h6 class="subtitle is-6 has-text-centered"><?= $key->descripcion ?></h6>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label class="label has-text-centered">Publicada por</label>
+                                        <h6 class="subtitle is-6 has-text-centered">@<?= session('username') ?></h6>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label class="label has-text-centered">Publicada</label>
+                                        <h6 class="subtitle is-6 has-text-centered"><?= $key->date_update->humanize(); ?></h6>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
                         </div>
-                    <form class="form-row" action="#" method="POST">
-                        
-
-                        <div class="form-group col-md-4">
-                            <label class="label has-text-centered">Tarifa</label>
-                            <?php foreach ($tarifas as $keyTarifa) : ?>
-
-                            <?php if ($key->idTarifa == $keyTarifa->idTarifa) : ?>
-                            <h6 class="subtitle is-6 has-text-centered">$<?= $keyTarifa->precio ?></h6>
-                            <?php endif; ?>
-
-                            <?php endforeach; ?>
-
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label class="label has-text-centered">Tipo de Hospedaje</label>
-                            <?php foreach ($tipoHospedajes as $keyTipoHospedaje) : ?>
-
-                            <?php if ($key->idTipoHospedaje == $keyTipoHospedaje->idTipoHospedaje) : ?>
-                            <h6 class="subtitle is-6 has-text-centered"><?= $keyTipoHospedaje->tipoHospedaje ?></h6>
-                            <?php endif; ?>
-
-                            <?php endforeach; ?>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label class="label has-text-centered">Disponibilidad</label>
-                            <?php if ($key->disponibilidad == 1) : ?>
-                            <h6 class="subtitle is-6 has-text-centered">Sin reservar</h6>
-                            <?php elseif ($key->disponibilidad == 2) :  ?>
-                            <h6 class="subtitle is-6 has-text-centered">Reservado</h6>
-                            <?php else : ?>
-                            <h6 class="subtitle is-6 has-text-centered">De baja</h6>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label class="label has-text-centered">Municipio</label>
-                            <?php foreach ($municipios as $keyMunicipio) : ?>
-
-                            <?php if ($key->idMunicipio == $keyMunicipio->idMunicipio) : ?>
-                            <h6 class="subtitle is-6 has-text-centered"><?= $keyMunicipio->municipio ?></h6>
-                            <?php endif; ?>
-
-                            <?php endforeach; ?>
-
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="label has-text-centered">Direccion</label>
-                            <h6 class="subtitle is-6 has-text-centered"><?= $key->direccion ?></h6>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="label has-text-centered">Descripción del hospedaje</label>
-                            <h6 class="subtitle is-6 has-text-centered"><?= $key->descripcion ?></h6>
-                        </div>
-
-                        <div class="form-group col-md-3">
-                            <label class="label has-text-centered">Publicada por</label>
-                            <h6 class="subtitle is-6 has-text-centered">@<?= session('username') ?></h6>
-                        </div>
-
-                        <div class="form-group col-md-3">
-                            <label class="label has-text-centered">Publicada</label>
-                            <h6 class="subtitle is-6 has-text-centered"><?= $key->date_update->humanize(); ?></h6>
-                        </div>
-                    </form>
-
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
 
 </section>
 

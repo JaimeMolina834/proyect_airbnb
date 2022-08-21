@@ -47,7 +47,7 @@ Publicar
                                             class="avatar img-thumbnail rounded-circle" alt="avatar">
                                         <h6></h6>
                                         <button type="button" class="btn-warning">
-                                            <i class="fa fa-camera"></i> Subirr foto
+                                            <i class="fa fa-camera"></i> Subir foto
                                             <input value='<?= old('foto') ?>' id="foto1" type="file" name="foto[]"
                                                 class="text-left left-block file-upload">
                                             <p class="is-danger help"><?= session('errorImg.foto') ?></p>

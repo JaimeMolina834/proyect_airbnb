@@ -18,6 +18,7 @@ class Anfitrion extends BaseController
     protected $model;
     protected $modelPais;
     protected $modelMunicipio;
+    protected $modelDepartamento;
 
 
     /*Constructor para cargar el archivo de configuracion Airbnb*/
@@ -40,6 +41,8 @@ class Anfitrion extends BaseController
         /*Muestra la vista de inicio del anfitrion*/
         return view('anfitrion/inicio', [
         'servicios' => $this->modelServicio->where('idAnfitrion', session('idAnfitrion'))->findAll(),
+        'paises' => $this->modelPais->findAll(),
+        'departamento' => $this->modelDepartamento->findAll(),
         'municipios' => $this->modelMunicipio->findAll(),
         'tarifas' => $this->modelTarifas->findAll(),
         'tipoHospedajes' => $this->model->findAll(),
