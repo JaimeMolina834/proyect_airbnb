@@ -96,8 +96,10 @@ Inicio Anfitrion
                                                         <?php foreach ($paises as $keyPais) : ?>
 
                                                             <?php if ($keyDepartamento->idPais == $keyPais->idPais) : ?>
-
-                                                                <p><?= $keyPais->pais?> - <?= $keyDepartamento->departamento ?> - <?= $keyMunicipio->municipio ?></p>
+                                                             
+                                                                <p class="title is-5"><?= $keyPais->pais ?></p>
+                                                                 <p class="subtitle is-6"><?= $keyDepartamento->departamento ?> - <?= $keyMunicipio->municipio ?></p>
+                                                               
 
                                                             <?php endif; ?>
 
@@ -242,7 +244,10 @@ Inicio Anfitrion
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+
+            </div>
+        </div>
+    <?php endforeach; ?>
 
 </section>
 
