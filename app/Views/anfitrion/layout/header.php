@@ -13,7 +13,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Alojamiento</a>
+                            <a style="color: red; font-weight: bold;"  class="nav-link active" aria-current="page" href="http://proyect_airbnb.test">Mis Publicaciones</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Experiencias</a>
