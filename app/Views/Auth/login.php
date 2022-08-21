@@ -24,13 +24,13 @@ Login
                                 </div>
                             </article>
                         <?php endif; ?>
-                            
+                        <h2 class="title text-center">Airbnb</h2>
+                        <h2 class="subtitle text-center">Inicia sesionen tu cuenta</h2>
                         <div class="text-center">
                             <img src="https://smartemployee.gbm.net/www/assets/img/user.png"
-                                class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width="125px"
+                                class="img-fluid  rounded-circle my-3" width="110px"
                                 alt="profile">
                         </div>
-                        <h5 class="title text-center">Inicia sesion</h5>
 
                         <form action="<?= base_url(route_to('signin')) ?>" method="POST">
                             <div class="form-outline mb-4">
