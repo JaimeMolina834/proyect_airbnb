@@ -13,7 +13,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Alojamiento</a>
+                            <a class="nav-link active" aria-current="page"
+                                href="<?=base_url(route_to('anfitrionInicio'))?>">Alojamiento</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Experiencias</a>
@@ -22,8 +23,7 @@
                     <div class="btn-group" role="group">
                         <a id="btnGroupDrop1" type="button" class="btn write" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img src="/img/linicio.png" class="img-fluid" width="50px"
-                                    height="30px" alt="">
+                            <img src="/img/linicio.png" class="img-fluid" width="50px" height="30px" alt="">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>

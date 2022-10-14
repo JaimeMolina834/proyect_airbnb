@@ -73,7 +73,7 @@ class Anfitrion extends BaseController
         'servicios' => $this->modelServicio->where('idAnfitrion', session('idAnfitrion'))->findAll(),
         'municipios' => $this->modelMunicipio->findAll(),
         'tarifas' => $this->modelTarifas->findAll(),
-        'tipoHospedajes' => $this->model->findAll(),
+        'tipoHospedajes' => $this->modelTipoHospedaje->findAll(),
         'imagenes' => $imagenes
     ]);
         
