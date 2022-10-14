@@ -165,7 +165,7 @@ class Anfitrion extends BaseController
     public function publicar(){
            /*Muestra la vista de publicar del anfitrión y se pasa los parametros de todos los tipo de hospedajes*/
            return view ('anfitrion/publicar',[
-               'tipoHospedajes' => $this->model->findAll(),
+               'tipoHospedajes' => $this->modelTipoHospedaje->findAll(),
                'paises' => $this->modelPais->findAll(),
                'departamentos' => $this->modelDepartamento->findAll(),
                'municipios' => $this->modelMunicipio->findAll(),
