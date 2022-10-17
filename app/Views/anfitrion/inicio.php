@@ -85,7 +85,7 @@ Inicio Anfitrion
 
                                     <div class="content">
                                         <br>
-                                        <p><?= $key->descripcion ?></p>
+                                        <p class="text-justify"><?= $key->descripcion ?></p>
 
                                         <?php foreach ($municipios as $keyMunicipio) : ?>
 
@@ -93,33 +93,31 @@ Inicio Anfitrion
                                                 <p>Municipio-<?= $keyMunicipio->municipio ?></p>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
+                                        <small class="text-muted">
+                                            <time><?= $key->date_update->humanize(); ?></time><br><br>
+                                        </small>
 
-                                        <time><?= $key->date_update->humanize(); ?></time><br>
 
                                         <div class="form-group">
                                             <div class="row">
 
-                                            <div class="col-md-3">
-                                             <a href="<?= base_url(route_to('verServicio'))?>?id=<?= password_hash($key->idServicio, PASSWORD_DEFAULT) ?>" class="btn btn-primary">Ver</a>
-                                            </div>
+                                                <div class="col-md-3">
+                                                    <a href="<?= base_url(route_to('verServicio')) ?>?id=<?= password_hash($key->idServicio, PASSWORD_DEFAULT) ?>" class="btn btn-primary">Ver</a>
+                                                </div>
 
-                                            <div class="col-md-4">
-                                            
-                                            <a href="#Modal<?= $key->idServicio?>" data-backdrop="false" data-toggle="modal" class="btn btn-info">Preview</a>
-                                            </div>
+                                                <div class="col-md-4">
 
+                                                    <a href="#Modal<?= $key->idServicio ?>" data-backdrop="false" data-toggle="modal" class="btn btn-info">Preview</a>
+                                                </div>
 
-                                            <div class="col-md-1">
-                                                
-                                                <a href="#" class="btn btn-success">Actualizar</a>
-                                                <br><br>
-                                            </div>
+                                                <div class="col-md-1">
 
-                                         
-                                           
-                                            <a href="#" class="btn btn-danger">Dar de baja</a>
-                                                
-                                             
+                                                    <a href="#" class="btn btn-success">Actualizar</a>
+                                                    <br><br>
+                                                </div>
+
+                                                <a href="#" class="btn btn-danger">Dar de baja</a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -232,7 +230,7 @@ Inicio Anfitrion
 
                             <div class="form-group col-md-6">
                                 <label class="label has-text-centered">Descripción del hospedaje</label>
-                                <h6 class="subtitle is-6 has-text-centered"><?= $key->descripcion ?></h6>
+                                <h6 class=" subtitle is-6 has-text-centered"><?= $key->descripcion ?></h6>
                             </div>
 
                             <div class="form-group col-md-3">
