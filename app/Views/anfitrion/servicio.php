@@ -16,70 +16,76 @@ Servicio
 
         <?php //dd($anfitrion); ?>
 
+        <!-- Gallery 
+        <div class="row">
+            <div class="col-md-5">
+                <?php foreach ($imagenes as $key) : ?>
+                <img src="<?=$key->url?>" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+
+            </div>
+            <div class="col-md-3">
+                <?php endforeach; ?>
+            </div>
+        </div>  -->
+
+
+
         <!-- Gallery -->
-<div class="row">
-  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-   
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Wintry Mountain Landscape"
-    />
-  </div>
-
-  <div class="col-lg-4 mb-4 mb-lg-0">
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Mountains in the Clouds"
-    />
-
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Boat on Calm Water"
-    />
-  </div>
-
-  <div class="col-lg-4 mb-4 mb-lg-0">
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Waves at Sea"
-    />
-
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-  </div>
-</div>
-<!-- Gallery -->
-
-        <div class="col-md-6">
-            <?php foreach ($imagenes as $key) : ?>
-            <img src="<?=$key->url?>" width="100" height="100">
-            <?php endforeach; ?>
+        <div class="row ">
+        <div class="col-md-12" >
             <div class="control">
                 <label><strong>Nombre del servicio </strong></label>
                 <label><?= $servicio[0]->nombre ?></label>
+                <!-- imgagenes -->
+                <div class="row">
+                    <div class="col-md-5">
+                        <?php foreach ($imagenes as $key) : ?>
+                        <img src="<?=$key->url?>" class="w-100 shadow-1-strong rounded mb-2"
+                            alt="" />
+                    </div>
+                    <div class="col-md-3">
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <!-- fin Imagenes -->
+                
+                <label><strong>Anfitrion </strong></label>
+                <label><?= $usuario[0]->username ?></label>
                 <br>
-                <label><strong>Descripcion del servicio </strong></label>
-                <label><?= $servicio[0]->descripcion ?></label>
+                <label><strong>Localizacion del servicio </strong></label>
+                <label><?= $pais[0]->pais .', '. $departamento[0]->departamento .', '. $municipio[0]->municipio ?></label>
                 <br>
                 <label><strong>Direccion del servicio </strong></label>
                 <label><?= $servicio[0]->direccion ?></label>
                 <br>
+                <label><strong>Descripcion del servicio </strong></label>
+                <label><?= $servicio[0]->descripcion ?></label>
+                <br>
+                <hr>
+
+                <label class="label">Cantidad de huespedes</label>
+                <label><strong>Adultos </strong></label>
+                <label><?= $huespedes[0]->adulto ?></label>
+                <br>
+                <label><strong>Menores de edad </strong></label>
+                <label><?= $huespedes[0]->menores ?></label>
+                <br>
+                <label><strong>Bebes </strong></label>
+                <label><?= $huespedes[0]->bebes ?></label>
+                <br>
+                <label><strong>Mascotas </strong></label>
+                <label><?= $huespedes[0]->mascotas ?></label>
+                <br>
+                <hr>
+
                 <label><strong>Precio del servicio </strong></label>
                 <label><?= $tarifa[0]->precio ?></label>
                 <br>
                 <label><strong>Descuento del servicio </strong></label>
                 <label><?= $tarifa[0]->descuento ?></label>
                 <br>
-                <label><strong>Anfitrion </strong></label>
-                <label><?= $usuario[0]->username ?></label>
-                <br>
+                <hr>
+
                 <label><strong>Nombre del anfitrion </strong></label>
                 <label><?= $usuario[0]->nombre .' '. $usuario[0]->apellido ?></label>
                 <br>
@@ -89,9 +95,8 @@ Servicio
                 <label><strong>Numero de telefono </strong></label>
                 <label><?= $usuario[0]->numeroTelefono ?></label>
                 <br>
-                <label><strong>Localizacion del servicio </strong></label>
-                <label><?= $pais[0]->pais .', '. $departamento[0]->departamento .', '. $municipio[0]->municipio ?></label>
-                <br>
+                <hr>
+                
                 <label><strong>Puntuacion </strong></label>
                 <label><?= $anfitrion[0]->puntuacion ?></label>
                 <br>
@@ -113,38 +118,28 @@ Servicio
                 <label><strong>Idioma extra del anfitrion </strong></label>
                 <label><?= $idiomaExtra[0]->idioma ?></label>
                 <?php endif; ?>
-                <br><br>
-                <label class="label">Cantidad de huespedes</label>
-                <label><strong>Adultos </strong></label>
-                <label><?= $huespedes[0]->adulto ?></label>
                 <br>
-                <label><strong>Menores de edad </strong></label>
-                <label><?= $huespedes[0]->menores ?></label>
-                <br>
-                <label><strong>Bebes </strong></label>
-                <label><?= $huespedes[0]->bebes ?></label>
-                <br>
-                <label><strong>Mascotas </strong></label>
-                <label><?= $huespedes[0]->mascotas ?></label>
-                <br><br>
+                <hr>
+                
                 <label class="label">Sub servicios</label>
                 <?php foreach ($subServicio as $key) : ?>
                 <label><?= $key->subServicio ?></label>
-                <br>
                 <?php endforeach; ?>
-                <br><br>
+                <hr>
+
                 <label class="label">Politicas de cancelacion</label>
                 <?php foreach ($politicaCancelacion as $key) : ?>
                 <label><?= $key->politicaCancelacion ?></label>
                 <br>
                 <?php endforeach; ?>
-                <br><br>
+                <hr>
+                
                 <label class="label">Reglas de servicio</label>
                 <?php foreach ($reglaServicio as $key) : ?>
                 <label><?= $key->reglaServicio ?></label>
-                <br>
+                <br>    
                 <?php endforeach; ?>
-                <br><br>
+                <hr>
                 <label class="label">Salud y seguridad</label>
                 <?php foreach ($saludSeguridad as $key) : ?>
                 <label><?= $key->saludSeguridad ?></label>
@@ -152,7 +147,7 @@ Servicio
                 <?php endforeach; ?>
             </div>
         </div>
-
+        </div>
     </div>
 </section>
 

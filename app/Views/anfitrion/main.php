@@ -54,6 +54,11 @@
 .btn-warning:hover {
     background-color: #d9a400;
 }
+hr{
+    border: none;
+    height: 5px;
+    background: black;
+}
 </style>
 
 <body>
