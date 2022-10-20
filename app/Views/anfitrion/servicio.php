@@ -35,11 +35,11 @@ Servicio
 
                     <!-- imgagenes -->
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-5 justify-content-center mx-auto">
                             <?php foreach ($imagenes as $key) : ?>
                                 <img src="<?= $key->url ?>" class="w-100 shadow-1-strong rounded mb-2" alt="" />
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 justify-content-center mx-auto">
                         <?php endforeach; ?>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ Servicio
                             <img class="img-thumbnail" src="<?= $usuario[0]->foto ?>" alt="">
                             <label class="h6">Se registro hace <?= $anfitrion[0]->date_create->humanize(); ?></label>
                         <?php else : ?>
-                            <img class="img-thumbnail" src="/img/perfiles/default.jpg" alt="">
+                            <img class="img-thumbnail" src="/img/perfiles/default.jpg"  alt="">
                             <label class="h6">Se registro hace <?= $anfitrion[0]->date_create->humanize(); ?></label>
                         <?php endif; ?>
                     </div>
@@ -185,12 +185,12 @@ Servicio
                             </div>
 
 
-                        </div><br><br>
+                        </div><br>
                         <label class="label">Politicas de cancelacion</label>
                         <?php foreach ($politicaCancelacion as $key) : ?>
                             <li><?= $key->politicaCancelacion ?></li>
-                            <br>
                         <?php endforeach; ?>
+                        <br>
                     </div>
 
                 </div>
