@@ -17,7 +17,7 @@ Servicio
         <!-- Gallery -->
         <div class="row ">
             <div class="form-row">
-                <div class="card border-dark">
+                <div class="card border-0 shadow">
 
                     <div class="col-md-12">
                         <div class="h1 text-dark">
@@ -183,7 +183,6 @@ Servicio
                                     <li class="col-md-12"><?= $key->saludSeguridad ?></li>
                                 <?php endforeach; ?>
                             </div>
-
 
                         </div><br>
                         <label class="label">Politicas de cancelacion</label>
