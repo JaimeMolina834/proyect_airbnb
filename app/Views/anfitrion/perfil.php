@@ -23,7 +23,7 @@ Perfil
         <span>
 
         </span>
-        <span>
+        <span><br><br>
             <a class="btn btn-primary" href="<?=base_url(route_to('actualizarPerfil'))?>">Actualizar datos</a><br><br>
         </span>
     </div>
