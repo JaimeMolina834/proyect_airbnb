@@ -88,7 +88,7 @@ Inicio Anfitrion
                                     <?php endif; ?>
                                     <?php endforeach; ?>
                                     <small class="text-muted">
-                                        <time><?= $key->date_update->humanize(); ?></time><br><br>
+                                        <time><?= $key->date_create->humanize(); ?></time><br><br>
                                     </small>
 
 
