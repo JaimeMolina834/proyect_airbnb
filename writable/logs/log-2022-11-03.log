@@ -1,0 +1,14 @@
+ERROR - 2022-11-03 17:58:31 --> Error connecting to the database: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+CRITICAL - 2022-11-03 17:58:31 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+#0 C:\laragon\www\proyect_airbnb\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\proyect_airbnb\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\proyect_airbnb\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\proyect_airbnb\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\laragon\www\proyect_airbnb\app\Models\UsuarioModel.php(69): CodeIgniter\BaseModel->first()
+#5 C:\laragon\www\proyect_airbnb\app\Filters\Roles.php(26): App\Models\UsuarioModel->buscarUsuario('idUsuario', '1')
+#6 C:\laragon\www\proyect_airbnb\system\Filters\Filters.php(173): App\Filters\Roles->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(386): CodeIgniter\Filters\Filters->run('anfitrion/inici...', 'before')
+#8 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}

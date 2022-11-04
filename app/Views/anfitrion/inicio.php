@@ -217,7 +217,7 @@ Inicio Anfitrion
 
                         <div class="form-group col-md-4">
                             <label class="label has-text-centered">Publicada</label>
-                            <h6 class="subtitle is-6 has-text-centered"><?= $key->date_update->humanize(); ?>
+                            <h6 class="subtitle is-6 has-text-centered"><?= $key->date_create->humanize(); ?>
                             </h6>
                         </div>
                     </form>
