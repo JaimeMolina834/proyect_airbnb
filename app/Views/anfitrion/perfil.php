@@ -12,6 +12,7 @@ Perfil
 
 <!-- PERFIL ANFITRION -->
 <div class="container">
+<br>
     <?php if(session('msg')):?>
     <article class="message is-<?=session('msg.type')?>">
         <div class="message-body">
