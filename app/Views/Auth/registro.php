@@ -138,7 +138,7 @@ Registro
                     </form>
                 </div>
             </div>
-        </div>
+        </div><br><br>
     </div>
     </div>
 </section>
