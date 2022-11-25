@@ -8,7 +8,7 @@ class TblGuardarPoliticasDeCancelacion extends Migration
 {
     public function up()
     {
-        $this->db->disableForeignKeyChecks();
+        //$this->db->disableForeignKeyChecks();
         $this->forge->addField([
             'idGuardar'          => [
                 'type'         => 'INT',
@@ -39,10 +39,10 @@ class TblGuardarPoliticasDeCancelacion extends Migration
             ],
         ]);
         $this->forge->addKey('idGuardar', true);
-        $this->forge->addForeignKey('idPoliticaCancelacion','tbl_politicas_de_cancelacion','idPoliticaCancelacion','CASCADE','SET NULL');
-        $this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','CASCADE');
+        //$this->forge->addForeignKey('idPoliticaCancelacion','tbl_politicas_de_cancelacion','idPoliticaCancelacion','CASCADE','SET NULL');
+        //$this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','CASCADE');
         $this->forge->createTable('tbl_guardar_politicas_cancelacion');
-        $this->db->enableForeignKeyChecks();
+        //$this->db->enableForeignKeyChecks();
     }
 
     public function down()

@@ -8,7 +8,7 @@ class TblPagos extends Migration
 {
     public function up()
     {
-        $this->db->disableForeignKeyChecks();
+        //$this->db->disableForeignKeyChecks();
         $this->forge->addField([
             'idPago'          => [
                 'type'         => 'INT',
@@ -52,10 +52,10 @@ class TblPagos extends Migration
             ],
         ]);
         $this->forge->addKey('idPago', true);
-        $this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','SET NULL');
-        $this->forge->addForeignKey('idUsuario','tbl_usuarios','idUsuario','CASCADE','SET NULL');
+        //$this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','SET NULL');
+        //$this->forge->addForeignKey('idUsuario','tbl_usuarios','idUsuario','CASCADE','SET NULL');
         $this->forge->createTable('tbl_pagos');
-        $this->db->enableForeignKeyChecks();
+        //$this->db->enableForeignKeyChecks();
     }
 
     public function down()

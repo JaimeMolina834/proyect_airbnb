@@ -8,7 +8,7 @@ class TblImagenes extends Migration
 {
     public function up()
     {
-        $this->db->disableForeignKeyChecks();
+        //$this->db->disableForeignKeyChecks();
         $this->forge->addField([
             'idImagen'          => [
                 'type'         => 'INT',
@@ -38,9 +38,9 @@ class TblImagenes extends Migration
             ],
         ]);
         $this->forge->addKey('idImagen', true);
-        $this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','CASCADE');
+        //$this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','CASCADE');
         $this->forge->createTable('tbl_imagenes');
-        $this->db->enableForeignKeyChecks();
+        //$this->db->enableForeignKeyChecks();
     }
 
     public function down()

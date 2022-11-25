@@ -8,7 +8,7 @@ class TblFechasReservas extends Migration
 {
     public function up()
     {
-        $this->db->disableForeignKeyChecks();
+        //$this->db->disableForeignKeyChecks();
         $this->forge->addField([
             'idFecha'          => [
                 'type'         => 'INT',
@@ -41,9 +41,9 @@ class TblFechasReservas extends Migration
             ],
         ]);
         $this->forge->addKey('idFecha', true);
-        $this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','CASCADE');
+        //$this->forge->addForeignKey('idServicio','tbl_servicios','idServicio','CASCADE','CASCADE');
         $this->forge->createTable('tbl_fechas_reservas');
-        $this->db->enableForeignKeyChecks();
+        //$this->db->enableForeignKeyChecks();
     }
 
     public function down()
