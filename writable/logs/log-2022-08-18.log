@@ -1,0 +1,12 @@
+CRITICAL - 2022-08-18 14:04:19 --> opendir(C:/laragon/www/proyect_airbnb/public/img/publicaciones/5/): El sistema no puede encontrar el archivo especificado. (code: 2)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'opendir(C:/lara...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\proyect_airbnb\app\Views\anfitrion\inicio.php(54): opendir('C:/laragon/www/...')
+#2 C:\laragon\www\proyect_airbnb\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#3 C:\laragon\www\proyect_airbnb\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\laragon\www\proyect_airbnb\system\Common.php(1089): CodeIgniter\View\View->render('anfitrion/inici...', Array, true)
+#5 C:\laragon\www\proyect_airbnb\app\Controllers\Anfitrion\Anfitrion.php(45): view('anfitrion/inici...', Array)
+#6 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(825): App\Controllers\Anfitrion\Anfitrion->index()
+#7 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anfitrion\Anfitrion))
+#8 C:\laragon\www\proyect_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\proyect_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
